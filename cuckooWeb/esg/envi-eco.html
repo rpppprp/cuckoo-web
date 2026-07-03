@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+    <head>
+        <meta charset="utf-8">
+        <title>CUCKOO - esg - 환경</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+         
+    </head>
+        
+
+    <body>
+
+        <!-- header -->
+        <%- include('/layout/header.html') %>
+        <!-- header -->
+
+        <main id="container" class="container">
+
+            <div class="esg-intro">
+
+                <!-- sub-tab -->
+                <%- include('/layout/sub-tab.html', { showTab: 'esg-environment' }) %>
+                <!-- sub-tab -->
+                
+                <div class="envi-tab-area">
+                    <ul class="tab-track envi-tab">
+                        <li class="tab-item"><a>환경경영</a></li>
+                        <li class="tab-item"><a>자원순환</a></li>
+                        <li class="tab-item on"><a>친환경</a></li>
+                    </ul>
+                </div>
+
+                <section class="section section-esg">
+                    <div class="inner">
+                        <!-- 친환경 -->
+                        <div class="tit-area envi-tit">
+                            <h1>친환경</h1>
+                        </div>
+                        <div class="env-part" id="env-part-5">
+                            <div class="sub-tit env-tit">
+                                <h2>친환경 제품확대</h2>
+                            </div>
+                            <div class="env-content">
+                                <div class="env-item">
+                                    <h4 class="tit">에너지 절감형, 에너지 효율적인 제품 개발</h4>
+                                    <div class="txt-area">
+                                        <p class="txt">
+                                            쿠쿠는 에너지의 절감이 뛰어난 에너지 고효율의 제품을 위한 탄탄한 기술력을 보유하고 있으며 지속적으로 연구개발을 추진하고 있습니다. 이로서 에너지절약과 탄소 저감에 기여하도록 하고 있습니다.
+                                        </p>
+                                        <p class="txt">쿠쿠는 매년 다수의 품목에 대해서 에너지 위너상을 수상하고 있으며, 에너지 효율이 뛰어난 제품을 고객들에게 선보이고 있습니다.</p>
+                                    </div>
+                                    <div class="env-group">
+                                        <h5 class="sub-tit">에너지 위너상 수상 현황</h5>
+                                        <div class="env-content-wrap">
+                                            <div class="env-winner-graph" id="env-winner-graph"></div>
+                                            <div class="img"></div>
+                                        </div>
+                                        <p class="txt">
+                                            쿠쿠는 주방가전, 생활가전, 냉방가전 등 여러 분야에서 에너지소비효율 1등급 제품을 다수 보유하여, 에너지 절약은 물론 소비자의 삶의 질 향상을 고려한 가전을 선보이고 있습니다. 이를 통해 산업통상자원부와 한국에너지공단이 시행하는 ‘으뜸효율 가전제품 환급사업’에 참여하고 있습니다.
+                                        </p>
+                                    </div>
+                                    <div class="env-group">
+                                        <h5 class="sub-tit">1등급 효율 제품 신규런칭 현황</h5>
+                                        <div class="env-content-wrap">
+                                            <div class="env-level1-graph" id="env-level1-graph"></div>
+                                            <div class="img"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="env-item">
+                                    <h4 class="tit">환경표지인증 제품 출시</h4>
+                                    <p class="txt">
+                                        환경부 산하 한국환경산업기술원이 부여하는 ‘환경표지 인증’은  제품 전 과정에서 오염물질 배출 및 에너지/자원 소비를 최소화한 친환경 제품에 부여하는 국가 공인 인증제도입니다. 친환경 제품 개발에 적극적으로 참여한 결과 환경표지 인증을 취득할 수 있습니다.
+                                    </p>
+                                    <div class="env-img-area"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+       
+                <!-- bottom page -->
+                <%- include('/layout/bottom-page.html', { showBottom: 'esg-environment' }) %>
+                <!-- bottom page -->
+
+            </div>
+
+
+        </main>
+
+        <!-- footer -->
+        <%- include('/layout/footer.html') %>
+        <!-- footer -->
+    </body>
+
+
+</html>

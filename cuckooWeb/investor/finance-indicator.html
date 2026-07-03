@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+    <head>
+        <meta charset="utf-8">
+        <title>CUCKOO - investor - 재무지표</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+         
+    </head>
+        
+
+    <body>
+
+        <!-- header -->
+        <%- include('/layout/header.html') %>
+        <!-- header -->
+
+        <main id="container" class="container">
+
+            <div class="investor-finance">
+
+                <!-- sub-tab -->
+                <%- include('/layout/sub-tab.html', { showTab: 'investor-finance' }) %>
+                <!-- sub-tab -->
+
+                <div class="finance-tab-area">
+                    <ul class="tab-track finance-tab">
+                        <li class="tab-item"><a>실시간 주가정보</a></li>
+                        <li class="tab-item"><a>재무제표</a></li>
+                        <li class="tab-item on"><a>재무지표</a></li>
+                    </ul>
+                </div>
+                
+                <section class="section section-finance">
+                    <div class="inner">
+                        <div class="tit-area finance-tit">
+                            <h1>재무지표</h1>
+                        </div>
+                        <ul class="tab-group finance">
+                            <li class="on" data-tab="indicator-cuckooHoldings"><a>쿠쿠홀딩스</a></li>
+                            <li data-tab="indicator-cuckooHomesys"><a>쿠쿠홈시스</a></li>
+                        </ul>
+                        <div class="finance-indicator-tab">
+                            <!-- 쿠쿠 홀딩스 -->
+                            <div class="indicator-item indicator-cuckooHoldings" id="indicator-cuckooHoldings">
+                                <div class="indicator-table">
+                                    <div class="table-group-1">
+                                        <div class="sub-tit table-tit">
+                                            <h2>수익성지표</h2>
+                                            <span>단위: %</span>
+                                        </div>
+                                        <table class="table-form indicator-table-1">
+                                            <tr>
+                                                <th>구분</th>
+                                                <th>2023년</th>
+                                                <th>2024년</th>
+                                                <th>2025년</th>
+                                            </tr>
+                                            <tr>
+                                                <th><b>총자산영업이익률</b></th>
+                                                <td>11.45</td>
+                                                <td>12.07</td>
+                                                <td>12.06</td>
+                                            </tr>
+                                            <tr>
+                                                <th><b>총자산순이익률</b></th>
+                                                <td>10.00</td>
+                                                <td>10.43</td>
+                                                <td>10.15</td>
+                                            </tr>
+                                            <tr>
+                                                <th><b>자기자본순이익률</b></th>
+                                                <td>39.55</td>
+                                                <td>38.57</td>
+                                                <td>36.61</td>
+                                            </tr>
+                                            <tr>
+                                                <th><b>영업이익률</b></th>
+                                                <td>12.38</td>
+                                                <td>11.22</td>
+                                                <td>11.63</td>
+                                            </tr>
+                                            <tr>
+                                                <th><b>순이익률</b></th>
+                                                <td>16.44</td>
+                                                <td>16.85</td>
+                                                <td>15.44</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div class="table-group-2">
+                                        <div class="sub-tit table-tit">
+                                            <h2>안정성지표</h2>
+                                            <span>단위: %</span>
+                                        </div>
+                                        <table class="table-form indicator-table-2">
+                                            <tr>
+                                                <th>구분</th>
+                                                <th>2023년</th>
+                                                <th>2024년</th>
+                                                <th>2025년</th>
+                                            </tr>
+                                            <tr>
+                                                <th><b>유동비율</b></th>
+                                                <td>477.79</td>
+                                                <td>430.45</td>
+                                                <td>341.61</td>
+                                            </tr>
+                                            <tr>
+                                                <th><b>부채이율</b></th>
+                                                <td>14.50</td>
+                                                <td>15.81</td>
+                                                <td>18.78</td>
+                                            </tr>
+                                            <tr>
+                                                <th><b>차입금의존도</b></th>
+                                                <td>0.00</td>
+                                                <td>0.01</td>
+                                                <td>0.05</td>
+                                            </tr>
+                                            <tr>
+                                                <th><b>자기자본이율</b></th>
+                                                <td>87.34</td>
+                                                <td>86.35</td>
+                                                <td>84.19</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div class="table-group-3">
+                                        <div class="sub-tit table-tit">
+                                            <h2>성장성지표</h2>
+                                            <span>단위: %</span>
+                                        </div>
+                                        <table class="table-form indicator-table-3">
+                                            <tr>
+                                                <th>구분</th>
+                                                <th>2023년</th>
+                                                <th>2024년</th>
+                                                <th>2025년</th>
+                                            </tr>
+                                            <tr>
+                                                <th><b>총 자산증가율</b></th>
+                                                <td>11.10</td>
+                                                <td>14.90</td>
+                                                <td>21.50</td>
+                                            </tr>
+                                            <tr>
+                                                <th><b>매출액증가율</b></th>
+                                                <td>2.90</td>
+                                                <td>5.20</td>
+                                                <td>15.20</td>
+                                            </tr>
+                                            <tr>
+                                                <th><b>영업이익증가율</b></th>
+                                                <td>8.00</td>
+                                                <td>5.80</td>
+                                                <td>10.50</td>
+                                            </tr>
+                                            <tr>
+                                                <th><b>순이익증가율</b></th>
+                                                <td>2.90</td>
+                                                <td>1.70</td>
+                                                <td>9.20</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 쿠쿠 홈시스 -->
+                            <div class="indicator-item indicator-cuckooHomesys" id="indicator-cuckooHomesys">
+                                <div class="table-group-1">
+                                    <div class="sub-tit table-tit">
+                                        <h2>수익성지표</h2>
+                                        <span>단위: %</span>
+                                    </div>
+                                    <table class="table-form indicator-table-1">
+                                        <tr>
+                                            <th>구분</th>
+                                            <th>2023년</th>
+                                            <th>2024년</th>
+                                            <th>2025년</th>
+                                        </tr>
+                                        <tr>
+                                            <th><b>총자산영업이익률</b></th>
+                                            <td>11.45</td>
+                                            <td>12.07</td>
+                                            <td>12.06</td>
+                                        </tr>
+                                        <tr>
+                                            <th><b>총자산순이익률</b></th>
+                                            <td>10.00</td>
+                                            <td>10.43</td>
+                                            <td>10.15</td>
+                                        </tr>
+                                        <tr>
+                                            <th><b>자기자본순이익률</b></th>
+                                            <td>39.55</td>
+                                            <td>38.57</td>
+                                            <td>36.61</td>
+                                        </tr>
+                                        <tr>
+                                            <th><b>영업이익률</b></th>
+                                            <td>12.38</td>
+                                            <td>11.22</td>
+                                            <td>11.63</td>
+                                        </tr>
+                                        <tr>
+                                            <th><b>순이익률</b></th>
+                                            <td>16.44</td>
+                                            <td>16.85</td>
+                                            <td>15.44</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="table-group-2">
+                                    <div class="sub-tit table-tit">
+                                        <h2>안정성지표</h2>
+                                        <span>단위: %</span>
+                                    </div>
+                                    <table class="table-form indicator-table-2">
+                                        <tr>
+                                            <th>구분</th>
+                                            <th>2023년</th>
+                                            <th>2024년</th>
+                                            <th>2025년</th>
+                                        </tr>
+                                        <tr>
+                                            <th><b>유동비율</b></th>
+                                            <td>477.79</td>
+                                            <td>430.45</td>
+                                            <td>341.61</td>
+                                        </tr>
+                                        <tr>
+                                            <th><b>부채이율</b></th>
+                                            <td>14.50</td>
+                                            <td>15.81</td>
+                                            <td>18.78</td>
+                                        </tr>
+                                        <tr>
+                                            <th><b>차입금의존도</b></th>
+                                            <td>0.00</td>
+                                            <td>0.01</td>
+                                            <td>0.05</td>
+                                        </tr>
+                                        <tr>
+                                            <th><b>자기자본이율</b></th>
+                                            <td>87.34</td>
+                                            <td>86.35</td>
+                                            <td>84.19</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="table-group-3">
+                                    <div class="sub-tit table-tit">
+                                        <h2>성장성지표</h2>
+                                        <span>단위: %</span>
+                                    </div>
+                                    <table class="table-form indicator-table-3">
+                                        <tr>
+                                            <th>구분</th>
+                                            <th>2023년</th>
+                                            <th>2024년</th>
+                                            <th>2025년</th>
+                                        </tr>
+                                        <tr>
+                                            <th><b>총 자산증가율</b></th>
+                                            <td>11.10</td>
+                                            <td>14.90</td>
+                                            <td>21.50</td>
+                                        </tr>
+                                        <tr>
+                                            <th><b>매출액증가율</b></th>
+                                            <td>2.90</td>
+                                            <td>5.20</td>
+                                            <td>15.20</td>
+                                        </tr>
+                                        <tr>
+                                            <th><b>영업이익증가율</b></th>
+                                            <td>8.00</td>
+                                            <td>5.80</td>
+                                            <td>10.50</td>
+                                        </tr>
+                                        <tr>
+                                            <th><b>순이익증가율</b></th>
+                                            <td>2.90</td>
+                                            <td>1.70</td>
+                                            <td>9.20</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+       
+                <!-- bottom page -->
+                <%- include('/layout/bottom-page.html', { showBottom: 'investor-finance' }) %>
+                <!-- bottom page -->
+
+            </div>
+
+
+        </main>
+
+        <!-- footer -->
+        <%- include('/layout/footer.html') %>
+        <!-- footer -->
+    </body>
+
+
+</html>

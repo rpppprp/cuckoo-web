@@ -1,0 +1,103 @@
+@charset "utf-8";
+
+
+/* ----------------------------------------------------------
+
+    index
+
+-------------------------------------------------------------*/
+
+
+
+
+
+
+/* ----------------------------------------------------------
+
+    회사소개 - 연혁
+
+-------------------------------------------------------------*/
+
+
+.history-date {
+    display:flex;
+}
+
+.history-date > p {
+    width:150px;
+    font-size:var(--font-xxx-lg);
+    font-weight: 800;
+}
+
+.history-date:after {
+    display:block;
+    content:"";
+    width:calc(100% - 160px);
+    height:1px;
+    top:20px;
+    background:var(--color-gry-4);
+    align-self:center;
+}
+
+.history-data-list {
+    position:relative;
+    display:flex;
+    width:auto;
+    gap:40px;
+    padding:40px 0px;
+}
+
+
+.history-data-list li {
+    width:280px;
+    flex-shrink: 0;
+}
+
+
+
+/* ----------------------------------------------------------
+
+    회사소개 - 한국 본사 소개 & 해외 자회사 근황
+
+-------------------------------------------------------------*/
+
+
+
+.associate-list .company-info li {
+    display:flex;
+    gap:40px;
+}
+
+.associate-list .company-info li:before {
+    display:block;
+    color: var(--color-gry-4);
+}
+
+.associate-list .company-info li.date:before {
+    content:"설립일";
+}
+
+.associate-list .company-info li.type:before {
+    content:"품목/사업";
+}
+
+.associate-list .company-info li.address:before {
+    content:"주소";
+}
+
+.associate-list .company-info li.url:before {
+    content:"홈페이지";
+}
+
+
+
+
+
+
+
+
+/* ----------------------------------------------------------
+
+    투자정보 - 주가·재무정보
+
+-------------------------------------------------------------*/

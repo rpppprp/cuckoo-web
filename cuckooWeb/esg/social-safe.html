@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+    <head>
+        <meta charset="utf-8">
+        <title>CUCKOO - esg - 사회</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+         
+    </head>
+        
+
+    <body>
+
+        <!-- header -->
+        <%- include('/layout/header.html') %>
+        <!-- header -->
+
+        <main id="container" class="container">
+
+            <div class="esg-intro">
+
+                <!-- sub-tab -->
+                <%- include('/layout/sub-tab.html', { showTab: 'esg-social' }) %>
+                <!-- sub-tab -->
+
+                <div class="social-tab-area">
+                    <ul class="tab-track social-tab">
+                        <li class="tab-item on"><a>안전보건</a></li>
+                        <li class="tab-item"><a>지역사회</a></li>
+                    </ul>
+                </div>
+                
+                <section class="section section-esg">
+                    <div class="inner">
+                        <!-- 안전보건 -->
+                        <div class="tit-area social-tit">
+                            <h1>안전보건</h1>
+                        </div>
+                        <div class="social-part" id="social-part-1">
+                            <div class="sub-tit social-tit">
+                                <h2>안전보건경영</h2>
+                            </div>
+                            <div class="social-content">
+                                <div class="social-item">
+                                    <h4 class="tit">안전보건경영시스템 구축 및 운영</h4>
+                                    <p class="txt">쿠쿠의 주요 생산사업장은 안전보건규정 및 중대재해 방지를 위한 방침을 운영하고 있습니다.</p>
+                                    <div class="social-group">
+                                        <h5 class="sub-tit">- 안전보건 조직도</h5>
+                                        <div class="img-area bg-gry">
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="social-item">
+                                    <h4 class="tit">관리자 및 관리감독자 주요 활용</h4>
+                                    <ul class="social-list bg-gry">
+                                        <li>안전보건경영방침 부서별 세부목표 및 추진계획 수립</li>
+                                        <li>유해·위험요인을 발굴하여 개선조치 이행</li>
+                                        <li>재해 예방 및 안전보건활동에 필요한 예산 편성 및 용도에 맞게 집행</li>
+                                        <li>중대산업재해, 급박한 위험을 대비하여 대응훈련, 긴급작업중지 절차 마련 및 조치 이행</li>
+                                        <li>도급, 용역, 위탁 시 산업재해 예방 조치 능력 및 기술에 관한 평가기준·절차, 관리비용 등 관한 기준 마련 및 이행 점검</li>
+                                        <li>화학물질 사용 실태파악 및 관리</li>
+                                        <li>안전보건관계 법령 의무 이행 점검</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="social-part" id="social-part-2">
+                            <div class="sub-tit social-tit">
+                                <h2>안전보건교육</h2>
+                            </div>
+                            <div class="social-content">
+                                <div class="social-item">
+                                    <h4 class="tit">안전보건교육 및 점검 진행</h4>
+                                    <p class="txt">전직원 및 작업자를 대상으로 정기적으로 안전보건교육을 실시하며, 현장점검도 실시하고 있습니다.</p>
+                                    <ul class="social-img-list">
+                                        <li>
+                                            <div class="img"></div>
+                                            <p>산업안전보건교육</p>
+                                        </li>
+                                        <li>
+                                            <div class="img"></div>
+                                            <p>직무스트레스 조사</p>
+                                        </li>
+                                        <li>
+                                            <div class="img"></div>
+                                            <p>작업장 위험성평가</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+       
+                <!-- bottom page -->
+                <%- include('/layout/bottom-page.html', { showBottom: 'esg-social' }) %>
+                <!-- bottom page -->
+
+            </div>
+
+
+        </main>
+
+        <!-- footer -->
+        <%- include('/layout/footer.html') %>
+        <!-- footer -->
+    </body>
+
+
+</html>

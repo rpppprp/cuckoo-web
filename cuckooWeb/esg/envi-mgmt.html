@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+    <head>
+        <meta charset="utf-8">
+        <title>CUCKOO - esg - 환경</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+         
+    </head>
+        
+
+    <body>
+
+        <!-- header -->
+        <%- include('/layout/header.html') %>
+        <!-- header -->
+
+        <main id="container" class="container">
+
+            <div class="esg-intro">
+
+                <!-- sub-tab -->
+                <%- include('/layout/sub-tab.html', { showTab: 'esg-environment' }) %>
+                <!-- sub-tab -->
+
+                <div class="envi-tab-area">
+                    <ul class="tab-track envi-tab">
+                        <li class="tab-item on"><a>환경경영</a></li>
+                        <li class="tab-item"><a>자원순환</a></li>
+                        <li class="tab-item"><a>친환경</a></li>
+                    </ul>
+                </div>
+                
+                <section class="section section-esg">
+                    <div class="inner">
+                        <!-- 환경경영 -->
+                        <div class="tit-area envi-tit">
+                            <h1>환경경영</h1>
+                        </div>
+                        <div class="env-part" id="env-part-1">
+                            <div class="sub-tit env-tit">
+                                <h2>환경경영 정책</h2>
+                            </div>
+                            <div class="env-content">
+                                <div class="env-item">
+                                    <h4 class="tit"></h4>
+                                    <ul class="env-list">
+                                        <li>
+                                            <h5></h5>
+                                            <p></p>
+                                        </li>
+                                        <li>
+                                            <h5></h5>
+                                            <p></p>
+                                        </li>
+                                        <li>
+                                            <h5></h5>
+                                            <p></p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="env-item">
+                                    <h4 class="tit"></h4>
+                                    <ul class="env-list">
+                                        <li>
+                                            <h5></h5>
+                                            <p></p>
+                                        </li>
+                                        <li>
+                                            <h5></h5>
+                                            <p></p>
+                                        </li>
+                                        <li>
+                                            <h5></h5>
+                                            <p></p>
+                                        </li>
+                                        <li>
+                                            <h5></h5>
+                                            <p></p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="env-part" id="env-part-2">
+                            <div class="sub-tit env-tit">
+                                <h2>환경경영체계</h2>
+                            </div>
+                            <div class="env-content">
+                                <div class="env-item">
+                                    <h4 class="tit">환경경영시스템(ISO 14001 인증)</h4>
+                                    <div class="img-area bg-gry">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="env-part" id="env-part-3">
+                            <div class="sub-tit env-tit">
+                                <h2>환경규제관리</h2>
+                            </div>
+                            <div class="env-content">
+                                <div class="env-item">
+                                    <h4 class="tit">환경규제 물질 정보 통합관리 시스템(MADAMS)</h4>
+                                    <div class="env-img-area bg-gry">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+       
+                <!-- bottom page -->
+                <%- include('/layout/bottom-page.html', { showBottom: 'esg-environment' }) %>
+                <!-- bottom page -->
+
+            </div>
+
+
+        </main>
+
+        <!-- footer -->
+        <%- include('/layout/footer.html') %>
+        <!-- footer -->
+    </body>
+
+
+</html>

@@ -1,0 +1,294 @@
+
+
+<!-- Bottom Pager -->
+
+
+<div class="bottom-pager">
+
+    <!--------------------------------------------------------------------------
+    
+        회사소개
+    
+    ---------------------------------------------------------------------------->
+
+    <% if (showBottom === 'about-intro') { %>
+        <nav class="bottom-page-area about-intro-page">
+            <ul class="page-wrap">
+                <li>
+                    <a href="/about/history.html" class="btn bottom-page-next">
+                        연혁
+                        <svg class="icon-24px">
+                            <use xlink:href="/cuckooWeb/images/sprite.svg#arrow-next"/>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    <% } %>
+
+    <% if (showBottom === 'about-history') { %>
+        <nav class="bottom-page-area about-history-page">
+            <ul class="page-wrap">
+                <li>
+                    <a href="/about/intro.html" class="btn bottom-page-prev">
+                        <svg class="icon-24px">
+                            <use xlink:href="/cuckooWeb/images/sprite.svg#arrow-prev"/>
+                        </svg>
+                        소개
+                    </a>
+                </li>
+                <li>
+                    <a href="/about/associate-kr.html" class="btn bottom-page-next">
+                        한국본사 소개
+                        <svg class="icon-24px">
+                            <use xlink:href="/cuckooWeb/images/sprite.svg#arrow-next"/>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    <% } %>
+
+    <% if (showBottom === 'about-associate-kr') { %>
+        <nav class="bottom-page-area about-associate-page">
+            <ul class="page-wrap">
+                <li>
+                    <a href="/about/history.html" class="btn bottom-page-prev">
+                        <svg class="icon-24px">
+                            <use xlink:href="/cuckooWeb/images/sprite.svg#arrow-prev"/>
+                        </svg>
+                        연혁
+                    </a>
+                </li>
+                <li>
+                    <a href="/about/associate-overseas.html" class="btn bottom-page-next">
+                        해외 자회사 현황
+                        <svg class="icon-24px">
+                            <use xlink:href="/cuckooWeb/images/sprite.svg#arrow-next"/>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </nav>    
+    <% } %>
+
+    <% if (showBottom === 'about-associate-overseas') { %>
+        <nav class="bottom-page-area about-associate-page">
+            <ul class="page-wrap">
+                <li>
+                    <a href="/about/associate-kr.html" class="btn bottom-page-prev">
+                        <svg class="icon-24px">
+                            <use xlink:href="/cuckooWeb/images/sprite.svg#arrow-prev"/>
+                        </svg>
+                        한국본사 소개
+                    </a>
+                </li>
+            </ul>
+        </nav>    
+    <% } %>
+
+    <!--------------------------------------------------------------------------
+    
+        투자정보
+    
+    ---------------------------------------------------------------------------->
+    
+    <% if (showBottom === 'investor-finance') { %>
+        <nav class="bottom-page-area investor-finance-page">
+            <ul class="page-wrap">
+                <li>
+                    <a class="btn bottom-page-next" href="/investor/disc-drt.html">     
+                        공시정보
+                        <svg class="icon-24px">
+                            <use xlink:href="/cuckooWeb/images/sprite.svg#arrow-next"/>
+                        </svg>
+                    </a>
+                </li>
+            </ul> 
+        </nav>
+    <% } %>
+
+    <% if (showBottom === 'investor-disc') { %>
+        <nav class="bottom-page-area investor-disc-page">
+            <ul class="page-wrap">
+                <li>
+                    <a class="btn bottom-page-prev" heaf="/investor/finance-stock.html">
+                        <svg class="icon-24px">
+                            <use xlink:href="/cuckooWeb/images/sprite.svg#arrow-prev"/>
+                        </svg>
+                        주가·재무정보
+                    </a>
+                </li>
+                <li>
+                    <a class="btn bottom-page-next" heaf="/investor/stockholder-info.html">
+                        주주정보
+                        <svg class="icon-24px">
+                            <use xlink:href="/cuckooWeb/images/sprite.svg#arrow-next"/>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    <% } %>
+
+    <% if (showBottom === 'investor-stockholder') { %>
+        <nav class="bottom-page-area investor-stockholder-page">
+            <ul class="page-wrap">
+                <li>
+                    <a class="btn bottom-page-prev" heaf="/investor/disc-drt.html">
+                        <svg class="icon-24px">
+                            <use xlink:href="/cuckooWeb/images/sprite.svg#arrow-prev"/>
+                        </svg>
+                        공시정보
+                    </a>
+                </li>
+                <li>
+                    <a class="btn bottom-page-next" heaf="/investor/archive-report.html">
+                        IR 자료실
+                        <svg class="icon-24px">
+                            <use xlink:href="/cuckooWeb/images/sprite.svg#arrow-next"/>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    <% } %>
+
+    
+    <% if (showBottom === 'investor-archive') { %>
+        <nav class="bottom-page-area investor-archive-page">
+            <ul class="page-wrap">
+                <li>
+                    <a class="btn bottom-page-prev" heaf="/investor/stockholder-info.html">
+                        <svg class="icon-24px">
+                            <use xlink:href="/cuckooWeb/images/sprite.svg#arrow-prev"/>
+                        </svg>
+                        주주정보
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    <% } %>
+
+    <!--------------------------------------------------------------------------
+    
+        지속가능경영
+    
+    ---------------------------------------------------------------------------->
+    
+    <% if (showBottom === 'esg-overview') { %>
+        <nav class="bottom-page-area esg-overview-page">
+            <ul class="page-wrap">
+                <li>
+                    <a class="btn bottom-page-next" href="/esg/envi-mgmt.html">
+                        환경
+                        <svg class="icon-24px">
+                            <use xlink:href="/cuckooWeb/images/sprite.svg#arrow-next"/>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    <% } %>
+
+    <% if (showBottom === 'esg-environment') { %>
+        <nav class="bottom-page-area esg-environment-page">
+            <ul class="page-wrap">
+                <li>
+                    <a class="btn bottom-page-prev" href="/esg/overview.html">
+                        <svg class="icon-24px">
+                            <use xlink:href="/cuckooWeb/images/sprite.svg#arrow-prev"/>
+                        </svg>
+                        개요
+                    </a>
+                </li>
+                <li>
+                    <a class="btn bottom-page-next" href="/esg/social-safe.html">
+                        사회
+                        <svg class="icon-24px">
+                            <use xlink:href="/cuckooWeb/images/sprite.svg#arrow-next"/>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    <% } %>
+
+    <% if (showBottom === 'esg-social') { %>
+        <nav class="bottom-page-area esg-social-page">
+            <ul class="page-wrap">
+                <li>
+                    <a class="btn bottom-page-prev" href="/esg/overview.html">
+                        <svg class="icon-24px">
+                            <use xlink:href="/cuckooWeb/images/sprite.svg#arrow-prev"/>
+                        </svg>
+                        환경
+                    </a>
+                </li>
+                <li>
+                    <a class="btn bottom-page-next" href="/esg/gov-dir.html">
+                        지배구조
+                        <svg class="icon-24px">
+                            <use xlink:href="/cuckooWeb/images/sprite.svg#arrow-next"/>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    <% } %>
+
+    <% if (showBottom === 'esg-governance') { %>
+        <nav class="bottom-page-area esg-governance-page">
+            <ul class="page-wrap">
+                <li>
+                    <a class="btn bottom-page-prev" href="/esg/social-safe.html">
+                        <svg class="icon-24px">
+                            <use xlink:href="/cuckooWeb/images/sprite.svg#arrow-prev"/>
+                        </svg>
+                        사회
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    <% } %>
+
+    <!--------------------------------------------------------------------------
+    
+        윤리경영
+    
+    ---------------------------------------------------------------------------->
+
+
+    <% if (showBottom === 'ethic-system') { %>
+        <nav class="bottom-page-area ethic-system-page">
+            <ul class="page-wrap">
+                <li>
+                    <a class="btn bottom-page-next" href="/ethic/activity.html">
+                        윤리경영활동
+                        <svg class="icon-24px">
+                            <use xlink:href="/cuckooWeb/images/sprite.svg#arrow-next"/>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    <% } %>
+
+    <% if (showBottom === 'ethic-activity') { %>
+        <nav class="bottom-page-area ethic-activity-page">
+            <ul class="page-wrap">
+                <li>
+                    <a class="btn bottom-page-prev" href="/ethic/system.html">
+                        <svg class="icon-24px">
+                            <use xlink:href="/cuckooWeb/images/sprite.svg#arrow-prev"/>
+                        </svg>
+                        윤리경영체계
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    <% } %>
+
+
+</div>
+

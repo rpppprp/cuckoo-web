@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+    <head>
+        <meta charset="utf-8">
+        <title>CUCKOO - esg - 환경</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+         
+    </head>
+        
+
+    <body>
+
+        <!-- header -->
+        <%- include('/layout/header.html') %>
+        <!-- header -->
+
+        <main id="container" class="container">
+
+            <div class="esg-intro">
+
+                <!-- sub-tab -->
+                <%- include('/layout/sub-tab.html', { showTab: 'esg-environment' }) %>
+                <!-- sub-tab -->
+
+                <div class="envi-tab-area">
+                    <ul class="tab-track envi-tab">
+                        <li class="tab-item"><a>환경경영</a></li>
+                        <li class="tab-item on"><a>자원순환</a></li>
+                        <li class="tab-item"><a>친환경</a></li>
+                    </ul>
+                </div>
+                
+                <section class="section section-esg">
+                    <div class="inner">
+                        <!-- 자원순환 -->
+                        <div class="tit-area envi-tit">
+                            <h1>자원순환</h1>
+                        </div>
+                        <div class="env-part" id="env-part-4">
+                            <div class="sub-tit env-tit">
+                                <h2>자원순환활동</h2>
+                            </div>
+                            <div class="env-content">
+                                <div class="env-item">
+                                    <h4 class="tit">지속 가능한 미래를 위한 약속, ‘E-순환우수제품’ 인증</h4>
+                                    <p class="txt">
+                                        쿠쿠는 제품의 생산부터 재활용에 이르는 전 과정에서 자원 순환성을 극대화하며 탄소 배출 저감에 앞장서고 있습니다. 음식물처리기를 포함한 쿠쿠의 주요 생활가전은 친환경 설계와 재활용 용이성을 인정받아 ‘E-순환우수제품’ 인증을 획득하였습니다. 기술력을 넘어 환경까지 생각하는 가전, 쿠쿠가 순환 경제의 기준을 세웁니다.
+                                    </p>
+                                    <div class="env-group">
+                                        <h5 class="sub-tit">E-순환우수제품 목록</h5>
+                                        <div class="env-slide-wrap">
+                                            <ul class="env-slide-track">
+                                                <li>
+                                                    <span class="e-icon"></span>
+                                                    <em class="product-code"></em>
+                                                </li>
+                                                <li>
+                                                    <span class="e-icon"></span>
+                                                    <em class="product-code"></em>
+                                                </li>
+                                                <li>
+                                                    <span class="e-icon"></span>
+                                                    <em class="product-code"></em>
+                                                </li>
+                                                <li>
+                                                    <span class="e-icon"></span>
+                                                    <em class="product-code"></em>
+                                                </li>
+                                                <li>
+                                                    <span class="e-icon"></span>
+                                                    <em class="product-code"></em>
+                                                </li>
+                                                <li>
+                                                    <span class="e-icon"></span>
+                                                    <em class="product-code"></em>
+                                                </li>
+                                                <li>
+                                                    <span class="e-icon"></span>
+                                                    <em class="product-code"></em>
+                                                </li>
+                                                <li>
+                                                    <span class="e-icon"></span>
+                                                    <em class="product-code"></em>
+                                                </li>
+                                                <li>
+                                                    <span class="e-icon"></span>
+                                                    <em class="product-code"></em>
+                                                </li>
+                                                <li>
+                                                    <span class="e-icon"></span>
+                                                    <em class="product-code"></em>
+                                                </li>
+                                            </ul>
+                                            <div class="env-slide-pager">
+                                                <a class="icon-32px env-slide-prev"></a>
+                                                <a class="icon-32px env-slide-next"></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="env-group">
+                                        <h5 class="sub-tit">E-순환우수제품 현황</h5>
+                                        <div class="env-recycle-graph" id="env-recycle-graph"></div>
+                                    </div>
+                                </div>
+                                <div class="env-item">
+                                    <h4 class="tit">E-순환 페스티벌 행사</h4>
+                                    <p class="txt">
+                                        E-순환우수제품에 대한 소비자 관심을 유도하고 친환경 인증제품 사용을 적극 장려하는 취지로 매년 E-순환 페스티벌 행사를 진행합니다.  쿠쿠는 자원순환 설계와 친환경 혁신을 적극 반영하며 소비자와 함께 환경적 가치를 실현하는 ESG 경영을 강화해 나가고 있습니다. 
+                                    </p>
+                                    <div class="env-group">
+                                        <h5 class="sub-tit">2025년 E-순환 페스티벌 (9월~10월 진행)</h5>
+                                        <div class="env-img-wrap">
+                                            <div class="img"></div>
+                                            <div class="img"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="env-item">
+                                    <h4 class="tit">친환경 재생 원재료 확대</h4>
+                                    <p class="txt">
+                                        쿠쿠는 정수기, 공기청정기, 음식물처리기 등 주요 생활가전 제품 전반에 재생 원재료 사용을 확대하고 있습니다. 특히 인기 모델인 제로 100 슬림 얼음 정수기와 바리스타 정수기는 재생 원재료 사용 100%를 달성했으며, 공기청정기 일부 모델은 96%까지 적용하고 있습니다. 음식물처리기에는 재생 고유동 ABS 소재를 하이브리드 인덕션 레인지는 친환경 난연 PP 소재를 적용하는 등 친환경 원재료 적용을 지속 확대하고 있습니다. 
+                                    </p>
+                                    <div class="env-group">
+                                        <h5 class="sub-tit">재생 원재료 사용 현황</h5>
+                                        <div class="env-recovery-graph" id="env-recovery-graph"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+       
+                <!-- bottom page -->
+                <%- include('/layout/bottom-page.html', { showBottom: 'esg-environment' }) %>
+                <!-- bottom page -->
+
+            </div>
+
+
+        </main>
+
+        <!-- footer -->
+        <%- include('/layout/footer.html') %>
+        <!-- footer -->
+    </body>
+
+
+</html>

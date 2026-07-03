@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+    <head>
+        <meta charset="utf-8">
+        <title>CUCKOO - index</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+         
+    </head>
+        
+
+    <body id="ck-main">
+
+        <!-- header -->
+        <%- include('/layout/header.html') %>
+        <!-- header -->
+
+        <main id="container" class="container">
+
+            <div class="main">
+
+                <section class="main-section hero-area">
+                    <div class="inner">
+                        <div class="hero">
+                            <div class="hero-slide-1">
+                                <div class="img">
+                                    <img src="/cuckooWeb/images/visual01.jpg" class="pc-only">
+                                </div>
+                                <div class="hero-txt">
+                                    <b class="sub-txt">
+                                        Heritage & Vision
+                                    </b>
+                                    <h1 class="tit-txt">
+                                        49년의 신뢰를 넘어, 글로벌 생활가전의 미래를 짓다
+                                    </h1>
+                                    <p class="txt">
+                                        Beyond 49 Years of Trust, Shaping the Future of Global Living.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="hero-slide-2">
+                                <div class="img">
+                                    <img src="/cuckooWeb/images/visual02.jpg" class="pc-only">
+                                </div>
+                                <div class="hero-txt">
+                                    <b class="sub-txt">
+                                        Emotion & Happiness
+                                    </b>
+                                    <h1 class="tit-txt">
+                                        기술에 감동을 더해, 당신의 모든 일상을 행복으로 채우다
+                                    </h1>
+                                    <p class="txt">
+                                        Inspiring Technology, Enriching Your Every Day with Happiness.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="hero-slide-3">
+                                <div class="img">
+                                    <img src="/cuckooWeb/images/visual03.jpg" class="pc-only">
+                                </div>
+                                <div class="hero-txt">
+                                    <b class="sub-txt">
+                                        Innovation & Global
+                                    </b>
+                                    <h1 class="tit-txt">
+                                        대한민국 NO.1을 넘어, 세계가 경험하는 기술의 혁신
+                                    </h1>
+                                    <p class="txt">
+                                        Beyond Korea’s No. 1, Leading Innovation in Global Living.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hero-navigation">
+                            <div class="progress-bar"></div>
+                            <h2 class="page-number"></h2>
+                            <div class="navigation-button">
+                                <a class="navi-btn nav-prev">
+                                    <svg class="icon-24px">
+                                        <use xlink:href="/cuckooWeb/images/sprite.svg#prev"/>
+                                    </svg>
+                                </a>
+                                <a class="navi-btn nav-next">
+                                    <svg class="icon-24px">
+                                        <use xlink:href="/cuckooWeb/images/sprite.svg#next"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="main-section about-area">
+                    <div class="inner">
+                        <div class="about-section">
+                            <div class="txt-wrap">
+                                <h1 class="section-tit">About</h1>
+                                <span class="loca">회사 소개</span>
+                                <p class="section-txt">
+                                    종합생활가전 쿠쿠로<br>언제나 곁에서 함께 하겠습니다.
+                                </p>
+                                <a class="btn b-btn section-btn">
+                                    더보기
+                                    <svg class="icon-24px">
+                                        <use xlink:href="/cuckooWeb/images/sprite.svg#arrow-next"/>
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="about-img">
+                                <img src="/cuckooWeb/images/about-bg.jpg">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="main-section investor-area">
+                    <div class="inner">
+                        <div class="invertor-section">
+                            <div class="txt-wrap">
+                                <h1 class="section-tit">Investor Relations</h1>
+                                <span class="loca">투자 정보</span>
+                                <p class="section-txt">
+                                    종합생활가전 쿠쿠로<br>언제나 곁에서 함께 하겠습니다.
+                                </p>
+                                <ul class="investor-link">
+                                    <li>
+                                        <a>
+                                            주가·재무정보
+                                            <span class="circle-icon">
+                                                <svg class="icon-24px">
+                                                    <use xlink:href="/cuckooWeb/images/sprite.svg#arrow-next"/>
+                                                </svg>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            공시정보
+                                            <span class="circle-icon">
+                                                <svg class="icon-24px">
+                                                    <use xlink:href="/cuckooWeb/images/sprite.svg#arrow-next"/>
+                                                </svg>
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a>
+                                            주주정보
+                                            <span class="circle-icon">
+                                                <svg class="icon-24px">
+                                                    <use xlink:href="/cuckooWeb/images/sprite.svg#arrow-next"/>
+                                                </svg>
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="investor-item">
+                                <div class="investor-txt-wrap">
+                                    <div class="investor-name">쿠쿠홀딩스</div>
+                                    <span class="investor-num">192400</span>
+                                    <em class="investor-date">2026-04-27 02:00:00 기준</em>
+                                </div>
+                                <div class="investor-graph" id="cuckoo-holdings"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>  
+                <section class="main-section esg-area">
+                    <div class="inner">
+                        <div class="esg-section">
+                            <div class="txt-wrap">
+                                <h1 class="section-tit">ESG</h1>
+                                <span class="loca">지속가능경영</span>
+                                <p class="section-txt">
+                                    쿠쿠는 모두의 행복을 추구하는<br>지속가능 경영을 실천합니다.
+                                </p>
+                                <a class="btn w-line-btn section-btn">
+                                    더보기
+                                    <svg class="icon-24px">
+                                        <use xlink:href="/cuckooWeb/images/sprite.svg#arrow-next"/>
+                                    </svg>
+                                </a>
+                            </div>
+                            <ul class="esg-item-group">
+                                <li class="esg-item-1">
+                                    <b class="esg-num">01</b>
+                                    <div class="esg-icon">
+                                        <svg class="icon-esg">
+                                            <use xlink:href="/cuckooWeb/images/sprite.svg#esg-icon1"/>
+                                        </svg>
+                                    </div>
+                                    <h2 class="esg-tit">Environment</h2>
+                                    <p class="esg-txt">
+                                        쿠쿠는 지구와 상생하는 친환경 기술을 통해 내일의 깨끗한 환경을 먼저 준비합니다.
+                                    </p>
+                                </li>
+                                <li class="esg-item-2">
+                                    <b class="esg-num">02</b>
+                                    <div class="esg-icon">
+                                        <svg class="icon-esg">
+                                            <use xlink:href="/cuckooWeb/images/sprite.svg#esg-icon2"/>
+                                        </svg>
+                                    </div>
+                                    <h2 class="esg-tit">Social</h2>
+                                    <p class="esg-txt">
+                                        쿠쿠는 나눔의 가치를 실천하며, 우리 사회 구성원 모두가 함께 웃을 수 있는 내일을 만듭니다.
+                                    </p>
+                                </li>
+                                <li class="esg-item-3">
+                                    <b class="esg-num">03</b>
+                                    <div class="esg-icon">
+                                        <svg class="icon-esg">
+                                            <use xlink:href="/cuckooWeb/images/sprite.svg#esg-icon3"/>
+                                        </svg>
+                                    </div>
+                                    <h2 class="esg-tit">Governance</h2>
+                                    <p class="esg-txt">
+                                        쿠쿠는 투명하고 정직한 경영 원칙을 바탕으로 주주와 고객에게 변치 않는 신뢰를 약속합니다.
+                                    </p>
+                                </li>
+                                <!-- <li class="esg-item-1">
+                                    <b class="esg-num">04</b>
+                                    <div class="esg-icon"></div>
+                                    <h2 class="esg-tit">Ethics</h2>
+                                    <p class="esg-txt">
+                                        쿠쿠는 확고한 준법 정신과 정직한 기업 문화를 바탕으로, 사회의 신뢰에 보답하는 공정하고 깨끗한 경영을 실천합니다.
+                                    </p>
+                                </li> -->
+                            </ul>
+                        </div>
+                    </div>
+                </section>            
+            </div>
+
+
+        </main>
+
+        <!-- footer -->
+        <%- include('/layout/footer.html') %>
+        <!-- footer -->
+    </body>
+
+
+</html>
