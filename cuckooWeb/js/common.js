@@ -4,6 +4,28 @@
 $(function(){
 
 
+
+/* ----------------------------------------------------------
+
+    COMMON
+
+-------------------------------------------------------------*/
+
+    //스크롤 reset
+    history.scrollRestoration = "manual"
+
+    //스크롤 제어
+    function scrollDisable() {
+        $('html, body').addClass('scroll-none');
+    }
+
+    //스크롤 제어 off
+    function scrollAble() {
+        $('html, body').removeClass('scroll-none');
+    }
+
+
+
 /* ----------------------------------------------------------
 
     HEADER
@@ -41,13 +63,91 @@ $(function(){
 
 
     //SITEMAP
-    const _sitemap = $(".sitemap-area");
-    _sitemap.hide();
     $(".sitemap-btn").click(function(){
-        _sitemap.fadeIn();
+        $(".sitemap-area").addClass('on');
     })
     $(".sitemap-close").click(function(){
-        _sitemap.fadeOut();
+        $(".sitemap-area").removeClass('on');
     })
+
+
+/* ----------------------------------------------------------
+
+    SUB TAB
+
+-------------------------------------------------------------*/
+
+
+    // breadcrumb button
+    $(".breadcrumb-btn").click(function(){
+        var _this = $(this);
+        var _dropdown = _this.next('ul');
+
+        if(_this.hasClass('on')) {
+            _this.removeClass('on');
+            _dropdown.hide();
+        } else {
+            _this.addClass('on');
+            _dropdown.show();
+        }
+    })
+
+    //breadcrumb 메뉴 열린상태로 외부영역 눌렀을때 초기화
+    $(document).on('click', function(e) {
+
+        if (!$(e.target).closest('.breadcrumb-btn, .breadcrumb-btn + ul').length) {
+          
+          $('.breadcrumb-btn').removeClass('on');
+          $('.breadcrumb-btn + ul').hide();
+          
+        }
+    });
+
+
+
+/* ----------------------------------------------------------
+
+    
+
+-------------------------------------------------------------*/
+
+
+
+
+
+/* ----------------------------------------------------------
+
+    FOOTER
+
+-------------------------------------------------------------*/
+
+
+    // footer family-select button
+    $(".family-select-btn").click(function(){
+        var _this = $(this);
+        var _dropdown = _this.next('ul');
+
+        if(_this.hasClass('on')) {
+            _this.removeClass('on');
+            _dropdown.hide();
+        } else {
+            _this.addClass('on');
+            _dropdown.show();
+        }
+    })
+
+    // footer family select 메뉴 열린상태로 외부영역 눌렀을때 초기화
+    $(document).on('click', function(e) {
+
+        if (!$(e.target).closest('.family-select-btn, .family-select-btn + ul').length) {
+          
+          $('.family-select-btn').removeClass('on');
+          $('.family-select-btn + ul').hide();
+          
+        }
+    });
+
+
+
 
 })

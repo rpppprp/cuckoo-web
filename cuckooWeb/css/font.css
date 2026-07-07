@@ -5,6 +5,9 @@
 	font-style: normal;
 	font-weight: 500;
 	font-display: swap;
+	size-adjust: 105%;
+	ascent-override: 100%;
+	descent-override: 20%;
 	src:url('../font/Pretendard-Regular.woff2') format('woff2'),
 	    url('../font/Pretendard-Regular.woff') format('woff');
 }
@@ -14,6 +17,9 @@
 	font-style: normal;
 	font-weight: 600;
 	font-display: swap;
+	size-adjust: 105%;
+	ascent-override: 100%;
+	descent-override: 20%;
 	src:url('../font/Pretendard-Medium.woff2') format('woff2'),
 	    url('../font/Pretendard-Medium.woff') format('woff');
 }
@@ -23,6 +29,9 @@
 	font-style: normal;
 	font-weight: 700;
 	font-display: swap;
+	size-adjust: 105%;
+	ascent-override: 100%;
+	descent-override: 20%;
 	src:url('../font/Pretendard-SemiBold.woff2') format('woff2'),
 	    url('../font/Pretendard-SemiBold.woff') format('woff');
 }
@@ -32,6 +41,9 @@
 	font-style: normal;
 	font-weight: 800;
 	font-display: swap;
+	size-adjust: 105%;
+	ascent-override: 100%;
+	descent-override: 20%;
 	src:url('../font/Pretendard-Bold.woff2') format('woff2'),
 	    url('../font/Pretendard-Bold.woff') format('woff');
 }
@@ -41,6 +53,9 @@
 	font-style: normal;
 	font-weight: 900;
 	font-display: swap;
+	size-adjust: 105%;
+	ascent-override: 100%;
+	descent-override: 20%;
 	src:url('../font/Pretendard-ExtraBold.woff2') format('woff2'),
 	    url('../font/Pretendard-ExtraBold.woff') format('woff');
 }

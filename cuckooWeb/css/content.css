@@ -3,13 +3,347 @@
 
 /* ----------------------------------------------------------
 
-    index
+    INDEX
 
 -------------------------------------------------------------*/
 
 
+/* index common */
+
+.main > section .txt-wrap {
+    align-self:center;
+}
+
+.main > section .txt-wrap {
+    display:flex;
+    flex-direction: column;
+}
+
+.main > section .txt-wrap .loca {
+    font-weight: 700;
+    color:var(--color-gry-5);
+    margin-bottom:80px;
+}
+
+.main > section .txt-wrap .section-txt {
+    font-size:var(--font-xx-lg);
+    margin-bottom:40px;
+}
+
+/* hero section */
+
+.hero-area .inner {
+    position:relative;
+    width:100vw;
+    height:100vh;
+}
+
+.hero-track .hero-item {
+    position:relative;
+    width:100%;
+    height:100vh;
+}
+
+.hero-track .hero-item .img {
+    display:flex;
+    width:100%;
+    height:100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-track .hero-item .img > img {
+    display:block;
+    width:100%;
+    height:100%;
+}
+
+.hero-track .hero-item:before {
+    content:"";
+    position:absolute;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.3);
+}
+
+.hero-track .hero-item .hero-txt {
+    position:absolute;
+    display:flex;
+    flex-direction: column;
+    width:1440px;
+    left:50%;
+    bottom:200px;
+    color:var(--color-wht);
+    transform:translateX(-50%);
+    text-shadow:0px 0px 5px rgba(0,0,0,0.15);
+}
+
+.hero-track .hero-item .hero-txt .sub-txt {
+    font-weight: 600;
+    margin-bottom:20px;
+}
+
+.hero-track .hero-item .hero-txt .tit-txt {
+    font-weight: 700;
+    margin-bottom:10px;  
+}
+
+.hero-navigation {
+    display:flex;
+    position:absolute;
+    flex-wrap: wrap;
+    width:1440px;
+    left:50%;
+    bottom:100px;
+    transform:translateX(-50%);
+    z-index:1;
+}
+
+.hero-navigation .progress-bar {
+    width:100%;
+    height: 3px;
+    background-color: rgba(0, 0, 0, 0.4);
+    background-image: linear-gradient(to right, #fff, #fff);
+    background-size: 0 100%;
+    background-repeat: no-repeat;
+    transition: all 0.3s ease-in-out;
+    border-radius: 3px;
+}
+
+.hero-navigation .page-number {
+    position:relative;
+    width:50px;
+    display:flex;
+    color:var(--color-wht);
+    margin-right:auto;
+    flex-shrink: 0;
+    align-items:center;
+    margin-top:10px;
+}
+
+.page-number .slick-dots {
+    top:0px;
+    left:0px;
+}
+
+.hero-navigation .navigation-button {
+    display:flex;
+    gap:10px;
+    align-items:center;
+    margin-left:auto;
+    margin-top:20px;
+}
+
+.hero-navigation .navigation-button .navi-btn {
+    width:32px;
+    height:32px;
+}
 
 
+/* about section */
+
+
+section.about-area {
+    background:var(--color-gry-0);
+    position:relative;
+    display:flex;
+    width:100vw;
+    height:100vh;
+    align-items:center;
+}
+
+section.about-area .inner {
+    width:1440px;
+    margin: auto;
+}
+
+section.about-area .inner .about-section {
+    display:flex;
+    width:100%;
+    justify-content: space-between;
+}
+
+section.about-area .inner .about-section .about-img {
+    position:relative;
+    width:700px;
+    border-radius:16px;
+    overflow:hidden;
+    z-index:1;
+}
+
+section.about-area .inner .about-section .about-section-bg {
+    position:absolute;
+    right:0px;
+    top:0px;
+    width:700px;
+    height:100%;
+    overflow:hidden;
+}
+
+section.about-area .inner .about-section .about-section-bg:after {
+    display:block;
+    content:"";
+    width:100%;
+    height:100%;
+    background:url(/cuckooWeb/images/about-bg.jpg) top right no-repeat;
+    background-size:auto 100%;
+    filter: blur(5px);
+    transform: scale(1.1);
+    opacity:0.6;
+}
+
+
+/* Investor section */
+
+.investor-area {
+    display:flex;
+    background:url(/cuckooWeb/images/invest-bg.jpg) center center no-repeat;
+    background-size:cover;
+    width:100vw;
+    height:100vh;
+    color:var(--color-wht);
+    align-items:center;
+}
+
+.investor-area .inner {
+    width:1440px;
+    margin: 0 auto;
+}
+
+.investor-area .inner .invertor-section {
+    display:flex;
+    width:100%;
+}
+
+.invertor-section .investor-link {
+    width:340px;
+    margin-top:120px;
+}
+
+.invertor-section .investor-link li {
+    border-bottom:1px solid var(--color-wht);
+}
+
+.invertor-section .investor-link li a {
+    display:flex;
+    font-size:var(--font-xx-lg);
+    justify-content: space-between;
+    align-items:center;
+    padding:10px 0px;
+}
+
+.invertor-section .investor-link li a .circle-btn {
+    width:40px;
+    height:40px;
+}
+
+.invertor-section .investor-stock-track {
+    background:var(--color-wht);
+    color:var(--color-blk);
+    width:700px;
+    border-radius: 16px;
+    margin-left:auto;
+    margin-top:auto;
+    padding:30px;
+    overflow:hidden;
+}
+
+.invertor-section .investor-item {
+    width:100%;
+}
+
+.invertor-section .investor-item .investor-head {
+    display:flex;
+    gap:10px;
+    padding-top:10px;
+    align-items:center;
+}
+
+.invertor-section .investor-item .investor-head .investor-num {
+    font-weight: 700;
+    color:var(--color-gry-4);
+}
+
+.invertor-section .investor-item .investor-head .investor-date {
+    font-size:var(--font-sm);
+    color:var(--color-gry-5);
+    margin-left:auto;
+}
+
+.invertor-section .investor-item .investor-graph {
+    width:100%;
+    height:340px;
+}
+
+/* ESG section */
+
+.esg-area {
+    position:relative;
+    background:url(/cuckooWeb/images/esg-bg.jpg) center center no-repeat;
+    background-size:cover;
+    width:100vw;
+    height:100%;
+    color:var(--color-wht);
+}
+
+.esg-area:before {
+    position:absolute;
+    content:"";
+    display:block;
+    background:rgba(0,0,0,0.3);
+    width:100%;
+    height:100%;
+    left:0px;
+    top:0px;
+}
+
+.esg-area .inner {
+    position:relative;
+    width:1440px;
+    margin:0 auto;
+    padding:120px 0px;
+    z-index:1;
+}
+
+.esg-area .inner .esg-section {
+    display:flex;
+    width:100%;
+    justify-content: space-between;
+}
+
+.esg-area .inner .esg-section .esg-item-group {
+    width:800px;
+    display:flex;
+    flex-direction: column;
+    gap: 120px;
+    align-items: flex-start;
+}
+
+.esg-section .esg-item-group li {
+    width:340px;
+    height: 460px;
+    background:var(--color-wht);
+    color:var(--color-blk);
+    padding:30px;
+    border-radius: 16px;
+    box-sizing:border-box;
+}
+
+.esg-section .esg-item-group .esg-item-2 {
+    margin-left: auto;
+    margin-top:-40%;
+}
+
+.esg-section .esg-item-group .esg-item-3 {
+    margin-top:-30%;
+}
+
+.esg-section .esg-item-group li a {
+    display:flex;
+    flex-direction: column;
+}
 
 
 /* ----------------------------------------------------------

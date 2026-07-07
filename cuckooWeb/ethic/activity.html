@@ -18,11 +18,18 @@
 
         <main id="container" class="container">
 
-            <div class="esg-intro">
+            <!-- sub-tab -->
+            <%- include('/layout/sub-tab.html', { showTab: 'ethic-activity' }) %>
+            <!-- sub-tab -->
 
-                <!-- sub-tab -->
-                <%- include('/layout/sub-tab.html', { showTab: 'ethic-activity' }) %>
-                <!-- sub-tab -->
+            <div class="ethic-activity sub-page">
+
+                <div class="tab-area ethic-tab-area">
+                    <ul class="tab-track ethic-tab">
+                        <li class="tab-item"><a href="/ethic/system.html">윤리경영체계</a></li>
+                        <li class="tab-item on"><a href="/ethic/activity.html">윤리경영활동</a></li>
+                    </ul>
+                </div>
                 
                 <section class="section section-intro">
                     <div class="inner">

@@ -4,14 +4,70 @@
 $(function(){
 
 
+/* ----------------------------------------------------------
+
+    INDEX
+
+-------------------------------------------------------------*/
+
+
+    // hero section pager
+    $(".hero-track").on('init reInit afterChange', function(event, slick, currentSlide, nextSlide) {
+        var index = (currentSlide ? currentSlide : slick.currentSlide) + 1;
+        var _num = index.toString().padStart(2,'0');
+        $('.hero-navigation .slick-dots').html(_num);
+    })
+
+    // hero section progress
+    var _progressBar = $('.hero-navigation .progress-bar');
+    var _initPercent = 100 / ($('.hero-track').find('.hero-item').length);
+
+    _progressBar.css('background-size', _initPercent + '% 100%');
+
+    $(".hero-track").on('beforeChange', function(event, slick, currentSlide, nextSlide){
+        var calc = ((nextSlide + 1) / slick.slideCount) * 100;
+        _progressBar.css('background-size', calc + '% 100%').attr('aria-valuenow', calc);
+    });
+
+    // hero section slick 
+    $('.hero-track').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 7000,
+        centerMode: true,
+        draggable: false,
+        cssEase: 'linear',
+        fade: true,
+        dots:true,
+        prevArrow : $('.navigation-button .nav-prev'),
+        nextArrow : $('.navigation-button .nav-next'),
+        appendDots: $('.page-number')
+    });
+
+
+    // investor stock slick
+    $('.investor-stock-track').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 10000,
+        centerMode: true,
+        draggable: false,
+        cssEase: 'linear',
+        fade: true,
+        dots:false,
+        arrows:false
+    });
 
 
 
-    /* ----------------------------------------------------------
 
-        회사소개 - 해외 자회사 근황
+/* ----------------------------------------------------------
 
-    -------------------------------------------------------------*/
+    회사소개 - 해외 자회사 근황
+
+-------------------------------------------------------------*/
 
     // overseas map
     if ($('#associate-map').length > 0) {
