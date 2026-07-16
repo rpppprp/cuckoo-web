@@ -4,6 +4,18 @@
 $(function(){
 
 
+    // ECharts 리사이즈 공용 함수
+    window.resizeActiveChart = function() {
+      // ECharts인스턴스 속성 검색
+      document.querySelectorAll('[_echarts_instance_]').forEach(function(dom) {
+          var chart = echarts.getInstanceByDom(dom);
+          if (chart) {
+              chart.resize();
+          }
+      });
+    };
+
+
   /* -----------------------------------------------------------
 
       투자정보 - 실시간 주가정보
@@ -105,12 +117,6 @@ $(function(){
 
         $(btnClass).removeClass('active');
         $(`button[onclick="changeChartPeriod('${period}', '${target}')"]`).addClass('active');
-    };
-
-    // 리사이즈 공용 함수
-    window.resizeActiveChart = function() {
-        if (chartHoldings) chartHoldings.resize();
-        if (chartHomesys) chartHomesys.resize();
     };
 
 
@@ -604,6 +610,7 @@ $(function(){
   -------------------------------------------------------------*/
 
 
+  if ($('#info-cuckooHoldings').length > 0) {{{
     function infoHoldings() {
       var dom = document.getElementById('info-holdings');
       var myChart = echarts.init(dom, null, {
@@ -654,7 +661,14 @@ $(function(){
       window.addEventListener('resize', myChart.resize);
     }
 
+    // 차트 함수 호출
+    infoHoldings()
+
+  }}}
+
   
+  if ($('#info-cuckooHoldings').length > 0) {{{
+
     function infoHomesys() {
       var dom = document.getElementById('info-homesys');
       var myChart = echarts.init(dom, null, {
@@ -706,20 +720,215 @@ $(function(){
     }
 
     // 차트 함수 호출
-    infoHoldings()
     infoHomesys()
+
+  }}}
 
 
 
   /* -----------------------------------------------------------
 
-      투자정보 - 주주정보
+      투자정보 - 주주환원
 
   -------------------------------------------------------------*/
 
 
-    
+    if ($('#return-cuckooHoldings').length > 0) {{{
+      function returnHoldings() {
+        console.log('DOM 확인:', document.getElementById('return-holdings'));
+        var dom = document.getElementById('return-holdings');
+        var myChart = echarts.init(dom, null, {
+          renderer: 'canvas',
+          useDirtyRect: false
+        });
+        var app = {};
+        
+        var option;
+  
+        option = {
+          tooltip: {
+            trigger: 'axis',
+            axisPointer: { type: 'cross' }
+          },
+          grid: {
+            left: '3%',   // 왼쪽 여백 (수치가 작을수록 바깥으로 확장)
+            right: '4%',  // 오른쪽 여백
+            bottom: '10%', // 범례가 아래에 있다면 여유를 좀 둬야 함
+            top: '10%',    // 타이틀 공간
+            containLabel: true // 라벨(숫자 등)이 잘리지 않게 그리드 안으로 포함
+          },
+          legend: {
+            data: ['주당배당금', '배당수익률', '배당성향'],
+            bottom: 0
+          },
+          xAxis: [
+            {
+              type: 'category',
+              data: ['제45기', '제46기', '제47기', '제48기', '제49기'],
+              axisPointer: { type: 'shadow' }
+            }
+          ],
+          yAxis: [
+            {
+              type: 'value',
+              name: '금액(백만원)',
+              nameLocation: 'end', // 축의 끝(상단)에 배치
+              nameGap: 40,         // 축 라인과 텍스트 사이의 간격
+              nameTextStyle: {
+                align: 'left',      // 왼쪽 정렬
+                padding: [0, 0, 0, -40] // [상, 우, 하, 좌] 좌측 여백(음수)으로 눈금선에 맞춤
+              }
+            },
+            {
+              type: 'value',
+              name: '비율(%)',
+              nameLocation: 'end',
+              nameGap: 40,
+              nameTextStyle: {
+                align: 'right',     // 오른쪽 정렬
+                padding: [0, -40, 0, 0] // 우측 여백(음수)으로 눈금선에 맞춤
+              }
+            }
+          ],
+          series: [
+            {
+              name: '주당배당금',
+              type: 'bar',
+              tooltip: { valueFormatter: (value) => value.toLocaleString() + ' 백만원' },
+              data: [700, 800, 1100, 1200, 1550],
+              itemStyle: { color: '#5470c6' }
+            },
+            {
+              name: '배당수익률',
+              type: 'line',
+              yAxisIndex: 1, // 오른쪽 Y축 사용
+              tooltip: { valueFormatter: (value) => value + ' %' },
+              data: [3.6, 4.8, 6.6, 5.0, 5.1],
+              itemStyle: { color: '#fac858' }
+            },
+            {
+              name: '배당성향',
+              type: 'line',
+              yAxisIndex: 1, // 오른쪽 Y축 사용
+              tooltip: { valueFormatter: (value) => value + ' %' },
+              data: [16.82, 21.31, 26.27, 27.16, 33.09],
+              itemStyle: { color: '#ee6666' }
+            }
+          ]
+        };
+  
+        if (option && typeof option === 'object') {
+          myChart.setOption(option);
+        }
+  
+        window.addEventListener('resize', myChart.resize);
+      }
 
-})
+      // 차트 함수 호출
+      returnHoldings()
+
+    }}}
+
+
+    if ($('#return-cuckooHomesys').length > 0) {{{
+      function returnHomesys() {
+        var dom = document.getElementById('return-homesys');
+        var myChart = echarts.init(dom, null, {
+          renderer: 'canvas',
+          useDirtyRect: false
+        });
+        var app = {};
+        
+        var option;
+  
+        option = {
+          tooltip: {
+            trigger: 'axis',
+            axisPointer: { type: 'cross' }
+          },
+          grid: {
+            left: '3%',   // 왼쪽 여백 (수치가 작을수록 바깥으로 확장)
+            right: '4%',  // 오른쪽 여백
+            bottom: '10%', // 범례가 아래에 있다면 여유를 좀 둬야 함
+            top: '10%',    // 타이틀 공간
+            containLabel: true // 라벨(숫자 등)이 잘리지 않게 그리드 안으로 포함
+          },
+          legend: {
+            data: ['주당배당금', '배당수익률', '배당성향'],
+            bottom: 0
+          },
+          xAxis: [
+            {
+              type: 'category',
+              data: ['제45기', '제46기', '제47기', '제48기', '제49기'],
+              axisPointer: { type: 'shadow' }
+            }
+          ],
+          yAxis: [
+            {
+              type: 'value',
+              name: '금액(백만원)',
+              nameLocation: 'end', // 축의 끝(상단)에 배치
+              nameGap: 40,         // 축 라인과 텍스트 사이의 간격
+              nameTextStyle: {
+                align: 'left',      // 왼쪽 정렬
+                padding: [0, 0, 0, -40] // [상, 우, 하, 좌] 좌측 여백(음수)으로 눈금선에 맞춤
+              }
+            },
+            {
+              type: 'value',
+              name: '비율(%)',
+              nameLocation: 'end',
+              nameGap: 40,
+              nameTextStyle: {
+                align: 'right',     // 오른쪽 정렬
+                padding: [0, -40, 0, 0] // 우측 여백(음수)으로 눈금선에 맞춤
+              }
+            }
+          ],
+          series: [
+            {
+              name: '주당배당금',
+              type: 'bar',
+              tooltip: { valueFormatter: (value) => value.toLocaleString() + ' 백만원' },
+              data: [700, 800, 1100, 1200, 1550],
+              itemStyle: { color: '#5470c6' }
+            },
+            {
+              name: '배당수익률',
+              type: 'line',
+              yAxisIndex: 1, // 오른쪽 Y축 사용
+              tooltip: { valueFormatter: (value) => value + ' %' },
+              data: [3.6, 4.8, 6.6, 5.0, 5.1],
+              itemStyle: { color: '#fac858' }
+            },
+            {
+              name: '배당성향',
+              type: 'line',
+              yAxisIndex: 1, // 오른쪽 Y축 사용
+              tooltip: { valueFormatter: (value) => value + ' %' },
+              data: [16.82, 21.31, 26.27, 27.16, 33.09],
+              itemStyle: { color: '#ee6666' }
+            }
+          ]
+        };
+  
+        if (option && typeof option === 'object') {
+          myChart.setOption(option);
+        }
+  
+        window.addEventListener('resize', myChart.resize);
+      }
+
+      // 차트 함수 호출
+      returnHomesys()
+      
+    }}}
+
+
+
+
+
+});
 
 

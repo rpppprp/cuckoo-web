@@ -41,9 +41,9 @@
                             <li class="on" data-tab="return-cuckooHoldings"><a>쿠쿠홀딩스</a></li>
                             <li data-tab="return-cuckooHomesys"><a>쿠쿠홈시스</a></li>
                         </ul>
-                        <div class="stockholder-return-item" >
+                        <div class="stockholder-return-tab tab">
                             <!-- 쿠쿠홀딩스 -->
-                            <div class="return-item return-cuckooHoldings" id="return-cuckooHoldings">
+                            <div class="return-item return-cuckooHoldings items" id="return-cuckooHoldings">
                                 <div class="return-graph" id="return-holdings"></div>
                                 <div class="return-table">
                                     <div class="table-txt">
@@ -56,76 +56,81 @@
                                         </h5>
                                     </div>
                                     <table class="table-form return-table">
-                                        <tr>
-                                            <th>구분</th>
-                                            <th>2023년</th>
-                                            <th>2024년</th>
-                                            <th>2025년</th>
-                                        </tr>
-                                        <tr>
-                                            <th><b>주당액면가액</b></th>
-                                            <td>100</td>
-                                            <td>100</td>
-                                            <td>100</td>
-                                        </tr>
-                                        <tr>
-                                            <th><b>(연결)당기순이익(백만원)</b></th>
-                                            <td>116,689</td>
-                                            <td>130,122</td>
-                                            <td>137,040</td>
-                                        </tr>
-                                        <tr>
-                                            <th><b>(별도)당기순이익(백만원)</b></th>
-                                            <td>39,998</td>
-                                            <td>38,895</td>
-                                            <td>38,895</td>
-                                        </tr>
-                                        <tr>
-                                            <th><b>(연결)주당순이익(백만원)</b></th>
-                                            <td>12.38</td>
-                                            <td>11.22</td>
-                                            <td>11.63</td>
-                                        </tr>
-                                        <tr>
-                                            <th><b>현금배당금총액(백만원)</b></th>
-                                            <td>16.44</td>
-                                            <td>16.85</td>
-                                            <td>15.44</td>
-                                        </tr>
-                                        <tr>
-                                            <th><b>(연결)현금배당성향(%)</b></th>
-                                            <td>16.44</td>
-                                            <td>16.85</td>
-                                            <td>15.44</td>
-                                        </tr>
-                                        <tr>
-                                            <th><b>현금배당수익률(%)</b></th>
-                                            <td>16.44</td>
-                                            <td>16.85</td>
-                                            <td>15.44</td>
-                                        </tr>
-                                        <tr>
-                                            <th><b>주당현금배당금(원)</b></th>
-                                            <td>16.44</td>
-                                            <td>16.85</td>
-                                            <td>15.44</td>
-                                        </tr>
-                                        <tr>
-                                            <th><b>연속배당횟수</b></th>
-                                            <td>9</td>
-                                            <td>10</td>
-                                            <td>11</td>
-                                        </tr>
-                                        <tr>
-                                            <th><b>3개년 평균 배당 수익률</b></th>
-                                            <td colspa="3">5.5</td>
-                                        </tr>
+                                        <thead>
+                                            <tr>
+                                                <th>구분</th>
+                                                <th>2023년</th>
+                                                <th>2024년</th>
+                                                <th>2025년</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th><b>주당액면가액</b></th>
+                                                <td>100</td>
+                                                <td>100</td>
+                                                <td>100</td>
+                                            </tr>
+                                            <tr>
+                                                <th><b>(연결)당기순이익(백만원)</b></th>
+                                                <td>116,689</td>
+                                                <td>130,122</td>
+                                                <td>137,040</td>
+                                            </tr>
+                                            <tr>
+                                                <th><b>(별도)당기순이익(백만원)</b></th>
+                                                <td>39,998</td>
+                                                <td>38,895</td>
+                                                <td>38,895</td>
+                                            </tr>
+                                            <tr>
+                                                <th><b>(연결)주당순이익(백만원)</b></th>
+                                                <td>12.38</td>
+                                                <td>11.22</td>
+                                                <td>11.63</td>
+                                            </tr>
+                                            <tr>
+                                                <th><b>현금배당금총액(백만원)</b></th>
+                                                <td>16.44</td>
+                                                <td>16.85</td>
+                                                <td>15.44</td>
+                                            </tr>
+                                            <tr>
+                                                <th><b>(연결)현금배당성향(%)</b></th>
+                                                <td>16.44</td>
+                                                <td>16.85</td>
+                                                <td>15.44</td>
+                                            </tr>
+                                            <tr>
+                                                <th><b>현금배당수익률(%)</b></th>
+                                                <td>16.44</td>
+                                                <td>16.85</td>
+                                                <td>15.44</td>
+                                            </tr>
+                                            <tr>
+                                                <th><b>주당현금배당금(원)</b></th>
+                                                <td>16.44</td>
+                                                <td>16.85</td>
+                                                <td>15.44</td>
+                                            </tr>
+                                            <tr>
+                                                <th><b>연속배당횟수</b></th>
+                                                <td>9</td>
+                                                <td>10</td>
+                                                <td>11</td>
+                                            </tr>
+                                            <tr>
+                                                <th><b>3개년 평균 배당 수익률</b></th>
+                                                <td colspan="3">5.5</td>
+                                            </tr>
+                                        </tbody>
+                                        
                                     </table>
                                 </div>
                             </div>
 
                             <!-- 쿠쿠홈시스 -->
-                            <div class="return-item return-cuckooHomesys" id="return-cuckooHomesys">
+                            <div class="return-item return-cuckooHomesys items" id="return-cuckooHomesys">
                                 <div class="return-graph" id="return-homesys"></div>
                                 <div class="return-table">
                                     <div class="table-txt">
@@ -138,70 +143,76 @@
                                         </h5>
                                     </div>
                                     <table class="table-form return-table">
-                                        <tr>
-                                            <th>구분</th>
-                                            <th>2023년</th>
-                                            <th>2024년</th>
-                                            <th>2025년</th>
-                                        </tr>
-                                        <tr>
-                                            <th><b>주당액면가액</b></th>
-                                            <td>100</td>
-                                            <td>100</td>
-                                            <td>100</td>
-                                        </tr>
-                                        <tr>
-                                            <th><b>(연결)당기순이익(백만원)</b></th>
-                                            <td>116,689</td>
-                                            <td>130,122</td>
-                                            <td>137,040</td>
-                                        </tr>
-                                        <tr>
-                                            <th><b>(별도)당기순이익(백만원)</b></th>
-                                            <td>39,998</td>
-                                            <td>38,895</td>
-                                            <td>38,895</td>
-                                        </tr>
-                                        <tr>
-                                            <th><b>(연결)주당순이익(백만원)</b></th>
-                                            <td>12.38</td>
-                                            <td>11.22</td>
-                                            <td>11.63</td>
-                                        </tr>
-                                        <tr>
-                                            <th><b>현금배당금총액(백만원)</b></th>
-                                            <td>16.44</td>
-                                            <td>16.85</td>
-                                            <td>15.44</td>
-                                        </tr>
-                                        <tr>
-                                            <th><b>(연결)현금배당성향(%)</b></th>
-                                            <td>16.44</td>
-                                            <td>16.85</td>
-                                            <td>15.44</td>
-                                        </tr>
-                                        <tr>
-                                            <th><b>현금배당수익률(%)</b></th>
-                                            <td>16.44</td>
-                                            <td>16.85</td>
-                                            <td>15.44</td>
-                                        </tr>
-                                        <tr>
-                                            <th><b>주당현금배당금(원)</b></th>
-                                            <td>16.44</td>
-                                            <td>16.85</td>
-                                            <td>15.44</td>
-                                        </tr>
-                                        <tr>
-                                            <th><b>연속배당횟수</b></th>
-                                            <td>9</td>
-                                            <td>10</td>
-                                            <td>11</td>
-                                        </tr>
-                                        <tr>
-                                            <th><b>3개년 평균 배당 수익률</b></th>
-                                            <td colspa="3">5.5</td>
-                                        </tr>
+                                        <thead>
+                                            <tr>
+                                                <th>구분</th>
+                                                <th>2023년</th>
+                                                <th>2024년</th>
+                                                <th>2025년</th>
+                                            </tr>
+                                        </thead>
+                                        
+                                        <tbody>
+                                            <tr>
+                                                <th><b>주당액면가액</b></th>
+                                                <td>100</td>
+                                                <td>100</td>
+                                                <td>100</td>
+                                            </tr>
+                                            <tr>
+                                                <th><b>(연결)당기순이익(백만원)</b></th>
+                                                <td>116,689</td>
+                                                <td>130,122</td>
+                                                <td>137,040</td>
+                                            </tr>
+                                            <tr>
+                                                <th><b>(별도)당기순이익(백만원)</b></th>
+                                                <td>39,998</td>
+                                                <td>38,895</td>
+                                                <td>38,895</td>
+                                            </tr>
+                                            <tr>
+                                                <th><b>(연결)주당순이익(백만원)</b></th>
+                                                <td>12.38</td>
+                                                <td>11.22</td>
+                                                <td>11.63</td>
+                                            </tr>
+                                            <tr>
+                                                <th><b>현금배당금총액(백만원)</b></th>
+                                                <td>16.44</td>
+                                                <td>16.85</td>
+                                                <td>15.44</td>
+                                            </tr>
+                                            <tr>
+                                                <th><b>(연결)현금배당성향(%)</b></th>
+                                                <td>16.44</td>
+                                                <td>16.85</td>
+                                                <td>15.44</td>
+                                            </tr>
+                                            <tr>
+                                                <th><b>현금배당수익률(%)</b></th>
+                                                <td>16.44</td>
+                                                <td>16.85</td>
+                                                <td>15.44</td>
+                                            </tr>
+                                            <tr>
+                                                <th><b>주당현금배당금(원)</b></th>
+                                                <td>16.44</td>
+                                                <td>16.85</td>
+                                                <td>15.44</td>
+                                            </tr>
+                                            <tr>
+                                                <th><b>연속배당횟수</b></th>
+                                                <td>9</td>
+                                                <td>10</td>
+                                                <td>11</td>
+                                            </tr>
+                                            <tr>
+                                                <th><b>3개년 평균 배당 수익률</b></th>
+                                                <td colspan="3">5.5</td>
+                                            </tr>
+                                        </tbody>
+                                        
                                     </table>
                                 </div>
                             </div>

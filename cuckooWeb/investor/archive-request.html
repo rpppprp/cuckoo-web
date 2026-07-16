@@ -6,7 +6,27 @@
         <title>CUCKOO - investor - IR 미팅신청</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="viewport" content="width=device-width,initial-scale=1">
-         
+        <script>
+
+            function initMap() {
+                // 1. 서울특별시 강남구 언주로 652 (쿠쿠빌딩) 정확한 좌표 설정
+                var myLocation = { lat: 37.5150712, lng: 127.035725 };
+
+                // 2. 지도 옵션 설정 (주변 지저분한 UI 완전 차단)
+                var map = new google.maps.Map(document.getElementById('request-map'), {
+                    zoom: 16,               // 줌 배율
+                    center: myLocation,     // 지도 중심 좌표
+                    disableDefaultUI: true, // 구글 기본 UI 전부 숨기기
+                    zoomControl: true       // 오른쪽 아래 +/- 줌 버튼만 표시
+                });
+
+                // 3. 마커 생성 및 지도에 꽂기
+                var marker = new google.maps.Marker({
+                    position: myLocation,
+                    map: map
+                });
+            }
+        </script>
     </head>
         
 
@@ -47,9 +67,9 @@
                                     <!-- 캘린더 -->
                                     <div class="request-calendar" id="request-calendar"></div>
                                     <!-- 선택창 -->
-                                    <div class="request-choice">
+                                    <div class="request-choice-area">
                                         <!-- 미선택시 -->
-                                        <div class="no-chice-area bg-gry">
+                                        <div class="no-choice-area bg-gry">
                                             <div class="txt">
                                                 <h4>미팅신청 일자를 선택하세요.</h4>
                                                 <p>
@@ -63,16 +83,16 @@
                                             <div class="wrap">
                                                 <div class="select-date">
                                                     <p class="date-tit">선택 날짜</p>
-                                                    <h2 class="date-value">2026.04.13 (월)</h2>
+                                                    <input type="text" class="date-value" value="" placeholder="-" readonly>
                                                 </div>
                                                 <div class="select-time">
                                                     <p class="time-tit">미팅 시간</p>
                                                     <div class="time-value">
-                                                        <a class="btn">10:00 ~ 10:50</a>
-                                                        <a class="btn">11:00 ~ 11:50</a>
-                                                        <a class="btn on">02:00 ~ 02:50</a>
-                                                        <a class="btn">03:00 ~ 03:50</a>
-                                                        <a class="btn">04:00 ~ 04:50</a>
+                                                        <button type="button" class="btn" value="10:00-10:50" disabled>10:00 ~ 10:50</button><!-- 이미 예약이 채워진 경우 disabled 처리-->
+                                                        <button type="button" class="btn" value="11:00-11:50">11:00 ~ 11:50</button>
+                                                        <button type="button" class="btn on" value="02:00-02:50">02:00 ~ 02:50</button>
+                                                        <button type="button" class="btn" value="03:00-03:50">03:00 ~ 03:50</button>
+                                                        <button type="button" class="btn" value="04:00-04:50">04:00 ~ 04:50</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -85,7 +105,7 @@
                             <div class="request-item">
                                 <div class="sub-tit request-tit">
                                     <h2>서울사무소</h2>
-                                    <span class="bg-gry">Seoul Office</span>
+                                    <span class="color-gry">Seoul Office</span>
                                 </div>
                                 <div class="request-map" id="request-map"></div>
                             </div>
@@ -97,31 +117,31 @@
                                 <ul class="request-info">
                                     <li>
                                         <label for="request-name">이름</label>
-                                        <input id="request-name" type="text" class="request-name" placeholder="이름을 입력하세요.">
+                                        <input id="request-name" type="text" class="input-txt request-name" placeholder="이름을 입력하세요." required>
                                     </li>
                                     <li>
                                         <label for="request-tel">휴대전화번호</label>
-                                        <input id="request-tel" type="number" class="request-tel" placeholder="휴대전화번호를 입력하세요.">
+                                        <input id="request-tel" type="number" class="input-txt request-tel" placeholder="휴대전화번호를 입력하세요." required>
                                     </li>
                                     <li>
                                         <label for="request-corp">회사명</label>
-                                        <input id="request-corp" type="text" class="request-corp" placeholder="회사명을 입력해 주세요.">
+                                        <input id="request-corp" type="text" class="input-txt request-corp" placeholder="회사명을 입력해 주세요." required>
                                     </li>
                                     <li>
                                         <label for="request-team">부서명</label>
-                                        <input id="request-team" type="text" class="request-team" placeholder="부서명을 입력해주세요.">
+                                        <input id="request-team" type="text" class="input-txt request-team" placeholder="부서명을 입력해주세요." required>
                                     </li>
                                     <li>
                                         <label for="request-rols">직위</label>
-                                        <input id="request-rols" type="text" class="request-rols" placeholder="직위 입력해 주세요.">
+                                        <input id="request-rols" type="text" class="input-txt request-rols" placeholder="직위 입력해 주세요." required>
                                     </li>
                                     <li>
                                         <label for="request-mail">이메일</label>
-                                        <input id="request-mail" type="text" class="request-mail" placeholder="이메일을 입력해주세요.">
+                                        <input id="request-mail" type="text" class="input-txt request-mail" placeholder="이메일을 입력해주세요." required>
                                     </li>
                                     <li>
                                         <label for="request-capacity">참석인원</label>
-                                        <input id="request-capacity" type="number" class="request-capacity" placeholder="참석인원을 입력하세요.">
+                                        <input id="request-capacity" type="number" class="input-txt request-capacity" placeholder="참석인원을 입력하세요." required>
                                     </li>
                                 </ul>
                             </div>
@@ -131,7 +151,7 @@
                                     <h2>방문 목적 및 요청사항</h2>
                                 </div>
                                 <div class="request-text">
-                                    <textarea class="request-memo" placeholder="방문 목적 및 요청사항을 입력해 주세요."></textarea>
+                                    <textarea class="input-textbox request-memo" placeholder="방문 목적 및 요청사항을 입력해 주세요." required></textarea>
                                 </div>
                             </div>
                             <!-- 개인정보보호법에 따른 개인정보 수집·이용 동의 -->
@@ -147,20 +167,21 @@
                                             <li>개인정보의 보유 및 이용기간 : 상담 문의 접수 시점 및 상담 완료 후 6개월</li>
                                             <li>개인정보의 제공을 거부할 권리가 있으며, 거부 할 경우 IR 신청이 어려울 수 있습니다.</li>
                                         </ul>
-                                        <label class="privacy-input" for="privacy-chk">
-                                            <input type="checkbox" class="privacy-chk input-chk" id="privacy-chk">
-                                            <span class="color-dark-gry">개인정보 수집 및 이용 동의 (필수)</span>
-                                        </label>
+                                        <div class="privacy-chk-wrap">
+                                            <input type="checkbox" class="privacy-chk input-chk" id="privacy-chk" required>
+                                            <label class="privacy-input" for="privacy-chk">
+                                                <span class="color-dark-gry">개인정보 수집 및 이용 동의 (필수)</span>
+                                            </label>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="btn-area">
+                                <div class="request-btn-area">
                                     <a class="btn b-btn">신청하기</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
-       
                 <!-- bottom page -->
                 <%- include('/layout/bottom-page.html', { showBottom: 'investor-archive' }) %>
                 <!-- bottom page -->

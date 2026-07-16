@@ -38,12 +38,12 @@
                             <h1>실시간 주가정보</h1>
                         </div>
                         <ul class="tab-group finance">
-                            <li class="on"><a>쿠쿠홀딩스</a></li>
-                            <li><a>쿠쿠홈시스</a></li>
+                            <li class="on" data-tab="stock-cuckooHoldings"><a>쿠쿠홀딩스</a></li>
+                            <li data-tab="stock-cuckooHomesys"><a>쿠쿠홈시스</a></li>
                         </ul>
-                        <div class="finance-stock-tab">
+                        <div class="finance-stock-tab tab">
                             <!-- 쿠쿠 홀딩스 -->
-                            <div class="stock-item stock-cuckooHoldings">
+                            <div class="stock-item stock-cuckooHoldings items" id="stock-cuckooHoldings">
                                 <div class="stock-tit">
                                     <h4 class="name">쿠쿠홀딩스</h4>
                                     <b class="code">192400</b>
@@ -52,18 +52,22 @@
                                 <div class="stock-head">
                                     <div class="stock-table" id="holdings-current">
                                         <ul class="stock-current">
-                                            <li><span>현재가</span><h4 class="tit-txt">28,700</h4></li>
                                             <li>
-                                                + 250원 (0.70%)
+                                                <span>현재가</span>
+                                                <h4 class="tit-txt">28,700</h4>
+                                            </li>
+                                            <li>
+                                                <em>전일대비</em>
+                                                <p class="color-high">+ 250원 (0.70%)</p>
                                             </li>
                                         </ul>
                                         <ul class="stock-current-group">
-                                            <li>28,450원</li>
-                                            <li>28,450원(상한가 36,000)</li>
-                                            <li>37,995</li>
-                                            <li>28,450원</li>
-                                            <li>28,450원(상한가 36,000)</li>
-                                            <li>28,450원</li>
+                                            <li><em>전일</em><p>28,450원</p></li>
+                                            <li><em>고가</em><p>28,450원(상한가 36,000)</p></li>
+                                            <li><em>거래량</em><p>37,995</p></li>
+                                            <li><em>시가</em><p>28,450원</p></li>
+                                            <li><em>저가</em><p>28,450원(상한가 36,000)</p></li>
+                                            <li><em>거래대금</em><p>28,450원</p></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -78,7 +82,7 @@
                                 </div>
                             </div>
                             <!-- 쿠쿠 홈시스 -->
-                            <div class="stock-item stock-cuckooHomesys">
+                            <div class="stock-item stock-cuckooHomesys items" id="stock-cuckooHomesys">
                                 <div class="stock-tit">
                                     <h4 class="name">쿠쿠홈시스</h4>
                                     <b class="code">284740</b>
@@ -89,16 +93,17 @@
                                         <ul class="stock-current">
                                             <li><span>현재가</span><h4 class="tit-txt">28,700</h4></li>
                                             <li>
-                                                + 250원 (0.70%)
+                                                <em>전일대비</em>
+                                                <p class="color-low">+ 250원 (0.70%)</p>
                                             </li>
                                         </ul>
                                         <ul class="stock-current-group">
-                                            <li>28,450원</li>
-                                            <li>28,450원(상한가 36,000)</li>
-                                            <li>37,995</li>
-                                            <li>28,450원</li>
-                                            <li>28,450원(상한가 36,000)</li>
-                                            <li>28,450원</li>
+                                            <li><em>전일</em><p>28,450원</p></li>
+                                            <li><em>고가</em><p>28,450원(상한가 36,000)</p></li>
+                                            <li><em>거래량</em><p>37,995</p></li>
+                                            <li><em>시가</em><p>28,450원</p></li>
+                                            <li><em>저가</em><p>28,450원(상한가 36,000)</p></li>
+                                            <li><em>거래대금</em><p>28,450원</p></li>
                                         </ul>
                                     </div>
                                 </div>

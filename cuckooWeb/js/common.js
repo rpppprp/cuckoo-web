@@ -23,6 +23,7 @@ $(function(){
     function scrollAble() {
         $('html, body').removeClass('scroll-none');
     }
+    
 
 
 
@@ -104,14 +105,38 @@ $(function(){
     });
 
 
-
 /* ----------------------------------------------------------
 
-    
+    SUB-PAGE TABS
 
 -------------------------------------------------------------*/
 
+    $(".tab-group > li").click(function(){
+        var _this = $(this);
+        $('.tab-group li').removeClass('on');
+        _this.addClass('on');
 
+        var _target = $(this).attr('data-tab');
+        
+        // lnb
+        $('.tab > .items').hide();
+        $('#' + _target).show();
+
+        // 탭 이동 시 echarts 초기화
+        setTimeout(function() {
+            if (window.resizeActiveChart) {
+                window.resizeActiveChart();
+            }
+        }, 50);
+        
+    })
+
+
+/* ----------------------------------------------------------
+
+    INPUT
+
+-------------------------------------------------------------*/
 
 
 

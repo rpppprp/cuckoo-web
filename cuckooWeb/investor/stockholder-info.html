@@ -39,66 +39,72 @@
                         </div>
 
                         <ul class="tab-group stockholder">
-                            <li class="on"><a>쿠쿠홀딩스</a></li>
-                            <li><a>쿠쿠홈시스</a></li>
+                            <li class="on" data-tab="info-cuckooHoldings"><a>쿠쿠홀딩스</a></li>
+                            <li data-tab="info-cuckooHomesys"><a>쿠쿠홈시스</a></li>
                         </ul>
 
-                        <div class="stockholder-info-tab">
+                        <div class="stockholder-info-tab tab">
                             <!-- 쿠쿠 홀딩스 -->
-                            <div class="info-item info-cuckooHoldings" id="info-cuckooHoldings">
-                                <div class="info-graph-area">
-                                    <div class="sub-tit table-tit">
-                                        <h2>발행주식수</h2>
-                                        <em>2025-12-31 기준</em>
+                            <div class="info-item info-cuckooHoldings items" id="info-cuckooHoldings">
+                                <div class="item-wrap">
+                                    <div class="info-graph-area">
+                                        <div class="sub-tit table-tit">
+                                            <h2>발행주식수</h2>
+                                            <em>2025-12-31 기준</em>
+                                        </div>
+                                        <div class="info-graph" id="info-holdings"></div>  
                                     </div>
-                                    <div class="info-graph" id="info-holdings"></div>  
-                                </div>
-                                <div class="info-table-area">
-                                    <div class="sub-tit table-tit">
-                                        <h2>주주현황 상세</h2>
-                                        <span>(단위, % / 연도말 기준)</span>
-                                    </div>
-                                    <table class="table-form info-holdings-table">
-                                        <tr>
-                                            <th>구분</th>
-                                            <th>2023년</th>
-                                            <th>2024년</th>
-                                            <th>2025년</th>
-                                        </tr>
-                                        <tr>
-                                            <th><b>최대 주주 및 특수 관계인</b></th>
-                                            <td>64.6%</td>
-                                            <td>69.8%</td>
-                                            <td>68.7%</td>
-                                        </tr>
-                                        <tr>
-                                            <th><b>자사주</b></th>
-                                            <td>12.6%</td>
-                                            <td>12.6%</td>
-                                            <td>12.6%</td>
-                                        </tr>
-                                        <tr>
-                                            <th><b>국내 개인</b></th>
-                                            <td>6%</td>
-                                            <td>18.2%</td>
-                                            <td>19.2%</td>
-                                        </tr>
-                                        <tr>
-                                            <th><b>국내 기관 등 (개인 외)</b></th>
-                                            <td>6%</td>
-                                            <td>12.1%</td>
-                                            <td>12.1%</td>
-                                        </tr>
-                                        <tr>
-                                            <th><b>외국인</b></th>
-                                            <td>14%</td>
-                                            <td>12.1%</td>
-                                            <td>12.1%</td>
-                                        </tr>
-                                        <tr>
-                                            <th><b>합계</b></th>
-                                            <td colspan="3">100%</td>
-                                        </tr>
+                                    <div class="info-table-area">
+                                        <div class="sub-tit table-tit">
+                                            <h2>주주현황 상세</h2>
+                                            <span>(단위, % / 연도말 기준)</span>
+                                        </div>
+                                        <table class="table-form info-holdings-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>구분</th>
+                                                    <th>2023년</th>
+                                                    <th>2024년</th>
+                                                    <th>2025년</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th><b>최대 주주 및 특수 관계인</b></th>
+                                                    <td>64.6%</td>
+                                                    <td>69.8%</td>
+                                                    <td>68.7%</td>
+                                                </tr>
+                                                <tr>
+                                                    <th><b>자사주</b></th>
+                                                    <td>12.6%</td>
+                                                    <td>12.6%</td>
+                                                    <td>12.6%</td>
+                                                </tr>
+                                                <tr>
+                                                    <th><b>국내 개인</b></th>
+                                                    <td>6%</td>
+                                                    <td>18.2%</td>
+                                                    <td>19.2%</td>
+                                                </tr>
+                                                <tr>
+                                                    <th><b>국내 기관 등 (개인 외)</b></th>
+                                                    <td>6%</td>
+                                                    <td>12.1%</td>
+                                                    <td>12.1%</td>
+                                                </tr>
+                                                <tr>
+                                                    <th><b>외국인</b></th>
+                                                    <td>14%</td>
+                                                    <td>12.1%</td>
+                                                    <td>12.1%</td>
+                                                </tr>
+                                                <tr>
+                                                    <th><b>합계</b></th>
+                                                    <td colspan="3">100%</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
                                         <div class="info-all-item bg-gry">
                                             <div class="name">
                                                 <h5>2025년 발행주식 총수</h5>
@@ -106,68 +112,75 @@
                                             </div>
                                             <div class="value">
                                                 <h2>35,562,185</h2>
-                                                <h4>원</h4>
+                                                <h4>주</h4>
                                             </div>
                                         </div>
-                                    </table>
+                                    </div>
                                 </div>
+
                             </div>
 
                             <!-- 쿠쿠 홈시스 -->
-                            <div class="info-item info-cuckooHomesys" id="info-cuckooHomesys">
-                                <div class="info-graph-area">
-                                    <div class="sub-tit table-tit">
-                                        <h2>발행주식수</h2>
-                                        <em>2025-12-31 기준</em>
+                            <div class="info-item info-cuckooHomesys items" id="info-cuckooHomesys">
+                                <div class="item-wrap">
+                                    <div class="info-graph-area">
+                                        <div class="sub-tit table-tit">
+                                            <h2>발행주식수</h2>
+                                            <em>2025-12-31 기준</em>
+                                        </div>
+                                        <div class="info-graph" id="info-homesys"></div> 
                                     </div>
-                                    <div class="info-graph" id="info-homesys"></div> 
-                                </div>
-                                <div class="info-table-area">
-                                    <div class="sub-tit table-tit">
-                                        <h2>주주현황 상세</h2>
-                                        <span>(단위, % / 연도말 기준)</span>
-                                    </div>
-                                    <table class="table-form info-homesys-table">
-                                        <tr>
-                                            <th>구분</th>
-                                            <th>2023년</th>
-                                            <th>2024년</th>
-                                            <th>2025년</th>
-                                        </tr>
-                                        <tr>
-                                            <th><b>최대 주주 및 특수 관계인</b></th>
-                                            <td>64.6%</td>
-                                            <td>69.8%</td>
-                                            <td>68.7%</td>
-                                        </tr>
-                                        <tr>
-                                            <th><b>자사주</b></th>
-                                            <td>12.6%</td>
-                                            <td>12.6%</td>
-                                            <td>12.6%</td>
-                                        </tr>
-                                        <tr>
-                                            <th><b>국내 개인</b></th>
-                                            <td>6%</td>
-                                            <td>18.2%</td>
-                                            <td>19.2%</td>
-                                        </tr>
-                                        <tr>
-                                            <th><b>국내 기관 등 (개인 외)</b></th>
-                                            <td>6%</td>
-                                            <td>12.1%</td>
-                                            <td>12.1%</td>
-                                        </tr>
-                                        <tr>
-                                            <th><b>외국인</b></th>
-                                            <td>14%</td>
-                                            <td>12.1%</td>
-                                            <td>12.1%</td>
-                                        </tr>
-                                        <tr>
-                                            <th><b>합계</b></th>
-                                            <td rowspan="3">100%</td>
-                                        </tr>
+                                    <div class="info-table-area">
+                                        <div class="sub-tit table-tit">
+                                            <h2>주주현황 상세</h2>
+                                            <span>(단위, % / 연도말 기준)</span>
+                                        </div>
+                                        <table class="table-form info-homesys-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>구분</th>
+                                                    <th>2023년</th>
+                                                    <th>2024년</th>
+                                                    <th>2025년</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th><b>최대 주주 및 특수 관계인</b></th>
+                                                    <td>64.6%</td>
+                                                    <td>69.8%</td>
+                                                    <td>68.7%</td>
+                                                </tr>
+                                                <tr>
+                                                    <th><b>자사주</b></th>
+                                                    <td>12.6%</td>
+                                                    <td>12.6%</td>
+                                                    <td>12.6%</td>
+                                                </tr>
+                                                <tr>
+                                                    <th><b>국내 개인</b></th>
+                                                    <td>6%</td>
+                                                    <td>18.2%</td>
+                                                    <td>19.2%</td>
+                                                </tr>
+                                                <tr>
+                                                    <th><b>국내 기관 등 (개인 외)</b></th>
+                                                    <td>6%</td>
+                                                    <td>12.1%</td>
+                                                    <td>12.1%</td>
+                                                </tr>
+                                                <tr>
+                                                    <th><b>외국인</b></th>
+                                                    <td>14%</td>
+                                                    <td>12.1%</td>
+                                                    <td>12.1%</td>
+                                                </tr>
+                                                <tr>
+                                                    <th><b>합계</b></th>
+                                                    <td colspan="3">100%</td>
+                                                </tr>
+                                            </tbody>                                     
+                                        </table>
                                         <div class="info-all-item bg-gry">
                                             <div class="name">
                                                 <h5>2025년 발행주식 총수</h5>
@@ -175,11 +188,12 @@
                                             </div>
                                             <div class="value">
                                                 <h2>35,562,185</h2>
-                                                <h4>원</h4>
+                                                <h4>주</h4>
                                             </div>
                                         </div>
-                                    </table>
+                                    </div>
                                 </div>
+
                             </div>
                         </div>
                     </div>

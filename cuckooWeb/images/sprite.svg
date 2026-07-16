@@ -50,8 +50,8 @@
             d="M4 5h6.586l-7.293 7.293a1 1 0 1 0 1.414 1.414L12 6.414V22a1 1 0 1 0 2 0V6.414l7.293 7.293a1 1 0 1 0 1.414-1.414L15.414 5H22a1 1 0 1 0 0-2H4a1 1 0 1 0 0 2z" />
     </symbol>
     <symbol id="check" viewBox="0 0 24 24">
-        <path stroke="#222" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-            d="M18.5 8l-9.286 8L5.5 12.571" />
+    <path fill="currentColor"
+            d="M4.223 13.307a.947.947 0 0 1-.06-1.413 1.148 1.148 0 0 1 1.53-.057l3.313 2.824 9.329-7.419a1.147 1.147 0 0 1 1.527.106.948.948 0 0 1-.114 1.41l-10.059 8a1.152 1.152 0 0 1-1.442-.023l-4.024-3.428z" />
     </symbol>
     <symbol id="burger-menu" viewBox="0 0 24 24">
         <path fill="currentColor"
