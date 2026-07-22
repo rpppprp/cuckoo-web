@@ -632,6 +632,8 @@ li.breadcrumb-link .breadcrumb-dropdown li a:hover {
     color:var(--color-blk);
 }
 
+
+
 /* ----------------------------------------------------------
 
     BUTTONS
@@ -906,7 +908,7 @@ section.section .tit-area {
     padding:20px 40px;
 }
 
-.download-form li .report-btn-area {
+.download-form li > ul {
     display:flex;
     gap:20px;
     padding:20px 40px;
@@ -914,7 +916,7 @@ section.section .tit-area {
     margin-left:auto;
 }
 
-.download-form li .report-btn-area li a.btn {
+.download-form li > ul li a.btn {
     display:flex;
     flex-direction: center;
     min-width:100px;
@@ -923,13 +925,13 @@ section.section .tit-area {
     align-items:center;
 }
 
-.download-form li .report-btn-area li a.kor-download {
+.download-form li > ul li a.kor-download {
     border:1px solid var(--color-blk);
     border-radius:32px;
 
 }
 
-.download-form li .report-btn-area li a.eng-download {
+.download-form li > ul li a.eng-download {
     background:var(--color-blk);
     color:var(--color-wht);
 }

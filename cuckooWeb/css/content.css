@@ -205,6 +205,7 @@ section.about-area .inner .about-section .about-section-bg:after {
     height:100vh;
     color:var(--color-wht);
     align-items:center;
+    background-attachment: fixed;
 }
 
 .investor-area .inner {
@@ -286,6 +287,7 @@ section.about-area .inner .about-section .about-section-bg:after {
     width:100vw;
     height:100%;
     color:var(--color-wht);
+    background-attachment: fixed;
 }
 
 .esg-area:before {
@@ -748,10 +750,6 @@ section.section-banner .inner {
 .stock-item .stock-tit .date-txt {
     font-size:var(--font-x-sm);
     margin-left:auto;
-}
-
-.stock-head {
-
 }
 
 .stock-head .stock-table {
@@ -2006,3 +2004,59 @@ section .request-item .sub-tit {
 
 -------------------------------------------------------------*/
 
+#gov-part-1 .txt-area {
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+}
+
+
+/* tab */
+.corp-tab-group {
+    display: flex;
+    padding:20px 0px 40px;
+    gap:24px;
+    justify-content: left;
+}
+
+.corp-tab-group li {
+    border:0px;
+}
+
+.corp-tab-group li a {
+    background:var(--color-gry-1);
+    color:var(--color-gry-4);
+}
+
+.corp-tab-group li.on a {
+    background:var(--color-blk);
+    color:var(--color-wht);
+    font-weight: 600;
+}
+
+
+/* table-group */
+.gov-table-area {
+    display:flex;
+    flex-direction: column;
+    gap:60px;
+}
+
+.gov-table-area .gov-table-item {
+    display: none;
+}
+
+.gov-table-area .gov-table-item:first-child {
+    display: block;
+}
+
+.gov-table-group {
+    display: flex;
+    flex-direction: column;
+    gap:30px;
+    margin-bottom:60px;
+}
+
+.gov-table-group:last-child {
+    margin-bottom:0px;
+}

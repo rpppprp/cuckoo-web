@@ -618,5 +618,26 @@ $(function(){
     }}}
 
 
+/* ----------------------------------------------------------
+
+    지속가능경영 - 지배구조
+
+-------------------------------------------------------------*/
+
+    $(".corp-tab-group > li").click(function (e) {
+        e.preventDefault();
+
+        var _this = $(this);
+        var _target = _this.attr('data-tab');
+
+        var _tabGroup = _this.closest('.corp-tab-group');
+        _tabGroup.children('li').removeClass('on');
+        _this.addClass('on');
+
+        var _tableArea = _tabGroup.next('.gov-table-area');
+        _tableArea.children('.items').hide();
+        _tableArea.children('#' + _target).show();
+    });
+
 });
 

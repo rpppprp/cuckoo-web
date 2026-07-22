@@ -118,7 +118,6 @@ $(function(){
 
         var _target = $(this).attr('data-tab');
         
-        // lnb
         $('.tab > .items').hide();
         $('#' + _target).show();
 
