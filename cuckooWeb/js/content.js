@@ -432,6 +432,103 @@ $(function(){
 
 /* ----------------------------------------------------------
 
+    지속가능경영 - 개요
+
+-------------------------------------------------------------*/
+
+
+if ($('.section-overview').length > 0) {
+    const $items = $('.section-overview .esg-item');
+  
+    // 1. 초기 셋팅
+    gsap.set('.section-overview', {
+      clipPath: 'inset(12% 10% round 30px)'
+    });
+  
+    // 텍스트 및 2번째 아이템 완전 숨김 (1번째 아이템과 위치 중첩 처리)
+    gsap.set($items.find('.txt-wrap'), { autoAlpha: 0 });
+    gsap.set($items.find('.fade-up'), { y: 50, autoAlpha: 0 });
+    
+    // 2번째 아이템은 시작할 때 숨김 처리
+    if ($items.length > 1) {
+      gsap.set($items.eq(1), { autoAlpha: 0, display: 'none' });
+    }
+  
+    // 2. 타임라인 생성
+    const overviewTL = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.section-overview',
+        start: 'top top',
+        end: '+=450%', // 스크롤 호흡을 더 길게 확보
+        pin: true,
+        scrub: 1,
+        anticipatePin: 1
+      }
+    });
+  
+    overviewTL
+      // [1] 풀스크린으로 확장
+      .to('.section-overview', {
+        clipPath: 'inset(0% 0% round 0px)',
+        duration: 2,
+        ease: 'none'
+      })
+  
+      // [2] 1번 아이템 텍스트 영역 등장
+      .to($items.eq(0).find('.txt-wrap'), {
+        autoAlpha: 1,
+        duration: 0.5
+      })
+      .to($items.eq(0).find('.fade-up'), {
+        y: 0,
+        autoAlpha: 1,
+        duration: 2,
+        stagger: 0.4,
+        ease: 'power2.out'
+      })
+  
+      // [3] 1번 아이템 정지 (읽는 구간)
+      .to({}, { duration: 3 })
+  
+      // [4] 1번 아이템 퇴장 및 화면에서 감춤
+      .to($items.eq(0), {
+        autoAlpha: 0,
+        duration: 1.5,
+        onComplete: function() {
+          $items.eq(0).hide();
+        },
+        onReverseComplete: function() {
+          $items.eq(0).show();
+        }
+      });
+  
+    // 2번 아이템 처리
+    if ($items.length > 1) {
+      overviewTL
+        // 2번 아이템 등장 준비
+        .set($items.eq(1), { display: 'flex', autoAlpha: 0 })
+        .to($items.eq(1), {
+          autoAlpha: 1,
+          duration: 1
+        })
+        .to($items.eq(1).find('.txt-wrap'), {
+          autoAlpha: 1,
+          duration: 0.5
+        })
+        .to($items.eq(1).find('.fade-up'), {
+          y: 0,
+          autoAlpha: 1,
+          duration: 2,
+          stagger: 0.4,
+          ease: 'power2.out'
+        })
+        // 2번 아이템 정지 (읽는 구간)
+        .to({}, { duration: 3 });
+    }
+  }
+
+/* ----------------------------------------------------------
+
     지속가능경영 - 환경
 
 -------------------------------------------------------------*/

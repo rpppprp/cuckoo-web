@@ -69,6 +69,13 @@ a {
 }
 
 
+.fade-up {
+    opacity: 0;
+    transform: translateY(50px);
+    will-change: transform, opacity;
+}
+
+
 /* ----------------------------------------------------------
 
     HEADER

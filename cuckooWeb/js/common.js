@@ -45,6 +45,7 @@ $(function(){
     gsap.ticker.lagSmoothing(0);
 
 
+
 /* ----------------------------------------------------------
 
     HEADER
@@ -183,36 +184,57 @@ $(function(){
 -------------------------------------------------------------*/
 
 
-    const introTL = gsap.timeline({
-        scrollTrigger: {
-        trigger: '.hero-intro',
-        start: 'top top',
-        end: '+=100%',        // 스크롤 여유 공간
-        pin: true,
-        scrub: 2,
-        anticipatePin: 1
-        }
+    if ($('.hero-intro').length > 0) {
+        const introTL = gsap.timeline({
+            scrollTrigger: {
+                trigger: '.hero-intro',
+                start: 'top top',
+                end: '+=100%',
+                pin: true,
+                scrub: 2,
+                anticipatePin: 1
+            }
+        });
+
+        introTL.to('.intro-full', {
+            width: '100vw',
+            height: '100vh',
+            borderRadius: '0px',
+            margin: '0px',
+            ease: 'none'
+        })
+        .to('.intro-full .txt-area', {
+            opacity: 1,
+            duration: 0.5,
+            ease: 'power1.out'
+        });
+    }
+
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                gsap.to(entry.target, {
+                    y: 0,
+                    autoAlpha: 1,
+                    duration: 1,
+                    ease: 'power2.out'
+                });
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { rootMargin: '0px 0px -15% 0px' });
+
+    $('.fade-up').each(function() {
+        gsap.set(this, { y: 50, autoAlpha: 0 });
+        observer.observe(this);
     });
 
-    // 1단계: 박스가 화면 전체로 확장
-    introTL.to('.intro-full', {
-        width: '100vw',
-        height: '100vh',
-        borderRadius: '0px',
-        margin: '0px',
-        ease: 'none'
-    })
-    // 2단계: 확장 완료 후 텍스트 서서히 등장
-    .to('.intro-full .txt-area', {
-        opacity: 1,
-        duration: 0.5,
-        ease: 'power1.out'
-    });
-
-    $(window).on('load', function () {
+    $(window).on('load', function() {
         ScrollTrigger.refresh();
     });
 
+    ScrollTrigger.refresh();
 
 
 /* ----------------------------------------------------------

@@ -563,8 +563,6 @@ section.section-history .inner {
 }
 
 
-
-
 .history-content {
     display:flex;
     gap:60px;
@@ -1571,6 +1569,17 @@ section .request-item .sub-tit {
     background-size:cover;
 }
 
+.section-overview .txt-wrap {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.section-overview .fade-up {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(60px);
+}
+
 .section-overview .esg-item {
     display:flex;
     height:100vh;
@@ -2031,7 +2040,6 @@ section .request-item .sub-tit {
     gap:20px;
 }
 
-
 /* tab */
 .corp-tab-group {
     display: flex;
@@ -2083,12 +2091,15 @@ section .request-item .sub-tit {
 }
 
 
-
 /* ----------------------------------------------------------
 
     윤리경영 - 체계 & 활동
 
 -------------------------------------------------------------*/
+
+.section-ethic {
+    padding:80px 0px;
+}
 
 /* 윤리경영체계 */
 .section-ethic .tit-area {
