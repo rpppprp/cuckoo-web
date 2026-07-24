@@ -1,0 +1,82 @@
+
+
+<!-- 윤리경영 제보접수폼 -->
+
+<div class="ethic-inform-area">
+    <div class="ethic-inform">
+        <div class="ethic-inform-head">
+            <h1>윤리경영제보</h1>
+            <a class="ethic-inform-close">
+                <svg class="icon-close icon-">
+                    <use xlink:href="/cuckooWeb/images/sprite.svg#close"/>
+                </svg>
+            </a>
+        </div>
+
+        <div class="ethic-inform-content">
+            <ul class="ethic-inform-note bg-gry">
+                <li>쿠쿠 임직원의 불공정한 업무처리나 직위를 이용한 부당한 요구 및 비리사실에 대한 제보를 받으며 비공개 방식으로 처리 됩니다.</li>
+                <li>사실에 근거하지 않는 비방, 개인 사생활과 관련된 사항은 신고접수 대상이 아닙니다.</li>
+                <li>익명 제보의 경우 내용이 구체적이지 않고 사실근거가 불분명한 경우 조사를 진행하지 않을 수 있습니다.</li>
+                <li>제보자의 비밀은 절대적으로 보호되며, 제보자는 어떠한 불이익도 받지 않습니다.</li>
+                <li>처리결과 통보를 원하시는 경우 입력하신 e-mail로 통보되며, 익명으로 신고한 경우 처리결과는 통보하지 않습니다.</li>
+                <li>제품,서비스 관련 문의는 고객센터로 문의 바라며, 관련 제보는 처리결과를 통보하지 않을 수 있습니다.</li>
+            </ul>
+            <ul class="ethic-inform-config">
+                <li>
+                    <h2>제보방법 설정</h2>
+                </li>
+                <li class="ethic-inform-chk">
+                    <div class="ethic-inform-radio">
+                        <input type="radio" class="ethic-radio input-radio" id="ethic-radio-1" name="tip-off" required checked>
+                        <label class="ethic-label" for="ethic-radio-1">
+                            익명정보
+                        </label>
+                    </div>
+                    <div class="ethic-inform-radio">
+                        <input type="radio" class="ethic-radio input-radio" id="ethic-radio-2" name="tip-off" required>
+                        <label class="ethic-label" for="ethic-radio-2">
+                            실명제보
+                        </label>
+                    </div>
+                </li>
+                <li>
+                    <div class="ethic-inform-tit">대상회사</div>
+                    <input id="ethic-inform-corp" type="text" class="input-txt ethic-inform-corp" placeholder="대상을 선택해주세요." required>
+                </li>
+                <li>
+                    <div class="ethic-inform-tit">내용</div>
+                    <input id="ethic-inform-subj" type="text" class="input-txt ethic-inform-subj" placeholder="제목을 입력해주세요." required>
+                </li>
+                <li>
+                    <div class="ethic-inform-tit">제목</div>
+                    <textarea class="input-textbox ethic-inform-cont" placeholder="윤리경영 제보 내용을 작성해주세요." id="ethic-inform-cont" required></textarea>
+                </li>
+                <li>
+                    <div class="ethic-inform-tit">첨부 파일</div>
+                    <div class="ethic-upload">
+                        <input class="ethic-inform-upload" type="file" id="ethic-inform-upload">
+                        <label for="ethic-inform-upload" class="btn b-btn">
+                            <svg class="icon-24px">
+                                <use xlink:href="/cuckooWeb/images/sprite.svg#tab-bottom"/>
+                            </svg>
+                            <span>파일선택</span>
+                        </label> 
+                        <input type="text" class="ethic-inform-filename" value="" readonly>
+                        <p class="txt">
+                            파일 최대 용량 8MB, 10개 첨부 가능 (문서 및 이미지만 첨부 가능)
+                        </p>
+                    </div>
+                </li>
+            </ul>
+            <div class="ethic-inform-btn">
+                <a class="btn g-line-btn">취소</a>
+                <a class="btn b-btn">제보</a>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+

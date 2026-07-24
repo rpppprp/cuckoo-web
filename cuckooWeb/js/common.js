@@ -24,7 +24,25 @@ $(function(){
         $('html, body').removeClass('scroll-none');
     }
     
+    // gsap 호출
+    gsap.registerPlugin(ScrollTrigger); 
 
+    // Lenis 초기화 및 GSAP ScrollTrigger와 연동
+    const lenis = new Lenis({
+        duration: 1.2, // 스크롤 감도 (기본값 1.2, 높일수록 더 부드러움)
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // 관성 곡선
+    });
+    
+    // Lenis의 스크롤 이벤트를 ScrollTrigger에 전달
+    lenis.on('scroll', ScrollTrigger.update);
+    
+    // GSAP의 ticker에 Lenis 업데이트 등록
+    gsap.ticker.add((time) => {
+        lenis.raf(time * 1000);
+    });
+    
+    // GSAP 라구 자이로 효과 등 오작동 방지
+    gsap.ticker.lagSmoothing(0);
 
 
 /* ----------------------------------------------------------
@@ -66,10 +84,37 @@ $(function(){
     //SITEMAP
     $(".sitemap-btn").click(function(){
         $(".sitemap-area").addClass('on');
+        scrollDisable()
     })
     $(".sitemap-close").click(function(){
         $(".sitemap-area").removeClass('on');
+        scrollAble()
     })
+
+
+    // LANGUAGE
+    $(".lang-choice .lang-select-btn").click(function(){
+        var _this = $(this);
+        var _opt = _this.next('ul');
+        
+        if(_this.hasClass('on')) {
+            _this.removeClass('on');
+            _opt.hide();
+        } else {
+            _this.addClass('on');
+            _opt.show();
+        }
+    })
+
+    $(document).on('click', function(e) {
+
+        if (!$(e.target).closest('.lang-select-btn, .lang-select-btn + ul').length) {
+          
+          $('.lang-select-btn').removeClass('on');
+          $('.lang-select-btn + ul').hide();
+          
+        }
+    });
 
 
 /* ----------------------------------------------------------
@@ -133,9 +178,40 @@ $(function(){
 
 /* ----------------------------------------------------------
 
-    INPUT
+    SECTION 
 
 -------------------------------------------------------------*/
+
+
+    const introTL = gsap.timeline({
+        scrollTrigger: {
+        trigger: '.hero-intro',
+        start: 'top top',
+        end: '+=100%',        // 스크롤 여유 공간
+        pin: true,
+        scrub: 2,
+        anticipatePin: 1
+        }
+    });
+
+    // 1단계: 박스가 화면 전체로 확장
+    introTL.to('.intro-full', {
+        width: '100vw',
+        height: '100vh',
+        borderRadius: '0px',
+        margin: '0px',
+        ease: 'none'
+    })
+    // 2단계: 확장 완료 후 텍스트 서서히 등장
+    .to('.intro-full .txt-area', {
+        opacity: 1,
+        duration: 0.5,
+        ease: 'power1.out'
+    });
+
+    $(window).on('load', function () {
+        ScrollTrigger.refresh();
+    });
 
 
 

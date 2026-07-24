@@ -506,13 +506,21 @@ section.about-area .inner .about-section .about-section-bg:after {
 
 -------------------------------------------------------------*/
 
+
+section.section-history {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* 화면 전체 높이 고정 필수 */
+    overflow: hidden; /* 가로 스크롤 넘침 숨김 필수 */
+}
+
 section.section-history .inner {
     display: flex;
     flex-direction: column;
     position:relative;
     width:100vw;
     height:100vh;
-    overflow-y:hidden;
+    overflow:hidden;
 }
 
 
@@ -532,21 +540,34 @@ section.section-history .inner {
     position:absolute;
     left:0px;
     top:0px;
-    width:auto;
     display: flex;
     gap:60px;
     padding-right:80px;
-}
-
-.history-content {
-    display:flex;
-    gap:60px;
+    width: max-content; /* 내부 아이템 전체 길이만큼 가로로 나열 */
+    height: 100%;
 }
 
 .history-item {
     display:flex;
     flex-direction: column;
     gap: 160px
+}
+
+#history-4,
+.history-item:last-child {
+  flex-shrink: 0 !important;
+  min-width: 100vw !important; /* 최소 한 화면 채우기 */
+  box-sizing: border-box;
+  padding-right: 10vw; /* 마지막 영역 스크롤 끝에 여유 공간 확보 */
+  margin-right: 30vw !important;
+}
+
+
+
+
+.history-content {
+    display:flex;
+    gap:60px;
 }
 
 .history-date {
@@ -2059,4 +2080,406 @@ section .request-item .sub-tit {
 
 .gov-table-group:last-child {
     margin-bottom:0px;
+}
+
+
+
+/* ----------------------------------------------------------
+
+    윤리경영 - 체계 & 활동
+
+-------------------------------------------------------------*/
+
+/* 윤리경영체계 */
+.section-ethic .tit-area {
+    display: flex;
+    flex-direction: column;
+    gap:40px;
+}
+
+.ethic-define {
+    display:flex;
+    flex-wrap: wrap;
+    gap:30px;
+}
+
+.ethic-define li {
+    display:flex;
+    width:705px;
+    padding:20px 40px;
+    gap:10px;
+    border-radius: 16px;
+    box-sizing: border-box;
+    align-items:center;
+}
+
+.ethic-define li:last-child {
+    width:100%;
+}
+
+.ethic-define li .icon {
+    background:var(--color-wht);
+    width:80px;
+    height:80px;
+    border-radius: 100%;
+}
+
+.ethic-define li .text-area {
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    padding:30px;
+}
+
+
+/* 윤리경영활동 */
+.ethic-item .ethic-program {
+    display: flex;
+    gap:24px;
+}
+
+.ethic-program li .img {
+    width:100%;
+    height:270px;
+    border-radius: 16px;
+    overflow:hidden;
+}
+
+.ethic-program li .img img {
+    display: block;
+    width:100%;
+    height:100%;
+}
+
+.ethic-program li .txt {
+    text-align:center;
+    padding-top:20px;
+}
+
+.ethic-program li .txt h3 {
+    margin-bottom:10px;
+}
+
+
+.ethic-item:last-child {
+    padding:60px 0px 80px;
+}
+
+.ethic-item:last-child .txt {
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+}
+
+.section-inform .inner {
+    display: flex;
+    flex-direction: column;
+    padding:120px 0px;
+    gap:100px;
+}
+
+.inform-item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.inform-item > ul {
+    background:var(--color-wht);
+    width:1070px;
+    box-sizing: border-box;
+    padding:40px;
+    border-radius: 16px;
+}
+
+.inform-item .inform-method {
+    display: flex;
+    background:none;
+    gap:24px;
+    padding:0px;
+}
+
+.inform-item .inform-method > li {
+    display:flex;
+    flex-direction: column;
+    width:calc(100% / 2);
+    background:var(--color-wht);
+    padding:40px;
+    border-radius: 16px;
+    gap:20px;
+}
+
+.inform-item .inform-method > li .btn {
+    width:200px;
+    margin-top:auto;
+}
+
+.inform-item .inform-method > li .ethic-inform-list {
+    color:var(--color-gry-4);
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+}
+
+.inform-item .inform-method > li .ethic-inform-list li {
+    font-size:var(--font-sm);
+    display: flex;
+    gap:10px;
+    align-items:center;
+}
+
+.inform-item .inform-method > li .ethic-inform-list li:before {
+    content:"·";
+    font-size:var(--font-lg);
+}
+
+
+.inform-item .inform-subject {
+    display: flex;
+    flex-wrap: wrap;
+    gap:10px;
+}
+
+.inform-item .inform-subject li {
+    display: flex;
+    width:calc(100% / 2 - 20px);
+    gap:20px;
+    align-items:center;
+    box-sizing: border-box;
+}
+
+.inform-item .inform-subject li:before {
+    content:"·";
+    font-size:var(--font-lg);
+}
+
+.inform-item .inform-process {
+    display: flex;
+}
+
+.inform-item .inform-process li {
+    display: flex;
+    flex-direction: column;
+    width:160px;
+    gap:20px;
+    flex-shrink: 0;
+    align-items: center;
+}
+
+.inform-item .inform-process li:nth-child(even) {
+    width:48px;
+    height:48px;
+    align-self: center;
+}
+
+.inform-item .inform-process li .icon {
+    display: flex;
+    width:100px;
+    height:100px;
+    align-items: center;
+    justify-content: center;
+}
+
+.inform-item .inform-process li .step {
+    background:var(--color-blk);
+    color:var(--color-wht);
+    font-size:var(--font-sm);
+    padding:5px 20px;
+    border-radius: 32px;
+}
+
+.inform-item .inform-process li h5 {
+    text-align:center;
+    padding:0 10px;
+}
+
+.inform-rule {
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}
+
+.inform-rule li {
+    display: flex;
+    gap:20px;
+    align-items: center;
+}
+
+.inform-rule li:before {
+    content:"·";
+    font-size:var(--font-lg);
+}
+
+
+/* 윤리경영제보 팝업 */
+
+.ethic-inform-area {
+    display:none;
+    position:fixed;
+    width:100%;
+    height:100%;
+    left:0;
+    top:0;
+    background:rgba(0,0,0,0.4);
+    backdrop-filter: blur(20px);
+    z-index:1000;
+    transition: all 0.4s;
+}
+
+.ethic-inform-area .ethic-inform {
+    width:1000px;
+    background:var(--color-wht);
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    border-radius: 16px;
+    box-shadow: 0px 0px 14px rgba(0,0,0,0.2);
+}
+
+.ethic-inform .ethic-inform-head {
+    display: flex;
+    justify-content: space-between;
+    padding:40px 40px 0px 40px;
+    align-items: center;
+}
+
+.ethic-inform .ethic-inform-head .ethic-inform-close {
+    display: flex;
+    width:40px;
+    height:40px;
+    justify-content: center;
+    align-items: center;
+}
+
+.ethic-inform-head .ethic-inform-close svg.icon-close {
+    width:40px;
+    height:40px;
+}
+
+.ethic-inform .ethic-inform-content {
+    padding:30px 40px 40px;
+}
+
+.ethic-inform-content .ethic-inform-note {
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+    padding:20px 30px;
+    border-radius: 16px;
+}
+
+.ethic-inform-content .ethic-inform-note li {
+    font-size:var(--font-sm);
+    display: flex;
+    gap:20px;
+    align-items: center;
+    letter-spacing:-0.8px;
+}
+
+.ethic-inform-content .ethic-inform-note li:before {
+    content:"·";
+    font-size:var(--font-lg);
+}
+
+.ethic-inform-content .ethic-inform-config {
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    padding-top:40px;
+}
+
+.ethic-inform-content .ethic-inform-config li {
+    display: flex;
+    align-items:start;
+}
+
+.ethic-inform-content .ethic-inform-config li:first-child {
+    padding-bottom:20px;
+}
+
+.ethic-inform-chk {
+    display: flex;
+    gap:20px;
+    align-items:center;
+}
+
+.ethic-inform-chk label {
+    display: flex;
+    gap:20px;
+    align-items:center;
+}
+
+.ethic-inform-chk .input-radio[type="radio"] + label {
+    color:var(--color-gry-4);
+}
+
+.ethic-inform-chk .input-radio[type="radio"]:checked + label {
+    color:var(--color-blk);
+    font-weight: 700;
+}
+
+.ethic-inform-content .ethic-inform-config li:nth-child(3) .ethic-inform-tit,
+.ethic-inform-content .ethic-inform-config li:nth-child(4) .ethic-inform-tit {
+    align-self:center;
+}
+
+.ethic-inform-config li .ethic-inform-tit {
+    width:120px;
+    flex-shrink: 0;
+}
+
+.ethic-inform-config li > .ethic-inform-corp {
+    width: 500px;
+    border-color:var(--color-gry-2);
+}
+
+.ethic-inform-config li > .ethic-inform-subj {
+    width: 100%;
+    border-color:var(--color-gry-2);
+}
+
+.ethic-inform-config li > .ethic-inform-cont {
+    width: 100%;
+    min-height:150px;
+    border-color:var(--color-gry-2);
+    padding:10px 20px;
+}
+
+.ethic-upload {
+    display: flex;
+    width:100%;
+    flex-wrap: wrap;
+}
+
+.ethic-upload .ethic-inform-upload {
+    display: none;
+}
+
+.ethic-upload > label {
+    font-size:var(--font-sm);
+    min-width:150px;
+    height:50px;
+    border-radius: 6px;
+    flex-shrink: 0;
+}
+
+.ethic-upload .ethic-inform-filename {
+    width: calc(100% - 200px);
+    color: var(--color-gry-4);
+    padding: 5px 20px;
+    box-sizing: border-box;
+}
+
+.ethic-upload > .txt {
+    width:100%;
+    font-size:var(--font-sm);
+    color:var(--color-gry-4);
+    padding:10px 0px 0px;
+}
+
+.ethic-inform-btn {
+    display: flex;
+    justify-content: center;
+    gap:20px;
+    padding-top:40px;
 }

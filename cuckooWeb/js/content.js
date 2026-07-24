@@ -61,6 +61,235 @@ $(function(){
     });
 
 
+    //실시간 주가 (쿠쿠홀딩스)
+    if ($('#cuckoo-main-holdings').length > 0) {{{
+
+        var dom = document.getElementById('cuckoo-main-holdings');
+        var myChart = echarts.init(dom, null, {
+          renderer: 'canvas',
+          useDirtyRect: false
+        });
+        var app = {};
+        
+        var option;
+    
+        option = {
+          tooltip: {
+            trigger: 'axis',
+            valueFormatter: (value) => value.toLocaleString() + '원'
+          },
+          grid: {
+            left: '5%',
+            right: '5%',
+            bottom: '10%',
+            containLabel: true
+          },
+          xAxis: {
+            type: 'category',
+            boundaryGap: false, // 차트 양 끝 여백 제거
+            data: [
+              '04-01', '04-03', '04-07', '04-10', '04-14', 
+              '04-17', '04-21', '04-24', '04-27'
+            ]
+          },
+          yAxis: {
+            type: 'value',
+            scale: true, // 0부터 시작하지 않고 데이터 범위에 맞춰 축 자동 조절 (필수)
+            axisLabel: {
+              formatter: (value) => value.toLocaleString()
+            }
+          },
+          series: [
+            {
+              name: '종가',
+              type: 'line',
+              smooth: true, // 선을 부드럽게
+              symbol: 'none', // 데이터 점 숨기기
+              data: [28050, 27650, 27300, 27700, 28000, 29100, 28900, 29100, 29200],
+              lineStyle: {
+                color: '#3452ff',
+                width: 2
+              },
+              areaStyle: {
+                // 하단 그라데이션 적용
+                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                  { offset: 0, color: 'rgba(52, 82, 255, 0.5)' },
+                  { offset: 1, color: 'rgba(52, 82, 255, 0)' }
+                ])
+              }
+            }
+          ]
+        };
+    
+        if (option && typeof option === 'object') {
+          myChart.setOption(option);
+        }
+    
+        window.addEventListener('resize', myChart.resize);
+
+    }}};
+
+
+
+    //실시간 주가 (쿠쿠홈시스)
+    if ($('#cuckoo-main-homesys').length > 0) {{{
+
+        var dom = document.getElementById('cuckoo-main-homesys');
+        var myChart = echarts.init(dom, null, {
+          renderer: 'canvas',
+          useDirtyRect: false
+        });
+        var app = {};
+        
+        var option;
+    
+        option = {
+          tooltip: {
+            trigger: 'axis',
+            valueFormatter: (value) => value.toLocaleString() + '원'
+          },
+          grid: {
+            left: '5%',
+            right: '5%',
+            bottom: '10%',
+            containLabel: true
+          },
+          xAxis: {
+            type: 'category',
+            boundaryGap: false, // 차트 양 끝 여백 제거
+            data: [
+              '04-01', '04-03', '04-07', '04-10', '04-14', 
+              '04-17', '04-21', '04-24', '04-27'
+            ]
+          },
+          yAxis: {
+            type: 'value',
+            scale: true, // 0부터 시작하지 않고 데이터 범위에 맞춰 축 자동 조절 (필수)
+            axisLabel: {
+              formatter: (value) => value.toLocaleString()
+            }
+          },
+          series: [
+            {
+              name: '종가',
+              type: 'line',
+              smooth: true, // 선을 부드럽게
+              symbol: 'none', // 데이터 점 숨기기
+              data: [28050, 27650, 27300, 27700, 28000, 29100, 28900, 29100, 29200],
+              lineStyle: {
+                color: '#3452ff',
+                width: 2
+              },
+              areaStyle: {
+                // 하단 그라데이션 적용
+                color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+                  { offset: 0, color: 'rgba(52, 82, 255, 0.5)' },
+                  { offset: 1, color: 'rgba(52, 82, 255, 0)' }
+                ])
+              }
+            }
+          ]
+        };
+    
+        if (option && typeof option === 'object') {
+          myChart.setOption(option);
+        }
+    
+        window.addEventListener('resize', myChart.resize);
+
+    }}};
+
+
+
+/* ----------------------------------------------------------
+
+    회사소개 - 연혁
+
+-------------------------------------------------------------*/
+
+
+    if ($('.section-history').length > 0) {{{ 
+
+        const $sectionHistory = $('.section-history');
+        const $historyTrack = $('.history-track');
+        const $historyItems = $('.history-item');
+        const $tabItems = $('.history-tab .tab-item');
+        const $pagerItems = $('.history-pager li');
+    
+        // 여백이 포함된 실제 가로 이동 필요 거리
+        const getScrollAmount = () => $historyTrack[0].scrollWidth - window.innerWidth;
+    
+        // 1. GSAP 수평 스크롤
+        const horizontalScroll = gsap.to($historyTrack, {
+        x: () => -getScrollAmount(),
+        ease: 'none',
+        scrollTrigger: {
+            trigger: $sectionHistory,
+            pin: true,
+            pinSpacing: true,
+            scrub: 1,
+            start: 'top top',
+            end: () => '+=' + getScrollAmount(),
+            invalidateOnRefresh: true,
+            anticipatePin: 1,
+            onUpdate: (self) => {
+            const currentX = -gsap.getProperty($historyTrack[0], 'x');
+            const maxScrollX = getScrollAmount();
+            let activeIndex = 0;
+    
+            if (self.progress >= 0.95) {
+                activeIndex = $historyItems.length - 1;
+            } else {
+                $historyItems.each(function (i) {
+                const itemLeft = this.offsetLeft;
+                const nextItemLeft = $historyItems.eq(i + 1).length 
+                    ? $historyItems.eq(i + 1)[0].offsetLeft 
+                    : maxScrollX;
+                const threshold = itemLeft + (nextItemLeft - itemLeft) * 0.4;
+    
+                if (currentX >= threshold) {
+                    activeIndex = i + 1;
+                }
+                });
+            }
+    
+                $tabItems.eq(activeIndex).addClass('on').siblings().removeClass('on');
+                $pagerItems.eq(activeIndex).addClass('on').siblings().removeClass('on');
+                }
+            }
+        });
+    
+        // 2. 탭 & 페이저 클릭 시 해당 섹션 시작 위치로 이동
+        $('.history-tab a, .history-pager a').on('click', function (e) {
+            e.preventDefault();
+        
+            const href = $(this).attr('href');
+            const indexNum = href.replace(/[^0-9]/g, '');
+            const $targetObj = $('#history-' + indexNum);
+        
+            if ($targetObj.length) {
+                const st = horizontalScroll.scrollTrigger;
+                const targetLeft = $targetObj[0].offsetLeft;
+                const maxScrollX = getScrollAmount();
+        
+                // 스크롤 목표 지점 계산
+                const targetScroll = st.start + (st.end - st.start) * (Math.min(targetLeft, maxScrollX) / maxScrollX);
+        
+                if (window.lenis) {
+                window.lenis.scrollTo(targetScroll, { duration: 0.8 });
+                } else {
+                $('html, body').stop().animate({ scrollTop: targetScroll }, 600);
+                }
+            }
+        });
+    
+        $(window).on('load resize', function () {
+            ScrollTrigger.refresh();
+        });
+
+    }}}
+
+
 
 
 /* ----------------------------------------------------------
@@ -116,6 +345,9 @@ $(function(){
     }
 
 
+
+
+    
 
 /* ----------------------------------------------------------
 
@@ -639,5 +871,38 @@ $(function(){
         _tableArea.children('#' + _target).show();
     });
 
+
+/* ----------------------------------------------------------
+
+    윤리경영 - 체계&활동
+
+-------------------------------------------------------------*/
+
+    // 윤리경영제보 팝업 열기
+    $("#ethic-inform-btn").click(function(e){
+        e.preventDefault();
+
+        $(".ethic-inform-area").show();
+        $('html, body').addClass('scroll-none');
+    })
+
+    // 윤리경영제보 팝업 닫기
+    $(".ethic-inform-close").click(function(){
+
+        $(".ethic-inform-area").hide();
+        $('html, body').removeClass('scroll-none');
+    })
+
+
+    $("#ethic-inform-upload").on('change',function(){
+        var _fileName = $("#ethic-inform-upload").val();
+        $(".ethic-inform-filename").val(_fileName);
+    });
+
+
+
 });
+
+
+
 
