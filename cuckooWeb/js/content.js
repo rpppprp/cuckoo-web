@@ -533,6 +533,22 @@ if ($('.section-overview').length > 0) {
 
 -------------------------------------------------------------*/
 
+    // E-순환우수제품 목록 slick
+    $('.env-slide-track').slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 7000,
+        centerMode: true,
+        draggable: false,
+        cssEase: 'linear',
+        centerPadding: '24px',
+        fade: false,
+        dots: false,
+        prevArrow : $('.env-slide-pager .env-slide-prev'),
+        nextArrow : $('.env-slide-pager .env-slide-next')
+    });
+
     // E-순환우수제품 현황    
     if ($('#env-recycle-graph').length > 0) {{{
 

@@ -1770,6 +1770,15 @@ section .request-item .sub-tit {
     justify-content: center;
 }
 
+.env-slide-wrap .slick-list {
+    margin: 0 -30px;
+}
+
+.slick-list .slick-slide {
+    display: flex;
+    margin: 0 15px;
+}
+
 .env-slide-track li .e-icon {
     position:absolute;
     background:url(/cuckooWeb/images/e-recy.png) center center no-repeat;
@@ -1804,15 +1813,15 @@ section .request-item .sub-tit {
     align-items:center;
     justify-content: center;
     box-shadow: 0px 0px 14px rgba(0,0,0,0.2);
-    bottom:120px;
+    bottom:115px;
 }
 
 .env-slide-wrap .env-slide-pager a.env-slide-prev {
-    left:-12px;
+    left:-10px;
 }
 
 .env-slide-wrap .env-slide-pager a.env-slide-next {
-    right:-12px;
+    right:-10px;
 }
 
 .env-recycle-graph, .env-recovery-graph {
@@ -2080,12 +2089,25 @@ section .request-item .sub-tit {
     display: block;
 }
 
+.gov-table-item p.txt {
+    font-size:var(--font-sm);
+    color:var(--color-gry-4);
+    padding:30px 0px 0px;
+}
+
 .gov-table-group {
     display: flex;
     flex-direction: column;
     gap:30px;
     margin-bottom:60px;
 }
+
+.gov-table-group p.txt {
+    font-size:var(--font-sm);
+    color:var(--color-gry-4);
+    padding:0px;
+}
+
 
 .gov-table-group:last-child {
     margin-bottom:0px;
