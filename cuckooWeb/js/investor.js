@@ -695,11 +695,11 @@ $(function(){
             radius: '60%',
             center: ['45%', '50%'],
             data: [
-              { value: 64.6, name: '최대주주 및 특수관계인' },
-              { value: 12.6, name: '자사주' },
-              { value: 5.4, name: '국내 개인' },
-              { value: 5.4, name: '국내 기관 등 (개인 외)' },
-              { value: 12.0, name: '외국인' }
+              { value: 70.1, name: '최대주주 및 특수관계인' },
+              { value: 0.1, name: '자사주' },
+              { value: 12.9, name: '국내 개인' },
+              { value: 9.6, name: '국내 기관 등 (개인 외)' },
+              { value: 7.3, name: '외국인' }
             ],
             emphasis: {
               itemStyle: {
@@ -758,7 +758,7 @@ $(function(){
             containLabel: true // 라벨(숫자 등)이 잘리지 않게 그리드 안으로 포함
           },
           legend: {
-            data: ['주당배당금', '배당수익률', '배당성향'],
+            data: ['현금배당총금액(백만원)', '시가배당률(%)', '(연결)현금배당성향(%)'],
             bottom: 0
           },
           xAxis: [
@@ -792,14 +792,14 @@ $(function(){
           ],
           series: [
             {
-              name: '주당배당금',
+              name: '현금배당총금액(백만원)',
               type: 'bar',
               tooltip: { valueFormatter: (value) => value.toLocaleString() + ' 백만원' },
-              data: [700, 800, 1100, 1200, 1550],
+              data: [21755, 24863, 34186, 37294, 48171],
               itemStyle: { color: '#5470c6' }
             },
             {
-              name: '배당수익률',
+              name: '시가배당률(%)',
               type: 'line',
               yAxisIndex: 1, // 오른쪽 Y축 사용
               tooltip: { valueFormatter: (value) => value + ' %' },
@@ -807,7 +807,7 @@ $(function(){
               itemStyle: { color: '#fac858' }
             },
             {
-              name: '배당성향',
+              name: '(연결)현금배당성향(%)',
               type: 'line',
               yAxisIndex: 1, // 오른쪽 Y축 사용
               tooltip: { valueFormatter: (value) => value + ' %' },
@@ -854,7 +854,7 @@ $(function(){
             containLabel: true // 라벨(숫자 등)이 잘리지 않게 그리드 안으로 포함
           },
           legend: {
-            data: ['주당배당금', '배당수익률', '배당성향'],
+            data: ['현금배당총금액(백만원)', '시가배당률(%)', '(연결)현금배당성향(%)'],
             bottom: 0
           },
           xAxis: [
@@ -888,26 +888,26 @@ $(function(){
           ],
           series: [
             {
-              name: '주당배당금',
+              name: '현금배당총금액(백만원)',
               type: 'bar',
               tooltip: { valueFormatter: (value) => value.toLocaleString() + ' 백만원' },
-              data: [700, 800, 1100, 1200, 1550],
+              data: [14575, 15696, 123779, 127047, 119514],
               itemStyle: { color: '#5470c6' }
             },
             {
-              name: '배당수익률',
+              name: '시가배당률(%)',
               type: 'line',
               yAxisIndex: 1, // 오른쪽 Y축 사용
               tooltip: { valueFormatter: (value) => value + ' %' },
-              data: [3.6, 4.8, 6.6, 5.0, 5.1],
+              data: [1.68, 2.2, 3.7, 4.8, 4.7],
               itemStyle: { color: '#fac858' }
             },
             {
-              name: '배당성향',
+              name: '(연결)현금배당성향(%)',
               type: 'line',
               yAxisIndex: 1, // 오른쪽 Y축 사용
               tooltip: { valueFormatter: (value) => value + ' %' },
-              data: [16.82, 21.31, 26.27, 27.16, 33.09],
+              data: [12.78, 13.68, 14.49, 17.65, 22.51],
               itemStyle: { color: '#ee6666' }
             }
           ]
