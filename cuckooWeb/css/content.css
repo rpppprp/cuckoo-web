@@ -671,7 +671,8 @@ section.section-banner .inner {
 
 .associate-china-area, .associate-usa-area,
 .associate-mal-area, .associate-india-area,
-.associate-sing-area {
+.associate-vietnam-area, .associate-indonesia-area,
+.associate-aus-area {
     margin-bottom:60px;
 }
 
@@ -743,6 +744,18 @@ section.section-banner .inner {
     content:"홈페이지";
 }
 
+
+.associate-list.oversea .company-info li.date:before {
+    content:"설립년도";
+}
+
+.associate-list.oversea .company-info li.address:before {
+    content:"주소";
+}
+
+.associate-list.oversea .company-info li.url:before {
+    content:"홈페이지";
+}
 
 
 
@@ -965,8 +978,20 @@ section.section-banner .inner {
     margin-left:auto;
 }
 
+.indicator-item .sub-tit > p {
+    font-size:var(--font-sm);
+    margin-left:20px;
+}
+
 .indicator-item > div {
     padding:20px 0px 40px;
+}
+
+.indicator-item > div span.txt {
+    display: block;
+    font-size:var(--font-sm);
+    color:var(--color-gry-4);
+    margin-top:20px;
 }
 
 
@@ -1651,7 +1676,7 @@ section .request-item .sub-tit {
     display:flex;
     flex-direction: column;
     width:1070px;
-    border-top:2px solid var(--color-blk);
+    border-top:3px solid var(--color-blk);
     padding:40px 0px 100px;
 } 
 
@@ -1918,6 +1943,7 @@ section .request-item .sub-tit {
     height:500px;
     padding:40px 60px;
     align-items:center;
+    border-radius: 16px;
 }
 
 #social-part-1 .safe-img-area .org-img {
@@ -2537,11 +2563,19 @@ section .request-item .sub-tit {
 @media (max-width: 1440px) {
 
 
+    /* index */
+
     .hero-track .hero-item .hero-txt,
     .hero-navigation {
         width: 100%;
         padding: 0 40px;
         box-sizing: border-box;
+    }
+
+    .hero-track .hero-item .img > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
     section.about-area .inner,
@@ -2550,6 +2584,237 @@ section .request-item .sub-tit {
         width: 100%;
         padding: 0 40px;
         box-sizing: border-box;
+    }
+
+    .main-section h1.tit-txt {
+        font-size:var(--font-3xl-tit)
+    }
+
+    .main > section .txt-wrap .section-txt {
+        font-size: var(--font-x-lg);
+    }
+
+    section.about-area .inner .about-section .about-img {
+        width:600px;
+    }
+
+    section.about-area .inner .about-section .about-section-bg {
+        width:500px;
+    }
+
+    .invertor-section .investor-link li a {
+        font-size: var(--font-x-lg);
+    }
+
+    .invertor-section .investor-stock-track {
+        width:640px;
+    }
+
+    .esg-area .inner {
+        padding:120px 40px;
+    }
+
+    .esg-section .esg-item-group li {
+        width:300px;
+        height:380px;
+    }
+
+    .esg-section .esg-item-group .esg-item-2 {
+        margin-top: 180px;
+        margin-left: 60px;
+    }
+
+    .esg-section .esg-item-group:after {
+        width:300px;
+        margin-left:60px;
+    }
+
+
+    /* about */
+
+    section.section-seek .inner {
+        padding:120px 30px;
+    }
+
+    .seek-item-list {
+        padding:0 80px;
+    }
+
+
+    .seek-item-list .seek-item .img {
+        width:50%;
+    }
+
+    .seek-item-list .seek-item .img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .seek-item-list .seek-item .txt-wrap .txt {
+        font-size:var(--font-md);
+    }
+
+    .history-area {
+        width:100%;
+        padding:0 30px;
+        box-sizing: border-box;
+    }
+
+    section.section-associate .inner {
+        padding: 60px 40px;
+    }
+
+    .associate-map {
+        border-radius: 16px;
+    }
+
+    .associate-list > li .associate-info {
+        width:60%;
+    }
+
+    .associate-list > li .associate-content {
+        width:40%;
+    }
+
+
+    /* investor */
+
+    .statement-item {
+        padding-top: 80px;
+    }
+
+    .info-item .info-graph-area {
+        width:600px;
+    }
+
+    .info-item .info-table-area {
+        width:calc(100% - 640px);
+    }
+
+    .meeting-item > .item-wrap .meeting-select {
+        width:200px;
+    }
+
+    .meeting-article-area {
+        width:calc(100% - 240px);
+    }
+
+
+    /* esg */
+
+    .esg-item .txt-wrap h1.tit-txt {
+        font-size: var(--font-3xl-tit);
+    }
+
+    .section-overview .esg-item .txt-wrap p {
+        padding: 30px 0px;
+    }
+
+    section.section-obs .inner {
+        padding:60px 30px;
+    }
+
+    .section-obs .inner .tit-area {
+        margin:40px 0px 60px;
+    }
+
+    .section-obs .inner .osb-img {
+        width:1000px;
+    }
+
+    .env-part, .social-part, .gov-part {
+        display: flex;
+        flex-direction: column;
+        justify-content: none;
+        gap:30px;
+    }
+
+    .envi-tit h1, .social-tit h1, .gov-tit h1 {
+        font-weight: 900;
+    }
+
+    .env-part .env-content, .social-part .social-content,
+    .gov-part .gov-content {
+        width:100%;
+        padding: 40px 0px 40px;
+    }
+
+
+    .env-item .txt-wrap, .social-item .txt-wrap, .gov-item .txt-wrap {
+        font-size: var(--font-sm);
+    }
+
+    .env-item .env-group, .social-item .social-group, .gov-item, .gov-group {
+        padding:0 40px;
+    }
+
+    .env-item .img-wrap.recy-img-wrap,
+    .env-item .env-content-wrap {
+        width:100%;
+        margin:0 auto;
+    }
+
+    .env-item .eco-img-wrap {
+        margin: 0 40px;
+    }
+
+    #social-part-1 .social-list {
+        margin:0 40px;
+    }
+
+    #social-part-2 .social-img-list {
+        margin: 0 40px;
+    }
+
+
+    /* ethic */
+
+    .section-ethic {
+        padding:60px 0px;
+    }
+
+
+    .ethic-define {
+        gap:24px;
+    }
+
+    .ethic-define li {
+        width:calc(100% / 2 - 12px);
+    }
+
+    section.section-inform .inner {
+        padding:100px 40px;
+    }
+
+    .ethic-inform-area .ethic-inform {
+        width:85%;
+    }
+
+    .ethic-inform .ethic-inform-content {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .ethic-inform-content .ethic-inform-note {
+        background:var(--color-wht) !important;
+        width: 35%;
+        flex-shrink: 0;
+        gap: 15px;
+        border-right: 1px solid var(--color-gry-1);
+        padding: 20px 20px 0px 0px;
+        border-radius: 0px;
+    }
+
+    .ethic-inform-content .ethic-inform-config {
+        width: calc(65% - 30px);
+        padding-top:0px;
+        margin-left:30px;
+    }
+    .ethic-inform-btn {
+        width:65%;
+        padding-top: 30px;
+        margin-left:40%;
     }
 
 }
@@ -2565,6 +2830,199 @@ section .request-item .sub-tit {
 
 @media (max-width: 1024px) {
 
+
+    /* index */
+
+    .hero-track .hero-item .hero-txt,
+    .hero-navigation {
+        width:100%;
+        padding:0 24px;
+        box-sizing: border-box;
+    }
+
+    
+    .hero-track .hero-item .hero-txt .tit-txt {
+        font-size:var(--font-xxx-lg);
+    }
+
+    .hero-track .hero-item .img > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    section.about-area .inner,
+    .investor-area .inner,
+    .esg-area .inner {
+        width: 100%;
+        padding: 60px 24px;
+        box-sizing: border-box;
+    }
+
+    .main-section h1.tit-txt {
+        font-size:var(--font-2xl-tit)
+    }
+
+    .main > section .txt-wrap .section-txt {
+        font-size: var(--font-md);
+    }
+
+    section.about-area .inner .about-section .about-img {
+        width:400px;
+    }
+
+    section.about-area .inner .about-section .about-section-bg {
+        width:300px;
+    }
+
+    .investor-area {
+        height:auto;
+    }
+
+    .investor-area .inner {
+        padding:100px 24px;
+    }
+
+    .investor-area .inner .invertor-section {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .main > section.investor-area .txt-wrap {
+        width:100%;
+        position:relative;
+        display: inline-flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-self: flex-start;
+        margin-bottom:60px;
+    }
+
+    .main > section.investor-area .txt-wrap h1.tit-txt {
+        width:80%;
+    }
+
+    .main > section.investor-area .txt-wrap .loca {
+        width:60%;
+        margin-bottom:60px;
+    }
+
+    .main > section.investor-area .txt-wrap .section-txt {
+        width:50%;
+        margin-bottom:0px;
+    }
+
+    .invertor-section .investor-link {
+        position:absolute;
+        right:0px;
+        bottom:0px;
+        margin-top:0px;
+    }
+
+    .invertor-section .investor-link li a {
+        font-size: var(--font-md);
+        padding: 15px 0px;
+    }
+
+    .invertor-section .investor-link li a .circle-btn {
+        width:32px;
+        height:32px;
+    }
+
+    .invertor-section .investor-stock-track {
+        width:640px;
+        margin-top:40px;
+    }
+
+    .esg-area .inner {
+        padding:100px 24px;
+    }
+
+    .esg-area .inner .esg-section {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .esg-area .inner .esg-section .txt-wrap {
+        margin-top: 0px;
+        align-self:flex-start;
+    }
+
+    .esg-area .inner .esg-section .esg-item-group {
+        width:100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        margin-top: 60px;
+        justify-content: space-between;
+    }
+
+
+    .esg-section .esg-item-group li {
+        width:calc(100% / 3 - 30px);
+        height:380px;
+    }
+
+    .esg-section .esg-item-group .esg-item-2 {
+        margin-top: 0px;
+        margin-left: 0px;
+    }
+
+    .esg-section .esg-item-group .esg-item-3 {
+        margin:0px;
+    }
+
+    .esg-section .esg-item-group:after {
+        display: none;
+    }
+
+
+    /* about */
+
+    section.section-seek .inner {
+        padding:100px 24px;
+    }
+
+    .seek-item-list {
+        padding:0 80px;
+    }
+
+
+    .seek-item-list .seek-item .img {
+        width:50%;
+    }
+
+    .seek-item-list .seek-item .img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .seek-item-list .seek-item .txt-wrap .txt {
+        font-size:var(--font-md);
+    }
+
+    .history-area {
+        width:100%;
+        padding:0 24px;
+        box-sizing: border-box;
+    }
+
+    section.section-associate .inner {
+        padding: 60px 40px;
+    }
+
+    .associate-map {
+        border-radius: 16px;
+    }
+
+    .associate-list > li .associate-info {
+        width:60%;
+    }
+
+    .associate-list > li .associate-content {
+        width:40%;
+    }
 
 
 

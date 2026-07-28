@@ -53,6 +53,36 @@ $(function(){
 -------------------------------------------------------------*/
 
 
+    // header를 위로 올리는 애니메이션 정의
+    const headerAnim = gsap.to('#header', {
+        yPercent: -100,
+        duration: 0.15,
+        ease: 'power3.out',
+        paused: true
+    });
+    
+    // 스크롤 방향 감지 및 제어
+    ScrollTrigger.create({
+        start: 'top top',
+        end: 'max',
+        onUpdate: (self) => {
+        // 최상단 근처(예: 50px 이내)일 때는 항상 보이도록 설정
+        if (self.scroll < 50) {
+            headerAnim.reverse();
+            return;
+        }
+    
+        // self.direction: 1(스크롤 다운) -> play()로 숨김
+        // self.direction: -1(스크롤 업) -> reverse()로 나타남
+        if (self.direction === 1) {
+            headerAnim.play();
+        } else {
+            headerAnim.reverse();
+        }
+        }
+    });
+
+
     // INDEX HEADER
     $('#ck-main .header').on('mouseenter', function() {
         $(this).addClass('over');
@@ -85,11 +115,11 @@ $(function(){
     //SITEMAP
     $(".sitemap-btn").click(function(){
         $(".sitemap-area").addClass('on');
-        scrollDisable()
+        scrollDisable();
     })
     $(".sitemap-close").click(function(){
         $(".sitemap-area").removeClass('on');
-        scrollAble()
+        scrollAble();
     })
 
 
@@ -189,7 +219,7 @@ $(function(){
             scrollTrigger: {
                 trigger: '.hero-intro',
                 start: 'top top',
-                end: '+=100%',
+                end: '+=150%',
                 pin: true,
                 scrub: 2,
                 anticipatePin: 1
@@ -203,6 +233,11 @@ $(function(){
             margin: '0px',
             ease: 'none'
         })
+        .to('.intro-full .bg-about', {
+            marginTop: 0,   // 필요 시 paddingTop: 0 으로 변경
+            duration: 0.5,
+            ease: 'power1.out'
+        }, 0)
         .to('.intro-full .txt-area', {
             opacity: 1,
             duration: 0.5,

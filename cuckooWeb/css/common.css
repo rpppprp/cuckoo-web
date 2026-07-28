@@ -104,6 +104,7 @@ a {
     z-index:100;
     border-bottom:1px solid var(--color-gry-1);
     transition: all 0.4s;
+    will-change: transform;
 }
 
 /* index */
@@ -468,7 +469,7 @@ section.section > .inner {
     width: 100%;
     height: 100vh;
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     justify-content: center;
     overflow: hidden;
 }
@@ -867,6 +868,11 @@ section.section .sub-tit {
 section.section .tit-area {
     padding:40px 0px;
 }
+
+section.section .tit-area h1 {
+    font-weight: 900;
+}
+
 
 
 /* ----------------------------------------------------------
@@ -1386,13 +1392,16 @@ body>.ui-datepicker {
 
 @media (max-width: 1440px) {
 
+
+    /* header */
+
     .header {
         width:100%;
     }
 
     .header .inner {
         position: relative;
-        margin: 0 30px;
+        margin: 0 40px;
     }
 
     .header .inner .gnb .gnb-area,
@@ -1401,12 +1410,59 @@ body>.ui-datepicker {
         display: none;
     }
 
+    /* section */
 
     section.section > .inner {
+        width: 100%;
+        padding: 0px 40px;
+        box-sizing: border-box;
+    }
+
+    .intro-full .txt-area {
         width: 100%;
         padding: 0 40px;
         box-sizing: border-box;
     }
+
+    .intro-full .txt-area h3.tit-txt {
+        font-size: var(--font-xl-tit);
+    }
+
+
+    /* title */
+
+    h1 {
+        font-size: var(--font-xx-lg)
+    }
+    
+    h2 {
+        font-size: var(--font-x-lg)
+    }
+    
+    h3 {
+        font-size: var(--font-lg)
+    }
+    
+    section.section .tit-area h1 {
+        font-weight: 900;
+    }
+
+
+    /* footer */
+
+    .fnb-area {
+        padding: 40px 30px;
+    }
+
+    .fnb-top {
+        padding-bottom: 100px;
+    }
+
+    .fnb-top .fnb-list {
+        gap:60px;
+    }
+
+
 
 
 }
@@ -1422,9 +1478,13 @@ body>.ui-datepicker {
 
 @media (max-width: 1024px) {
 
+    body {
+        font-size:var(--font-sm);
+    }
 
     .header {
         width:100%;
+        height:80px;
     }
 
     .header .inner {
@@ -1438,11 +1498,138 @@ body>.ui-datepicker {
         display: none;
     }
 
-    section.section > .inner {
-        width:auto;
-        padding:0 24px;
+    .header .inner .gnb .sub-gnb-area {
+        height:80px;
     }
 
+    .header .inner .gnb .logo-area {
+        height:80px;
+    }
+
+    .icon-logo {
+        width:120px;
+    }
+
+    section.section > .inner {
+        width:100%;
+        padding:0 24px;
+        box-sizing: border-box;
+    }
+
+
+    /* sub-nav */
+
+    .sub-nav {
+        padding: 140px 0px 40px; 
+    }
+
+    .sub-nav .sub-nav-tit {
+        font-size:var(--font-2xl-tit);
+    }
+
+
+
+    /* sitemap */
+
+
+    .sitemap-area .sitemap {
+        width:100%;
+        height:100vh;
+    }
+    .sitemap-area .sitemap .sitemap-close {
+        position:absolute;
+        right:24px;
+        top:24px;
+        width:32px;
+        height:32px;
+    }
+
+    .sitemap-area .sitemap .sitemap-close .icon-close {
+        width:24px;
+        height:24px;
+    }
+
+    .sitemap-area .sitemap .sitemap-list {
+        height:calc(100vh - 80px);
+        border-radius: 16px 16px 0px 0px;
+        margin-top:80px;
+    }
+
+
+    .sitemap .sitemap-list > li {
+        width:calc(100% / 4);
+        box-sizing:border-box;
+    }
+
+    .sitemap-list-group li {
+        flex-direction: column;
+    }
+
+    .sitemap-list-group li .sitemap-sub-group {
+        display: inline-flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        gap:15px 20px;
+    }
+
+    .sitemap-list-group li > a {
+        width:auto;
+    }
+
+
+    /* section */
+
+    section.section > .inner {
+        width:100%;
+        padding:0 24px;
+        box-sizing: border-box;
+    }
+
+    .intro-full .txt-area {
+        width:100%;
+        padding:0 24px;
+        box-sizing: border-box;
+    }
+
+    .intro-full .txt-area .sub-tit {
+        font-size:var(--font-md);
+    }
+
+    .intro-full .txt-area h3.tit-txt {
+        font-size: var(--font-xx-lg);
+    }
+
+    .intro-full .txt-area p.txt {
+        width:80%;
+        font-size:var(--font-sm);
+        margin: 20px auto 0px;
+    }
+
+    /* footer */
+
+    .fnb-area {
+        padding: 40px 24px;
+    }
+
+    .fnb-top {
+        padding-bottom: 80px;
+    }
+
+    .fnb-top .fnb-list {
+        gap:40px;
+    }
+    
+    .fnb-top .fnb-list li a {
+        font-size:var(--font-x-sm);
+    }
+
+    .family-choice {
+        width:200px;
+    }
+
+    .family-choice .family-select-btn {
+        width:200px;
+    }
 
 }
 
