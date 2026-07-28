@@ -3017,11 +3017,11 @@ section .request-item .sub-tit {
     }
 
     .associate-list > li .associate-info {
-        width:60%;
+        width:50%;
     }
 
     .associate-list > li .associate-content {
-        width:40%;
+        width:50%;
     }
 
 
