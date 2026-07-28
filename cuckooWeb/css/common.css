@@ -1428,7 +1428,6 @@ body>.ui-datepicker {
         font-size: var(--font-xl-tit);
     }
 
-
     /* title */
 
     h1 {
@@ -1603,6 +1602,35 @@ body>.ui-datepicker {
         width:80%;
         font-size:var(--font-sm);
         margin: 20px auto 0px;
+    }
+
+    /* tab */
+
+    .tab-area {
+        padding: 0px 0px 40px;
+    }
+
+    .tab-area .tab-track li {
+        width:180px;
+        height:50px;
+    }
+
+
+    /* tit */
+
+    section.section .tit-area {
+        padding:20px 0px;
+    }
+
+    /* back page button */
+
+    .bottom-page-area {
+        padding: 80px 0px 60px;
+    }
+
+    .bottom-page-prev, .bottom-page-next {
+        width: 180px;
+        height: 50px;
     }
 
     /* footer */
