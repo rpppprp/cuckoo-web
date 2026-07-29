@@ -1,6 +1,32 @@
 "use strict";
 
 
+// 스크롤 위치 저장 변수 (전역 scope)
+let savedScrollY = 0;
+
+// window 객체에 직접 할당하여 외부(content.js)에 노출
+window.scrollDisable = function() {
+    savedScrollY = window.scrollY || window.pageYOffset;
+    if (typeof lenis !== 'undefined') lenis.stop();
+    
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${savedScrollY}px`;
+    document.body.style.width = '100%';
+    document.body.style.overflowY = 'scroll';
+};
+
+window.scrollAble = function() {
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.width = '';
+    document.body.style.overflowY = '';
+    
+    window.scrollTo(0, savedScrollY);
+    if (typeof lenis !== 'undefined') lenis.start();
+};
+
+
+
 $(function(){
 
 
@@ -11,18 +37,6 @@ $(function(){
 
 -------------------------------------------------------------*/
 
-    //스크롤 reset
-    history.scrollRestoration = "manual"
-
-    //스크롤 제어
-    function scrollDisable() {
-        $('html, body').addClass('scroll-none');
-    }
-
-    //스크롤 제어 off
-    function scrollAble() {
-        $('html, body').removeClass('scroll-none');
-    }
     
     // gsap 호출
     gsap.registerPlugin(ScrollTrigger); 
@@ -116,10 +130,12 @@ $(function(){
     $(".sitemap-btn").click(function(){
         $(".sitemap-area").addClass('on');
         scrollDisable();
+        lenis.stop();
     })
     $(".sitemap-close").click(function(){
         $(".sitemap-area").removeClass('on');
         scrollAble();
+        lenis.start();
     })
 
 
@@ -146,6 +162,62 @@ $(function(){
           
         }
     });
+
+
+
+/* ----------------------------------------------------------
+
+    MOBILE GNB
+
+-------------------------------------------------------------*/
+
+    //mobile gnb open
+    $(".mognb-btn").click(function(e){
+        e.preventDefault();
+        
+        var _mobg = $(".mobile-gnb-area"); // 배경
+        var _moGnb = $(".mobile-gnb");     // 모바일메뉴
+    
+        // 메뉴가 닫혀있을 때 (열기)
+        if (!_moGnb.hasClass("active")) {
+            _mobg.fadeIn(300);
+            _moGnb.addClass("active");
+        } 
+        // 메뉴가 열려있을 때 (닫기)
+        else {
+            _mobg.fadeOut(300);
+            _moGnb.removeClass("active");
+        }
+        scrollDisable();
+    });
+
+    // mobile gnb close
+    $(".mobile-gnb-close").click(function(){
+        $(".mobile-gnb-area").fadeOut(300);
+        $(".mobile-gnb").removeClass("active");
+        scrollAble();
+    });
+
+
+    $(".mobile-gnb-group").hide();
+
+    $(".mobile-gnb-content li .depth-1").click(function(){
+        var _this = $(this);
+        var _lnb = _this.next('ul.mobile-gnb-group');
+    
+        if(_this.hasClass('on')) {
+            _this.removeClass('on');
+            _lnb.stop(true, true).slideUp();
+        } 
+        else {
+            $(".mobile-gnb-content > li .depth-1").removeClass('on');
+            $(".mobile-gnb-content > li > ul").stop(true, true).slideUp();
+    
+            _this.addClass('on');
+            _lnb.stop(true, true).slideDown();
+        }
+    });
+
 
 
 /* ----------------------------------------------------------
@@ -219,7 +291,7 @@ $(function(){
             scrollTrigger: {
                 trigger: '.hero-intro',
                 start: 'top top',
-                end: '+=150%',
+                end: '+=100%',
                 pin: true,
                 scrub: 2,
                 anticipatePin: 1
