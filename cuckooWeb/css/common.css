@@ -2008,6 +2008,10 @@ body>.ui-datepicker {
         padding: 100px 0px 20px;
     }
 
+    .sub-nav .sub-nav-tit {
+        font-size: var(--font-xxx-lg);
+    }
+
     /* title */
 
     h1 {

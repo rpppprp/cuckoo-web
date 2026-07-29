@@ -217,11 +217,8 @@ $(function(){
       const $tabItems = $('.history-tab .tab-item');
       const $pagerItems = $('.history-pager li');
 
-      let mm = gsap.matchMedia();
-
-      // 1025px 이상 (PC/데스크톱): GSAP 가로 스크롤 적용
-      mm.add("(min-width: 1025px)", () => {
-
+      // 1. PC 전용 가로 스크롤 (원코드 100% 유지)
+      function initDesktopHistory() {
           const getScrollAmount = () => $historyTrack[0].scrollWidth - window.innerWidth;
 
           const horizontalScroll = gsap.to($historyTrack, {
@@ -231,88 +228,120 @@ $(function(){
                   trigger: $sectionHistory,
                   pin: true,
                   pinSpacing: true,
-                  scrub: 0.5,
+                  scrub: 1,
                   start: 'top top',
                   end: () => '+=' + getScrollAmount(),
                   invalidateOnRefresh: true,
                   anticipatePin: 1,
                   onUpdate: (self) => {
+                      const currentX = -gsap.getProperty($historyTrack[0], 'x');
+                      const maxScrollX = getScrollAmount();
                       let activeIndex = 0;
-                      if (self.progress >= 0.96) {
+
+                      if (self.progress >= 0.95) {
                           activeIndex = $historyItems.length - 1;
-                      } else if (self.progress <= 0.02) {
-                          activeIndex = 0;
                       } else {
-                          const currentX = -gsap.getProperty($historyTrack[0], 'x');
-                          const centerOffset = currentX + (window.innerWidth / 2);
                           $historyItems.each(function (i) {
-                              if (centerOffset >= this.offsetLeft + (this.offsetWidth / 2)) {
-                                  activeIndex = i;
+                              const itemLeft = this.offsetLeft;
+                              const nextItemLeft = $historyItems.eq(i + 1).length
+                                  ? $historyItems.eq(i + 1)[0].offsetLeft
+                                  : maxScrollX;
+                              const threshold = itemLeft + (nextItemLeft - itemLeft) * 0.4;
+
+                              if (currentX >= threshold) {
+                                  activeIndex = i + 1;
                               }
                           });
                       }
+
                       $tabItems.eq(activeIndex).addClass('on').siblings().removeClass('on');
                       $pagerItems.eq(activeIndex).addClass('on').siblings().removeClass('on');
                   }
               }
           });
 
-          // PC 버튼 클릭 이동
-          $('.history-tab a, .history-pager a').off('click').on('click', function (e) {
+          $('.history-tab a, .history-pager a').off('click.historyPc').on('click.historyPc', function (e) {
               e.preventDefault();
+
               const href = $(this).attr('href');
               const indexNum = href.replace(/[^0-9]/g, '');
               const $targetObj = $('#history-' + indexNum);
 
               if ($targetObj.length) {
                   const st = horizontalScroll.scrollTrigger;
-                  const targetIndex = $targetObj.index();
-                  const totalCount = $historyItems.length;
+                  const targetLeft = $targetObj[0].offsetLeft;
                   const maxScrollX = getScrollAmount();
 
-                  let progress = 0;
-                  if (targetIndex === totalCount - 1) progress = 1;
-                  else if (targetIndex === 0) progress = 0;
-                  else progress = Math.min(Math.max(($targetObj[0].offsetLeft - $historyItems.eq(0)[0].offsetLeft) / maxScrollX, 0), 1);
+                  const targetScroll = st.start + (st.end - st.start) * (Math.min(targetLeft, maxScrollX) / maxScrollX);
 
-                  const targetScroll = st.start + (st.end - st.start) * progress;
-
-                  if (window.lenis) window.lenis.scrollTo(targetScroll, { duration: 0.8 });
-                  else $('html, body').stop().animate({ scrollTop: targetScroll }, 500);
+                  if (window.lenis) {
+                      window.lenis.scrollTo(targetScroll, { duration: 0.8 });
+                  } else {
+                      $('html, body').stop().animate({ scrollTop: targetScroll }, 600);
+                  }
               }
           });
 
-          // PC 세팅 cleanup
-          return () => {
-              gsap.set($historyTrack, { clearProps: "all" });
-          };
-      });
+          $(window).off('load.historyPc resize.historyPc').on('load.historyPc resize.historyPc', function () {
+              ScrollTrigger.refresh();
+          });
+      }
 
-      // 1024px 이하 (모바일/태블릿): GSAP 완전 해제 & 일반 세로 스크롤 이동
-      mm.add("(max-width: 768px)", () => {
-          
-          // GSAP 스타일 초기화
-          gsap.set($historyTrack, { clearProps: "all" });
-
-          // 모바일 버튼 클릭 시 해당 연혁 위치로 일반 세로 스크롤 이동
-          $('.history-tab a, .history-pager a').off('click').on('click', function (e) {
+      // 2. 모바일 전용 세로 스크롤 (768px 이하)
+      function initMobileHistory() {
+          $('.history-tab a, .history-pager a, .history-pager li').off('click.historyMo').on('click.historyMo', function (e) {
               e.preventDefault();
-              const href = $(this).attr('href');
-              const indexNum = href.replace(/[^0-9]/g, '');
-              const $targetObj = $('#history-' + indexNum);
+
+              const $this = $(this);
+              let $targetObj;
+
+              if ($this.is('li')) {
+                  const index = $this.index();
+                  $targetObj = $historyItems.eq(index);
+              } else {
+                  const href = $this.attr('href');
+                  const indexNum = href ? href.replace(/[^0-9]/g, '') : '';
+                  $targetObj = $('#history-' + indexNum);
+              }
 
               if ($targetObj.length) {
-                  const targetTop = $targetObj.offset().top - 80; // 상단 헤더 여백 보정
+                  const headerHeight = 80;
+                  const targetTop = $targetObj.offset().top - headerHeight;
 
-                  if (window.lenis) window.lenis.scrollTo(targetTop, { duration: 0.5 });
-                  else $('html, body').stop().animate({ scrollTop: targetTop }, 400);
+                  if (window.lenis) {
+                      window.lenis.scrollTo(targetTop, { duration: 0.5 });
+                  } else {
+                      $('html, body').stop().animate({ scrollTop: targetTop }, 400);
+                  }
 
                   const targetIndex = $targetObj.index();
                   $tabItems.eq(targetIndex).addClass('on').siblings().removeClass('on');
                   $pagerItems.eq(targetIndex).addClass('on').siblings().removeClass('on');
               }
           });
-      });
+
+          $(window).off('scroll.historyMo').on('scroll.historyMo', function () {
+              const scrollTop = $(window).scrollTop();
+              const headerHeight = 100;
+
+              $historyItems.each(function (i) {
+                  const itemTop = $(this).offset().top - headerHeight;
+                  const itemBottom = itemTop + $(this).outerHeight();
+
+                  if (scrollTop >= itemTop && scrollTop < itemBottom) {
+                      $tabItems.eq(i).addClass('on').siblings().removeClass('on');
+                      $pagerItems.eq(i).addClass('on').siblings().removeClass('on');
+                  }
+              });
+          });
+      }
+
+      // 3. 해상도 분기 실행
+      if (window.innerWidth > 768) {
+          initDesktopHistory();
+      } else {
+          initMobileHistory();
+      }
     }
 
 

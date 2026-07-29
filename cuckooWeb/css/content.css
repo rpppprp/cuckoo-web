@@ -727,6 +727,7 @@ section.section-banner .inner {
     width:80px;
     display:block;
     color: var(--color-gry-4);
+    flex-shrink: 0;
 }
 
 .associate-list .company-info li.date:before {
@@ -3511,6 +3512,7 @@ section .request-item .sub-tit {
 
     .vision-head .content .quote {
         font-size: var(--font-xx-lg);
+        padding:0 20px;
     }
 
     .vision-head .content .txt {
@@ -3558,35 +3560,114 @@ section .request-item .sub-tit {
     }
 
     section.section-history {
-        will-change: transform;
+        height:auto;
+        overflow: auto;
     }
-
 
     section.section-history .inner {
+        height:auto;
         padding: 120px 16px;
     }
-
 
     .history-tab-area {
         display: none;
     }
 
+    .history-area {
+        position:relative;
+        width:100%;
+        padding:0px;
+    }
+
     .history-track {
+        position:static;
+        width:100%;
+        flex-direction: column;
         will-change: transform;
         flex-wrap: nowrap;
+        padding:0px;
+    }
+
+    .history-item {
+        flex-direction: column;
+    }
+
+    .history-content {
+        flex-direction: column;
+    }
+
+    .history-data-list {
+        width:calc(100% - 120px);
+        flex-direction: column;
+        margin-left:auto;
+    }
+
+    .history-data-list li {
+        width:auto;
+        padding:0 10px 0px 0px;
+    }
+
+    .history-data-list li p.txt {
+        width:auto;
+    }
+
+    #history-4, .history-item:last-child {
+        min-width:100%;
+        padding:0px;
+        margin:0px;
     }
 
     .history-pager {
-        width:calc(100% + 40px);
-        bottom:0px;
-        gap:10px;
-        z-index:10;
+        position: fixed;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(100% - 48px); /* 좌우 24px 여백 반영 */
+        /* margin: 0 24px;  <- 제거 */
+        
+        display: flex; /* flex 지정 누락 방지 */
         justify-content: space-around;
+        gap: 10px;
+        z-index: 10;
+    }
+
+    .history-pager:before {
+        position:absolute;
+        background: linear-gradient(0deg,rgba(255, 255, 255, 1) 0%, rgba(0, 0, 0, 0) 100%);
+        display: block;
+        content:"";
+        width:calc(100% + 48px);
+        height:150px;
+        bottom:-30px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .history-pager li {
+        position:relative;
     }
 
     .history-pager p.pager-txt {
         font-size: var(--font-x-sm);
         text-align:center;
+    }
+
+
+    .associate-list > li {
+        flex-direction: column;
+    }
+
+    .associate-list > li .associate-info {
+        width: 100%;
+        margin-bottom:20px;
+    }
+
+    .associate-list > li .associate-content {
+        width:100%;
+    }
+
+    .associate-list .company-info li {
+        gap:20px;
     }
 
 }
