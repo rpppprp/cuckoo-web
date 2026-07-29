@@ -587,8 +587,13 @@ if ($('.section-overview').length > 0) {
 -------------------------------------------------------------*/
 
     // E-순환우수제품 목록 slick
+
+    if ($('.env-slide-track').hasClass('slick-initialized')) {
+        $('.env-slide-track').slick('unslick');
+    }
+
     $('.env-slide-track').slick({
-        slidesToShow: 4,
+        slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 7000,
@@ -598,8 +603,17 @@ if ($('.section-overview').length > 0) {
         centerPadding: '24px',
         fade: false,
         dots: false,
-        prevArrow : $('.env-slide-pager .env-slide-prev'),
-        nextArrow : $('.env-slide-pager .env-slide-next')
+        prevArrow: $('.env-slide-pager .env-slide-prev'),
+        nextArrow: $('.env-slide-pager .env-slide-next'),
+        mobileFirst: true,
+        responsive: [
+            {
+                breakpoint: 768, // 768px 이상일 때 4개
+                settings: {
+                    slidesToShow: 4
+                }
+            }
+        ]
     });
 
     // E-순환우수제품 현황    
