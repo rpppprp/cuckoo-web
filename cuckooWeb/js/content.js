@@ -324,6 +324,17 @@ $(function(){
               const scrollTop = $(window).scrollTop();
               const headerHeight = 100;
 
+              // .section-history 영역에 들어왔는지 체크 후 .show 토글
+              const secTop = $sectionHistory.offset().top;
+              const secBottom = secTop + $sectionHistory.outerHeight();
+
+              if (scrollTop + $(window).height() > secTop && scrollTop < secBottom) {
+                  $('.history-pager').addClass('show');
+              } else {
+                  $('.history-pager').removeClass('show');
+              }
+
+              // 기존 active 처리 로직
               $historyItems.each(function (i) {
                   const itemTop = $(this).offset().top - headerHeight;
                   const itemBottom = itemTop + $(this).outerHeight();
@@ -342,7 +353,9 @@ $(function(){
       } else {
           initMobileHistory();
       }
+
     }
+
 
 
 /* ----------------------------------------------------------
@@ -493,10 +506,6 @@ $(function(){
 if ($('.section-overview').length > 0) {
     const $items = $('.section-overview .esg-item');
   
-    // 1. 초기 셋팅
-    gsap.set('.section-overview', {
-      clipPath: 'inset(12% 10% round 30px)'
-    });
   
     // 텍스트 및 2번째 아이템 완전 숨김 (1번째 아이템과 위치 중첩 처리)
     gsap.set($items.find('.txt-wrap'), { autoAlpha: 0 });
@@ -507,7 +516,7 @@ if ($('.section-overview').length > 0) {
       gsap.set($items.eq(1), { autoAlpha: 0, display: 'none' });
     }
   
-    // 2. 타임라인 생성
+    // 타임라인 생성
     const overviewTL = gsap.timeline({
       scrollTrigger: {
         trigger: '.section-overview',
@@ -522,7 +531,7 @@ if ($('.section-overview').length > 0) {
     overviewTL
       // [1] 풀스크린으로 확장
       .to('.section-overview', {
-        clipPath: 'inset(0% 0% round 0px)',
+        clipPath: 'inset(0% 0px round 0px)',
         duration: 2,
         ease: 'none'
       })
