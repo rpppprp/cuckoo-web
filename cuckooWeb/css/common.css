@@ -1301,6 +1301,7 @@ body>.ui-datepicker {
 
 
 .footer {
+    position:relative;
     width:100%;
     border-top:1px solid var(--color-gry-1);
     transition: all 0.4s;

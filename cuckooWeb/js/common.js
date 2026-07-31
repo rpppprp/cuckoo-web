@@ -351,6 +351,34 @@ $(function(){
 -------------------------------------------------------------*/
 
 
+    let _foot = $("#footer");
+    let _topBtn = $(".top-btn")
+    let _stop_pos_call = _foot.offset().top;
+
+    //top button
+    $(document).on('click', '.top-btn', function(e){
+        e.preventDefault();
+        $('html, body').stop().animate({scrollTop :0})
+    });
+
+    $(window).on("scroll",function(){
+        let _winPos = $(this).scrollTop(); // 현재위치
+        
+        if(_winPos >= 91){
+            _topBtn.fadeIn()
+        } else {
+            _topBtn.fadeOut()
+        }
+        
+        //--- 플로팅 제어 (푸터 도달 여부만 체크)
+        if (_winPos + $(window).height() >= _stop_pos_call - 50) {
+        _topBtn.addClass("stop");
+        } else {
+        _topBtn.removeClass("stop");
+        }
+    });
+
+
     // footer family-select button
     $(".family-select-btn").click(function(){
         var _this = $(this);
