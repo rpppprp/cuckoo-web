@@ -719,21 +719,21 @@ if ($('.section-overview').length > 0) {
                 itemStyle: { color: '#806000' },
                 lineStyle: { width: 3 },
                 // 그래프 상단의 "X개 제품군 X개 모델" 텍스트 매핑
-                label: {
-                    show: true,
-                    position: 'top',
-                    distance: 10,
-                    color: '#000',
-                    fontSize: 13,
-                    formatter: function (params) {
-                    const labels = [
-                        '1개 제품군\n38개 모델',
-                        '2개 제품군\n49개 모델',
-                        '9개 제품군\n98개 모델'
-                    ];
-                    return labels[params.dataIndex];
-                    }
-                }
+                  // label: {
+                  //     show: true,
+                  //     position: 'top',
+                  //     distance: 10,
+                  //     color: '#000',
+                  //     fontSize: 13,
+                  //     formatter: function (params) {
+                  //     const labels = [
+                  //         '1개 제품군\n38개 모델',
+                  //         '2개 제품군\n49개 모델',
+                  //         '9개 제품군\n98개 모델'
+                  //     ];
+                  //     return labels[params.dataIndex];
+                  //     }
+                  // }
                 }
             ]
             };

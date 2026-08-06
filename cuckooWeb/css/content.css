@@ -420,6 +420,41 @@ section.about-area .inner .about-section .about-section-bg:after {
 
 
 
+/* ethic section */
+
+section.ethic-area {
+    position:relative;
+    background:url(/cuckooWeb/images/ethic-bg02.jpg) center center no-repeat;
+    background-size:cover;
+    display:flex;
+    width:100vw;
+    height:100vh;
+    align-items:center;
+    background-attachment: fixed;
+}
+
+section.ethic-area:before {
+    position:absolute;
+    content:"";
+    width:56%;
+    height:100vh;
+    background:linear-gradient(90deg,rgba(255, 255, 255, 0.9) 40%, rgba(0, 0, 0, 0) 100%);
+    top:0px;
+    left:0px;
+}
+
+section.ethic-area .inner {
+    width:1440px;
+    margin: auto;
+}
+
+section.ethic-area .inner .ethic-section {
+    display:flex;
+    width:100%;
+    justify-content: space-between;
+}
+
+
 /* ----------------------------------------------------------
 
     회사소개 - 소개
@@ -945,6 +980,11 @@ section.section-banner .inner {
     margin-left:auto;
 }
 
+.statement-table .sub-tit p {
+    font-size:var(--font-sm);
+    margin-left:20px;
+}
+
 .statement-table .info-txt {
     font-size:var(--font-sm);
     color:var(--color-gry-4);
@@ -1153,14 +1193,28 @@ section.section-banner .inner {
     justify-content: space-between;
     align-items:center;
     border-bottom:2px solid var(--color-blk);
+    transition: all 0.4s;
+}
+
+.meeting-select .meeting-select-btn.on svg.dropdown {
+    position:relative;
+    transform:rotate(-180deg);
 }
 
 .meeting-select .meeting-select-opt {
     display: none;
 }
 
+.meeting-select .meeting-select-opt.active {
+    display: block;
+}
+
 .meeting-select .meeting-select-opt li {
     color:var(--color-gry-4);
+}
+
+.meeting-select .meeting-select-opt li a {
+    display: block;
     padding:15px 0px;
 }
 
@@ -1460,6 +1514,7 @@ section .request-item .sub-tit {
     height: 100%;
     display:flex;
     flex-direction: column;
+    justify-content: center;
     gap:60px;
     padding:40px;
     border:1px solid var(--color-gry-1);
@@ -1493,6 +1548,7 @@ section .request-item .sub-tit {
 }
 
 .select-time .time-value .btn {
+    font-size: var(--font-sm);
     color:var(--color-gry-4);
     border:1px solid var(--color-gry-1);
 }
@@ -1513,26 +1569,91 @@ section .request-item .sub-tit {
     border:1px solid var(--color-gry-1);
 }
 
+.request-item .sub-tit #add-visitor {
+    margin-left:auto;
+}
+
+.request-item .sub-tit p.txt {
+    font-size:var(--font-sm);
+}
+
+.request-item .request-info-area {
+    display: flex;
+    flex-direction: column;
+    gap:30px;
+    counter-reset: numbering;
+}
 
 .request-item .request-info {
-    display:grid;
-    grid-template-columns:repeat(2, 1fr);
+    position:relative;
+    display:flex;
+    flex-wrap: wrap;
     gap:24px 40px;
+    border:1px solid var(--color-gry-2);
+    padding:50px 40px 40px;
+    border-radius: 16px;
 }
 
-.request-item .request-info li {
+.request-item .request-info:before {
+    background:var(--color-blk);
+    counter-increment: numbering;
+    content: counter(numbering);
+    display: flex;
+    position: absolute;
+    width:32px;
+    height:40px;
+    top:0px;
+    left:40px;
+    font-size:var(--font-md);
+    font-weight: 800;
+    color:var(--color-wht);
+    z-index: 1;
+    border-radius: 0px 0px 3px 3px;
+    justify-content: center;
+    align-items: center;
+}
+
+.request-item .request-info > li {
     display:flex;
-    width:100%;
+    width:calc(100% / 2 - 24px);
     align-items:center;
     gap:30px;
+    flex-shrink: 0;
 }
 
-.request-item .request-info li > label {
-    width:180px;
+.request-item .request-info > li > label {
+    width:160px;
 }
 
-.request-item .request-info li > .input-txt {
-    width:100%;
+.request-item .request-info > li > label > span {
+    display: block;
+    font-size:var(--font-x-sm);
+}
+
+.request-item .request-info > li > .input-txt {
+    width:calc(100% - 180px);
+    box-sizing: border-box;
+}
+
+.request-item .request-info > li > .input-select {
+    width:calc(100% - 180px);
+    box-sizing: border-box;
+}
+
+
+.request-item .request-info > li ul.input-group {
+    width:calc(100% - 180px);
+    display: flex;
+    gap:20px;
+    padding:15px 0px;
+}
+
+.request-item .request-info > li > ul.input-group li label {
+    display: flex;
+    font-size:var(--font-sm);
+    color:var(--color-gry-5);
+    gap:10px;
+    align-items:center;
 }
 
 .request-item .request-text {
@@ -1549,6 +1670,7 @@ section .request-item .sub-tit {
 }
 
 .request-item .request-privacy .request-privacy-text {
+    background:var(--color-gry-0);
     border-radius: 16px;
     border:1px solid var(--color-gry-1);
     padding:40px;
@@ -1563,7 +1685,7 @@ section .request-item .sub-tit {
 }
 
 .request-privacy-text .privacy-list li {
-    color:var(--color-gry-4);
+    color:var(--color-gry-5);
 }
 
 .privacy-chk-wrap .privacy-input {
@@ -1899,9 +2021,16 @@ section .request-item .sub-tit {
     gap:24px;
 }
 
+
+.env-content-wrap .env-graph-area {
+    width:50%;
+    height:auto;
+    overflow-x:auto;
+}
+
 .env-content-wrap .env-winner-graph,
 .env-content-wrap .env-level1-graph {
-    width:50%;
+    width:100%;
     height:350px;
     border:1px solid var(--color-gry-1);
     border-radius: 16px;
@@ -2089,6 +2218,10 @@ section .request-item .sub-tit {
     gap:20px;
 }
 
+#gov-part-4 .gov-content {
+    width:100%;
+}
+
 /* tab */
 .corp-tab-group {
     display: flex;
@@ -2152,6 +2285,36 @@ section .request-item .sub-tit {
     margin-bottom:0px;
 }
 
+
+.gov-table-group .gov-comm-table td.l-line {
+    border-left:1px solid var(--color-gry-1);
+}
+
+.gov-board-form.board-form li > a {
+    justify-content: flex-start;
+}
+
+.gov-board-form.board-form li > a .date {
+    width:10%;
+    color:var(--color-gry-4);
+    text-align:center;
+    padding:0px 30px;
+    box-sizing: border-box;
+}
+
+.gov-board-form.board-form li > a .corp {
+    width:20%;
+    text-align:center;
+    padding:0px 30px;
+    box-sizing: border-box;
+}
+
+.gov-board-form.board-form li > a .subtit {
+    width:calc(100% - 30%);
+    font-weight: 700;
+    padding:0px 30px;
+    box-sizing: border-box;
+}
 
 /* ----------------------------------------------------------
 
@@ -3177,6 +3340,10 @@ section .request-item .sub-tit {
         width:calc(100% / 2 - 10px);
     }
 
+    .request-item .request-info > li {
+        width:100%;
+    }
+
     /* esg */
 
     .esg-item .txt-wrap h1.tit-txt {
@@ -3251,6 +3418,18 @@ section .request-item .sub-tit {
         top:50%;
         bottom:auto;
         transform:translateY(-50%);
+    }
+
+    .gov-board-form.board-form li > a .date {
+        width:20%;
+    }
+    
+    .gov-board-form.board-form li > a .corp {
+        width:20%;
+    }
+    
+    .gov-board-form.board-form li > a .subtit {
+        width:calc(100% - 40%);
     }
 
     /* ethic */
@@ -3881,19 +4060,55 @@ section .request-item .sub-tit {
         font-size:var(--font-x-sm);
     }
 
+    .request-item .request-tit {
+        flex-wrap: wrap;
+    }
+
+    .request-item .sub-tit #add-visitor {
+        min-width:100%;
+        width:100%;
+    }
 
     .request-item .request-info {
+        padding:60px 30px 40px;
         grid-template-columns: repeat(1, 1fr);
+    }
+
+    .request-item .request-info:before {
+        left:30px;
+    }
+
+    .request-item .request-info > li {
+        width:100%;
+        flex-flow: column;
+        align-items: normal;
+        gap:0px;
+    }
+
+    .request-item .request-info > li > label {
+        display: inline-flex;
+        width:100%;
+        gap:20px;
+        align-items:center;
+        padding:10px 0px;
+    }
+
+    .request-item .request-info li > .input-txt {
+        width:100%;
+    }
+
+    .request-item .request-info li ul.input-group {
+        width:100%;
+    }
+
+    .request-item .request-info > li > .input-select {
+        width:100%;
     }
 
     .request-item .request-privacy {
         padding-bottom:20px;
     }
     
-
-    .request-item .request-info li {
-        gap:0px;
-    }
     .request-item .request-privacy .request-privacy-text {
         padding:20px 30px;
     }
@@ -4077,10 +4292,25 @@ section .request-item .sub-tit {
         white-space: nowrap;
     }
 
-    .gov-board-form.download-form li .subtit {
-        font-size: var(--font-lg);
-        margin-left:auto;
+    .gov-board-form.board-form li > a {
+        flex-direction: column;
     }
+
+    .gov-board-form.board-form li > a .date,
+    .gov-board-form.board-form li > a .corp {
+        width:100%;
+        text-align: left;
+        padding:0 20px;
+    }
+    
+    
+    .gov-board-form.board-form li > a .subtit {
+        width:100%;
+        font-size: var(--font-lg);
+        margin-top:10px;
+        padding:0 20px;
+    }
+
 
     .corp-tab-group li {
         min-width:calc(100% / 2 - 12px);

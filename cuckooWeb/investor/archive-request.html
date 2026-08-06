@@ -96,7 +96,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <p class="color-point">*하루 2건 이상 미팅 잡힐 시 해당일자의 나머지 회차는 자동으로 접수불가</p>
                                         </div>
                                     </div>
                                 </div>
@@ -104,8 +103,8 @@
                             <!-- 서울사무소 지도 -->
                             <div class="request-item">
                                 <div class="sub-tit request-tit">
-                                    <h2>서울사무소</h2>
-                                    <span class="color-gry">Seoul Office</span>
+                                    <h2>오시는 길</h2>
+                                    <span class="color-gry">(서울사무소)</span>
                                 </div>
                                 <div class="request-map" id="request-map"></div>
                             </div>
@@ -113,37 +112,91 @@
                             <div class="request-item">
                                 <div class="sub-tit request-tit">
                                     <h2>방문자 정보</h2>
+                                    <p class="txt color-point">* 방문자는 최대 5명까지 가능</p>
+                                    <a class="btn b-btn" id="add-visitor">방문자 추가 +</a>
                                 </div>
-                                <ul class="request-info">
-                                    <li>
-                                        <label for="request-name">이름</label>
-                                        <input id="request-name" type="text" class="input-txt request-name" placeholder="이름을 입력하세요." required>
-                                    </li>
-                                    <li>
-                                        <label for="request-tel">휴대전화번호</label>
-                                        <input id="request-tel" type="number" class="input-txt request-tel" placeholder="휴대전화번호를 입력하세요." required>
-                                    </li>
-                                    <li>
-                                        <label for="request-corp">회사명</label>
-                                        <input id="request-corp" type="text" class="input-txt request-corp" placeholder="회사명을 입력해 주세요." required>
-                                    </li>
-                                    <li>
-                                        <label for="request-team">부서명</label>
-                                        <input id="request-team" type="text" class="input-txt request-team" placeholder="부서명을 입력해주세요." required>
-                                    </li>
-                                    <li>
-                                        <label for="request-rols">직위</label>
-                                        <input id="request-rols" type="text" class="input-txt request-rols" placeholder="직위 입력해 주세요." required>
-                                    </li>
-                                    <li>
-                                        <label for="request-mail">이메일</label>
-                                        <input id="request-mail" type="text" class="input-txt request-mail" placeholder="이메일을 입력해주세요." required>
-                                    </li>
-                                    <li>
-                                        <label for="request-capacity">참석인원</label>
-                                        <input id="request-capacity" type="number" class="input-txt request-capacity" placeholder="참석인원을 입력하세요." required>
-                                    </li>
-                                </ul>
+                                <div class="request-info-area">
+                                    <ul class="request-info">
+                                        <li>
+                                            <label for="request-name">이름</label>
+                                            <input id="request-name" type="text" class="input-txt request-name" placeholder="이름을 입력하세요." required>
+                                        </li>
+                                        <li>
+                                            <label for="request-rols">직위</label>
+                                            <input id="request-rols" type="text" class="input-txt request-rols" placeholder="직위 입력해 주세요." required>
+                                        </li>
+                                        <li>
+                                            <label for="request-corp">회사명</label>
+                                            <input id="request-corp" type="text" class="input-txt request-corp" placeholder="회사명을 입력해 주세요." required>
+                                        </li>
+                                        <li>
+                                            <label for="request-team">부서명</label>
+                                            <input id="request-team" type="text" class="input-txt request-team" placeholder="부서명을 입력해주세요." required>
+                                        </li>
+                                        <li>
+                                            <label for="request-tel">전화번호</label>
+                                            <input id="request-tel" type="number" class="input-txt request-tel" placeholder="전화번호를 입력하세요." required>
+                                        </li>
+                                        
+                                        <li>
+                                            <label for="request-mail">이메일</label>
+                                            <input id="request-mail" type="text" class="input-txt request-mail" placeholder="이메일을 입력해주세요." required>
+                                        </li>
+                                        <li>
+                                            <label for="request-visit-date">방문 희망일</label>
+                                            <select id="request-visit-date" class="input-select">
+                                                <option>2026-08-13 1회차(10:00 ~ 15:00)</option>
+                                                <option>2026-08-13 2회차(10:00 ~ 15:00)</option>
+                                                <option>2026-08-13 3회차(10:00 ~ 15:00)</option>
+                                            </select>
+                                        </li>
+                                        <li>
+                                            <label for="meeting-method-01">미팅방식</label>
+                                            <ul class="input-group">
+                                                <li>
+                                                    <input type="radio" class="input-radio" name="meeting-method" id="meeting-method-01">
+                                                    <label for="meeting-method-01">컨콜(전화)</label>
+                                                </li>
+                                                <li>
+                                                    <input type="radio" class="input-radio" name="meeting-method" id="meeting-method-02">
+                                                    <label for="meeting-method-02">방문</label>
+                                                </li>
+                                                <li>
+                                                    <input type="radio" class="input-radio" name="meeting-method" id="meeting-method-03">
+                                                    <label for="meeting-method-03">화상미팅</label>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <label for="request-investor">투자유형</label>
+                                            <select id="request-investor" class="input-select">
+                                                <option>기관투자자</option>
+                                                <option>애널리스트</option>
+                                                <option>기타</option>
+                                            </select>
+                                        </li>
+                                        <li>
+                                            <label for="interests-01">
+                                                관심사항
+                                                <span class="txt color-point">* 중복선택 가능</span>
+                                            </label>
+                                            <ul class="input-group">
+                                                <li>
+                                                    <input type="checkbox" class="input-chk" name="interests" id="interests-01">
+                                                    <label for="interests-01">실적</label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" class="input-chk" name="interests" id="interests-02">
+                                                    <label for="interests-02">배당</label>
+                                                </li>
+                                                <li>
+                                                    <input type="checkbox" class="input-chk" name="interests" id="interests-03">
+                                                    <label for="interests-03">기타(ESG 등)</label>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                             <!-- 방문 목적 및 요청사항 -->
                             <div class="request-item">

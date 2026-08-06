@@ -47,209 +47,217 @@
                                 <div class="item-wrap">
                                     <div class="meeting-select">
                                         <a class="meeting-select-btn">
-                                            <h4>2025년</h4>
+                                            <h4><!-- 연도표시 !--></h4>
                                             <svg class="icon-24px dropdown">
                                                 <use xlink:href="/cuckooWeb/images/sprite.svg#dropdown"/>
                                             </svg>
                                         </a>
-                                        <ul class="meeting-select-opt" id="meeting-select-holdings">
+                                        <ul class="meeting-select-opt" id="meeting-holdings">
+                                            <li><a>2026년</a></li>
                                             <li><a>2025년</a></li>
                                             <li><a>2024년</a></li>
                                             <li><a>2023년</a></li>
-                                            <li><a>2022년</a></li>
-                                            <li><a>2021년</a></li>
                                         </ul>
+                                        <select class="holdings-select" style="display:none;">
+                                            <option value="2026" selected>2026년</option>
+                                            <option value="2025">2025년</option>
+                                            <option value="2024">2024년</option>
+                                            <option value="2023">2023년</option>
+                                        </select>
                                     </div>
                                     <div class="meeting-article-area">
-    
-                                        <!-- 제 49기 정기주주총회 -->
-                                        <div class="meeting-article">
-                                            <h4 class="meeting-article-tit">제 49기 정기주주총회</h4>
-                                            <div class="meeting-article-content">
-                                                <ul class="article-info">
-                                                    <li class="total">27,226,359주 / 31,078,385주 (참석률 87.6%)</li>
-                                                    <li class="date">2026-03-24 오전10시</li>
-                                                    <li class="location">경남 양산시 충렬로 143 쿠쿠 2공장 3층 대회의실</li>
-                                                </ul>
-                                                <table class="article-table">
-                                                    <thead>
-                                                        <tr>
-                                                            <th class="bg-gry">구분</th>
-                                                            <th class="bg-gry">의안명</th>
-                                                            <th class="bg-gry">결과</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <th class="bg-gry">제 1호 의안</th>
-                                                            <td>제 49기 재무제표 및 연결재무제표, 이익잉여금처분계산서(안) 승인의 건<br>※ 현금배당 1주당 1,550원</td>
-                                                            <td>원안대로 승인</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th class="bg-gry">제 2-1호 의안</th>
-                                                            <td>개정 상법 관련 정관 변경의 건</td>
-                                                            <td>원안대로 승인</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th class="bg-gry">제 2-2호 의안</th>
-                                                            <td>기타 정관 변경의 건</td>
-                                                            <td>원안대로 승인</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th class="bg-gry">제 3-1호 의안</th>
-                                                            <td>사내이사 선임의 건 (구자신)</td>
-                                                            <td>원안대로 승인</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th class="bg-gry">제 3-2호 의안</th>
-                                                            <td>사외이사 선임의 건 (이성호)</td>
-                                                            <td>원안대로 승인</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th class="bg-gry">제 4호 의안</th>
-                                                            <td>감사위원회 위원이 되는 사외이사 선임의 건 (김상희)</td>
-                                                            <td>원안대로 승인</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th class="bg-gry">제 5호 의안</th>
-                                                            <td>감사위원 선임의 건 (이성호)</td>
-                                                            <td>원안대로 승인</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th class="bg-gry">제 6호 의안</th>
-                                                            <td>이사 보수한도 승인의 건</td>
-                                                            <td>원안대로 승인</td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
+                                        <div class="wrap" data-value="meeting-holdings-2025">
 
-                                        <!-- 제 49기 2회차 임시주주총회 -->
-                                        <div class="meeting-article">
-                                            <h4 class="meeting-article-tit">제 49기 2회차 임시주주총회</h4>
-                                            <div class="meeting-article-content">
-                                                <ul class="article-info">
-                                                    <li class="total">26,197,865주 / 31,078,385주 (참석률 84.3%)</li>
-                                                    <li class="date">2025-11-11 오전10시</li>
-                                                    <li class="location">경남 양산시 충렬로 143 쿠쿠 2공장 3층 대회의실</li>
-                                                </ul>
-                                                <table class="article-table">
-                                                    <thead>
-                                                        <tr>
-                                                            <th class="bg-gry">구분</th>
-                                                            <th class="bg-gry">의안명</th>
-                                                            <th class="bg-gry">결과</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <th class="bg-gry">제 1호 의안</th>
-                                                            <td>자본준비금 감소의 건</td>
-                                                            <td>원안대로 승인</td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
+                                            <!-- 제 49기 정기주주총회 -->
+                                            <div class="meeting-article">
+                                                <h4 class="meeting-article-tit">제 49기 정기주주총회</h4>
+                                                <div class="meeting-article-content">
+                                                    <ul class="article-info">
+                                                        <li class="total">27,226,359주 / 31,078,385주 (참석률 87.6%)</li>
+                                                        <li class="date">2026-03-24 오전10시</li>
+                                                        <li class="location">경남 양산시 충렬로 143 쿠쿠 2공장 3층 대회의실</li>
+                                                    </ul>
+                                                    <table class="article-table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th class="bg-gry">구분</th>
+                                                                <th class="bg-gry">의안명</th>
+                                                                <th class="bg-gry">결과</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <th class="bg-gry">제 1호 의안</th>
+                                                                <td>제 49기 재무제표 및 연결재무제표, 이익잉여금처분계산서(안) 승인의 건<br>※ 현금배당 1주당 1,550원</td>
+                                                                <td>원안대로 승인</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th class="bg-gry">제 2-1호 의안</th>
+                                                                <td>개정 상법 관련 정관 변경의 건</td>
+                                                                <td>원안대로 승인</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th class="bg-gry">제 2-2호 의안</th>
+                                                                <td>기타 정관 변경의 건</td>
+                                                                <td>원안대로 승인</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th class="bg-gry">제 3-1호 의안</th>
+                                                                <td>사내이사 선임의 건 (구자신)</td>
+                                                                <td>원안대로 승인</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th class="bg-gry">제 3-2호 의안</th>
+                                                                <td>사외이사 선임의 건 (이성호)</td>
+                                                                <td>원안대로 승인</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th class="bg-gry">제 4호 의안</th>
+                                                                <td>감사위원회 위원이 되는 사외이사 선임의 건 (김상희)</td>
+                                                                <td>원안대로 승인</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th class="bg-gry">제 5호 의안</th>
+                                                                <td>감사위원 선임의 건 (이성호)</td>
+                                                                <td>원안대로 승인</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th class="bg-gry">제 6호 의안</th>
+                                                                <td>이사 보수한도 승인의 건</td>
+                                                                <td>원안대로 승인</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
                                             </div>
-                                        </div>
 
-                                        <!-- 제 49기 1회차 임시주주총회 -->
-                                        <div class="meeting-article">
-                                            <h4 class="meeting-article-tit">제 49기 1회차 임시주주총회</h4>
-                                            <div class="meeting-article-content">
-                                                <ul class="article-info">
-                                                    <li class="total">20,787,685주 / 31,078,385주 (참석률 66.9%)</li>
-                                                    <li class="date">2025-05-13 오전10시</li>
-                                                    <li class="location">경남 양산시 충렬로 143 쿠쿠 2공장 3층 대회의실</li>
-                                                </ul>
-                                                <table class="article-table">
-                                                    <thead>
-                                                        <tr>
-                                                            <th class="bg-gry">구분</th>
-                                                            <th class="bg-gry">의안명</th>
-                                                            <th class="bg-gry">결과</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <th class="bg-gry">제 1호 의안</th>
-                                                            <td>사내이사 선임의 건(구본학)</td>
-                                                            <td>원안대로 승인</td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
+                                            <!-- 제 49기 2회차 임시주주총회 -->
+                                            <div class="meeting-article">
+                                                <h4 class="meeting-article-tit">제 49기 2회차 임시주주총회</h4>
+                                                <div class="meeting-article-content">
+                                                    <ul class="article-info">
+                                                        <li class="total">26,197,865주 / 31,078,385주 (참석률 84.3%)</li>
+                                                        <li class="date">2025-11-11 오전10시</li>
+                                                        <li class="location">경남 양산시 충렬로 143 쿠쿠 2공장 3층 대회의실</li>
+                                                    </ul>
+                                                    <table class="article-table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th class="bg-gry">구분</th>
+                                                                <th class="bg-gry">의안명</th>
+                                                                <th class="bg-gry">결과</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <th class="bg-gry">제 1호 의안</th>
+                                                                <td>자본준비금 감소의 건</td>
+                                                                <td>원안대로 승인</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
                                             </div>
-                                        </div>
 
-                                        <!-- 제 48기 정기주주총회 -->
-                                        <div class="meeting-article">
-                                            <h4 class="meeting-article-tit">제 48기 정기주주총회</h4>
-                                            <div class="meeting-article-content">
-                                                <ul class="article-info">
-                                                    <li class="total">27,069,692주 / 31,078,385주 (참석률 87.1%)</li>
-                                                    <li class="date">2025-03-25 오전10시</li>
-                                                    <li class="location">경남 양산시 충렬로 143 쿠쿠 2공장 3층 대회의실</li>
-                                                </ul>
-                                                <table class="article-table">
-                                                    <thead>
-                                                        <tr>
-                                                            <th class="bg-gry">구분</th>
-                                                            <th class="bg-gry">의안명</th>
-                                                            <th class="bg-gry">결과</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <th class="bg-gry">제 1호 의안</th>
-                                                            <td>제 48기 재무제표 및 연결재무제표, 이익잉여금처분계산서(안) 승인의 건<br>※ 현금배당 1주당 1,200원</td>
-                                                            <td>원안대로 승인</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th class="bg-gry">제 2호 의안</th>
-                                                            <td>감사위원회위원되는 사외이사 선임의 건 (이묘승)</td>
-                                                            <td>원안대로 승인</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th class="bg-gry">제 3호 의안</th>
-                                                            <td>이사 보수한도 승인의 건</td>
-                                                            <td>원안대로 승인</td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
+                                            <!-- 제 49기 1회차 임시주주총회 -->
+                                            <div class="meeting-article">
+                                                <h4 class="meeting-article-tit">제 49기 1회차 임시주주총회</h4>
+                                                <div class="meeting-article-content">
+                                                    <ul class="article-info">
+                                                        <li class="total">20,787,685주 / 31,078,385주 (참석률 66.9%)</li>
+                                                        <li class="date">2025-05-13 오전10시</li>
+                                                        <li class="location">경남 양산시 충렬로 143 쿠쿠 2공장 3층 대회의실</li>
+                                                    </ul>
+                                                    <table class="article-table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th class="bg-gry">구분</th>
+                                                                <th class="bg-gry">의안명</th>
+                                                                <th class="bg-gry">결과</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <th class="bg-gry">제 1호 의안</th>
+                                                                <td>사내이사 선임의 건(구본학)</td>
+                                                                <td>원안대로 승인</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
                                             </div>
-                                        </div>
 
-                                        <!-- 제 47기 정기주주총회 -->
-                                        <div class="meeting-article">
-                                            <h4 class="meeting-article-tit">제 47기 정기주주총회</h4>
-                                            <div class="meeting-article-content">
-                                                <ul class="article-info">
-                                                    <li class="total">26,541,253주 / 31,078,385주 (참석률 85.4%)</li>
-                                                    <li class="date">2024-03-26 오전10시</li>
-                                                    <li class="location">경남 양산시 충렬로 143 쿠쿠 2공장 3층 대회의실</li>
-                                                </ul>
-                                                <table class="article-table">
-                                                    <thead>
-                                                        <tr>
-                                                            <th class="bg-gry">구분</th>
-                                                            <th class="bg-gry">의안명</th>
-                                                            <th class="bg-gry">결과</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <th class="bg-gry">제 1호 의안</th>
-                                                            <td>제 47기 재무제표 및 연결재무제표, 이익잉여금처분계산서(안) 승인의 건<br>※ 현금배당 1주당 1,100원</td>
-                                                            <td>원안대로 승인</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th class="bg-gry">제 2호 의안</th>
-                                                            <td>이사 보수한도 승인의 건</td>
-                                                            <td>원안대로 승인</td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
+                                            <!-- 제 48기 정기주주총회 -->
+                                            <div class="meeting-article">
+                                                <h4 class="meeting-article-tit">제 48기 정기주주총회</h4>
+                                                <div class="meeting-article-content">
+                                                    <ul class="article-info">
+                                                        <li class="total">27,069,692주 / 31,078,385주 (참석률 87.1%)</li>
+                                                        <li class="date">2025-03-25 오전10시</li>
+                                                        <li class="location">경남 양산시 충렬로 143 쿠쿠 2공장 3층 대회의실</li>
+                                                    </ul>
+                                                    <table class="article-table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th class="bg-gry">구분</th>
+                                                                <th class="bg-gry">의안명</th>
+                                                                <th class="bg-gry">결과</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <th class="bg-gry">제 1호 의안</th>
+                                                                <td>제 48기 재무제표 및 연결재무제표, 이익잉여금처분계산서(안) 승인의 건<br>※ 현금배당 1주당 1,200원</td>
+                                                                <td>원안대로 승인</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th class="bg-gry">제 2호 의안</th>
+                                                                <td>감사위원회위원되는 사외이사 선임의 건 (이묘승)</td>
+                                                                <td>원안대로 승인</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th class="bg-gry">제 3호 의안</th>
+                                                                <td>이사 보수한도 승인의 건</td>
+                                                                <td>원안대로 승인</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
                                             </div>
+
+                                            <!-- 제 47기 정기주주총회 -->
+                                            <div class="meeting-article">
+                                                <h4 class="meeting-article-tit">제 47기 정기주주총회</h4>
+                                                <div class="meeting-article-content">
+                                                    <ul class="article-info">
+                                                        <li class="total">26,541,253주 / 31,078,385주 (참석률 85.4%)</li>
+                                                        <li class="date">2024-03-26 오전10시</li>
+                                                        <li class="location">경남 양산시 충렬로 143 쿠쿠 2공장 3층 대회의실</li>
+                                                    </ul>
+                                                    <table class="article-table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th class="bg-gry">구분</th>
+                                                                <th class="bg-gry">의안명</th>
+                                                                <th class="bg-gry">결과</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <th class="bg-gry">제 1호 의안</th>
+                                                                <td>제 47기 재무제표 및 연결재무제표, 이익잉여금처분계산서(안) 승인의 건<br>※ 현금배당 1주당 1,100원</td>
+                                                                <td>원안대로 승인</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th class="bg-gry">제 2호 의안</th>
+                                                                <td>이사 보수한도 승인의 건</td>
+                                                                <td>원안대로 승인</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+
                                         </div>
 
                                     </div>
@@ -262,202 +270,209 @@
                                 <div class="item-wrap">
                                     <div class="meeting-select">
                                         <a class="meeting-select-btn">
-                                            <h4>2025년</h4>
+                                            <h4><!-- 연도표시 !--></h4>
                                             <svg class="icon-24px">
                                                 <use xlink:href="/cuckooWeb/images/sprite.svg#dropdown"/>
                                             </svg>
                                         </a>
                                         <ul class="meeting-select-opt" id="meeting-select-homesys">
+                                            <li><a>2026년</a></li>
                                             <li><a>2025년</a></li>
                                             <li><a>2024년</a></li>
                                             <li><a>2023년</a></li>
-                                            <li><a>2022년</a></li>
-                                            <li><a>2021년</a></li>
                                         </ul>
+                                        <select class="homesys-select" style="display:none;">
+                                            <option value="2026" selected>2026년</option>
+                                            <option value="2025">2025년</option>
+                                            <option value="2024">2024년</option>
+                                            <option value="2023">2023년</option>
+                                        </select>
                                     </div>
                                     <div class="meeting-article-area">
-    
-                                        <!-- 제 9기 정기주주총회 -->
-                                        <div class="meeting-article">
-                                            <h4 class="meeting-article-tit">제 9기 정기주주총회</h4>
-                                            <div class="meeting-article-content">
-                                                <ul class="article-info">
-                                                    <li class="total">18,393,996주 / 22,422,380주 (참석률 82.0%)</li>
-                                                    <li class="date">2026-03-26 오전9시</li>
-                                                    <li class="location">경기도 시흥시 엠티비이북로 349(정왕동) 회의실</li>
-                                                </ul>
-                                                <table class="article-table">
-                                                    <thead>
-                                                        <tr>
-                                                            <th class="bg-gry">구분</th>
-                                                            <th class="bg-gry">의안명</th>
-                                                            <th class="bg-gry">결과</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <th class="bg-gry">제 1호 의안</th>
-                                                            <td>제 9기 재무제표 및 연결재무제표, 이익잉여금처분계산서(안) 승인의 건<br>※ 현금배당 1주당 1,200원</td>
-                                                            <td>원안대로 승인</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th class="bg-gry">제 2-1호 의안</th>
-                                                            <td>개정 상법 관련 정관 변경의 건</td>
-                                                            <td>원안대로 승인</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th class="bg-gry">제 2-2호 의안</th>
-                                                            <td>사업 목적 변경의 건</td>
-                                                            <td>원안대로 승인</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th class="bg-gry">제 2-3호 의안</th>
-                                                            <td>기타 정관 변경의 건</td>
-                                                            <td>원안대로 승인</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th class="bg-gry">제 3-1호 의안</th>
-                                                            <td>사내이사 선임의 건 (구본학)</td>
-                                                            <td>원안대로 승인</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th class="bg-gry">제 3-2호 의안</th>
-                                                            <td>사내이사 선임의 건 (나영민)</td>
-                                                            <td>원안대로 승인</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th class="bg-gry">제 4호 의안</th>
-                                                            <td>감사위원회 위원이 되는 사외이사 선임의 건 (허준영)</td>
-                                                            <td>원안대로 승인</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th class="bg-gry">제 5호 의안</th>
-                                                            <td>감사위원회 위원이 되는 사외이사 선임의 건 (강규호)</td>
-                                                            <td>원안대로 승인</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th class="bg-gry">제 6호 의안</th>
-                                                            <td>이사 보수한도 승인의 건</td>
-                                                            <td>원안대로 승인</td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
+                                        <div class="wrap" data-value="meeting-homesys">
+                                            <!-- 제 9기 정기주주총회 -->
+                                            <div class="meeting-article">
+                                                <h4 class="meeting-article-tit">제 9기 정기주주총회</h4>
+                                                <div class="meeting-article-content">
+                                                    <ul class="article-info">
+                                                        <li class="total">18,393,996주 / 22,422,380주 (참석률 82.0%)</li>
+                                                        <li class="date">2026-03-26 오전9시</li>
+                                                        <li class="location">경기도 시흥시 엠티비이북로 349(정왕동) 회의실</li>
+                                                    </ul>
+                                                    <table class="article-table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th class="bg-gry">구분</th>
+                                                                <th class="bg-gry">의안명</th>
+                                                                <th class="bg-gry">결과</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <th class="bg-gry">제 1호 의안</th>
+                                                                <td>제 9기 재무제표 및 연결재무제표, 이익잉여금처분계산서(안) 승인의 건<br>※ 현금배당 1주당 1,200원</td>
+                                                                <td>원안대로 승인</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th class="bg-gry">제 2-1호 의안</th>
+                                                                <td>개정 상법 관련 정관 변경의 건</td>
+                                                                <td>원안대로 승인</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th class="bg-gry">제 2-2호 의안</th>
+                                                                <td>사업 목적 변경의 건</td>
+                                                                <td>원안대로 승인</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th class="bg-gry">제 2-3호 의안</th>
+                                                                <td>기타 정관 변경의 건</td>
+                                                                <td>원안대로 승인</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th class="bg-gry">제 3-1호 의안</th>
+                                                                <td>사내이사 선임의 건 (구본학)</td>
+                                                                <td>원안대로 승인</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th class="bg-gry">제 3-2호 의안</th>
+                                                                <td>사내이사 선임의 건 (나영민)</td>
+                                                                <td>원안대로 승인</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th class="bg-gry">제 4호 의안</th>
+                                                                <td>감사위원회 위원이 되는 사외이사 선임의 건 (허준영)</td>
+                                                                <td>원안대로 승인</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th class="bg-gry">제 5호 의안</th>
+                                                                <td>감사위원회 위원이 되는 사외이사 선임의 건 (강규호)</td>
+                                                                <td>원안대로 승인</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th class="bg-gry">제 6호 의안</th>
+                                                                <td>이사 보수한도 승인의 건</td>
+                                                                <td>원안대로 승인</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+
+                                            <!-- 제 9기 1회차 임시주주총회 -->
+                                            <div class="meeting-article">
+                                                <h4 class="meeting-article-tit">제 9기 1회차 임시주주총회</h4>
+                                                <div class="meeting-article-content">
+                                                    <ul class="article-info">
+                                                        <li class="total">15,922,588주 / 22,422,380주 (참석률 71.0%)</li>
+                                                        <li class="date">2025-05-15 오전9시</li>
+                                                        <li class="location">경기도 시흥시 엠티비이북로 349(정왕동) 회의실</li>
+                                                    </ul>
+                                                    <table class="article-table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th class="bg-gry">구분</th>
+                                                                <th class="bg-gry">의안명</th>
+                                                                <th class="bg-gry">결과</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <th class="bg-gry">제 1호 의안</th>
+                                                                <td>사내이사 선임의 건 (허재영)</td>
+                                                                <td>원안대로 승인</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+
+                                            <!-- 제 8기 정기주주총회 -->
+                                            <div class="meeting-article">
+                                                <h4 class="meeting-article-tit">제 8기 정기주주총회</h4>
+                                                <div class="meeting-article-content">
+                                                    <ul class="article-info">
+                                                        <li class="total">17,768,597주 / 22,422,380주 (참석률 79.2%)</li>
+                                                        <li class="date">2025-03-27 오전9시</li>
+                                                        <li class="location">경기도 시흥시 엠티비이북로 349(정왕동) 회의실</li>
+                                                    </ul>
+                                                    <table class="article-table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th class="bg-gry">구분</th>
+                                                                <th class="bg-gry">의안명</th>
+                                                                <th class="bg-gry">결과</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <th class="bg-gry">제 1호 의안</th>
+                                                                <td>제 8기 재무제표 및 연결재무제표, 이익잉여금처분계산서(안) 승인의 건<br>※ 현금배당 1주당 1,000원</td>
+                                                                <td>원안대로 승인</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th class="bg-gry">제 2호 의안</th>
+                                                                <td>정관 일부 변경의 건</td>
+                                                                <td>원안대로 승인</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th class="bg-gry">제 3호 의안</th>
+                                                                <td>이사 보수한도 승인의 건</td>
+                                                                <td>원안대로 승인</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+
+                                            <!-- 제 7기 정기주주총회 -->
+                                            <div class="meeting-article">
+                                                <h4 class="meeting-article-tit">제 7기 정기주주총회</h4>
+                                                <div class="meeting-article-content">
+                                                    <ul class="article-info">
+                                                        <li class="total">18,196,239주 / 22,422,380주 (참석률 81.2%)</li>
+                                                        <li class="date">2024-03-28 오전9시</li>
+                                                        <li class="location">경기도 시흥시 엠티비이북로 349(정왕동) 회의실</li>
+                                                    </ul>
+                                                    <table class="article-table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th class="bg-gry">구분</th>
+                                                                <th class="bg-gry">의안명</th>
+                                                                <th class="bg-gry">결과</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <th class="bg-gry">제 1호 의안</th>
+                                                                <td>제 7기 재무제표 및 연결재무제표, 이익잉여금처분계산서(안) 승인의 건<br>※ 현금배당 1주당 800원</td>
+                                                                <td>원안대로 승인</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th class="bg-gry">제 2호 의안</th>
+                                                                <td>정관 일부 변경 승인의 건</td>
+                                                                <td>원안대로 승인</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th class="bg-gry">제 3호 의안</th>
+                                                                <td>사외이사 선임의 건 (하대영)</td>
+                                                                <td>원안대로 승인</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th class="bg-gry">제 4호 의안</th>
+                                                                <td>감사위원 선임의 건 (하대영)</td>
+                                                                <td>원안대로 승인</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th class="bg-gry">제 5호 의안</th>
+                                                                <td>이사 보수한도 승인의 건</td>
+                                                                <td>원안대로 승인</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
                                             </div>
                                         </div>
 
-                                        <!-- 제 9기 1회차 임시주주총회 -->
-                                        <div class="meeting-article">
-                                            <h4 class="meeting-article-tit">제 9기 1회차 임시주주총회</h4>
-                                            <div class="meeting-article-content">
-                                                <ul class="article-info">
-                                                    <li class="total">15,922,588주 / 22,422,380주 (참석률 71.0%)</li>
-                                                    <li class="date">2025-05-15 오전9시</li>
-                                                    <li class="location">경기도 시흥시 엠티비이북로 349(정왕동) 회의실</li>
-                                                </ul>
-                                                <table class="article-table">
-                                                    <thead>
-                                                        <tr>
-                                                            <th class="bg-gry">구분</th>
-                                                            <th class="bg-gry">의안명</th>
-                                                            <th class="bg-gry">결과</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <th class="bg-gry">제 1호 의안</th>
-                                                            <td>사내이사 선임의 건 (허재영)</td>
-                                                            <td>원안대로 승인</td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-
-                                        <!-- 제 8기 정기주주총회 -->
-                                        <div class="meeting-article">
-                                            <h4 class="meeting-article-tit">제 8기 정기주주총회</h4>
-                                            <div class="meeting-article-content">
-                                                <ul class="article-info">
-                                                    <li class="total">17,768,597주 / 22,422,380주 (참석률 79.2%)</li>
-                                                    <li class="date">2025-03-27 오전9시</li>
-                                                    <li class="location">경기도 시흥시 엠티비이북로 349(정왕동) 회의실</li>
-                                                </ul>
-                                                <table class="article-table">
-                                                    <thead>
-                                                        <tr>
-                                                            <th class="bg-gry">구분</th>
-                                                            <th class="bg-gry">의안명</th>
-                                                            <th class="bg-gry">결과</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <th class="bg-gry">제 1호 의안</th>
-                                                            <td>제 8기 재무제표 및 연결재무제표, 이익잉여금처분계산서(안) 승인의 건<br>※ 현금배당 1주당 1,000원</td>
-                                                            <td>원안대로 승인</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th class="bg-gry">제 2호 의안</th>
-                                                            <td>정관 일부 변경의 건</td>
-                                                            <td>원안대로 승인</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th class="bg-gry">제 3호 의안</th>
-                                                            <td>이사 보수한도 승인의 건</td>
-                                                            <td>원안대로 승인</td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
-
-                                        <!-- 제 7기 정기주주총회 -->
-                                        <div class="meeting-article">
-                                            <h4 class="meeting-article-tit">제 7기 정기주주총회</h4>
-                                            <div class="meeting-article-content">
-                                                <ul class="article-info">
-                                                    <li class="total">18,196,239주 / 22,422,380주 (참석률 81.2%)</li>
-                                                    <li class="date">2024-03-28 오전9시</li>
-                                                    <li class="location">경기도 시흥시 엠티비이북로 349(정왕동) 회의실</li>
-                                                </ul>
-                                                <table class="article-table">
-                                                    <thead>
-                                                        <tr>
-                                                            <th class="bg-gry">구분</th>
-                                                            <th class="bg-gry">의안명</th>
-                                                            <th class="bg-gry">결과</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <th class="bg-gry">제 1호 의안</th>
-                                                            <td>제 7기 재무제표 및 연결재무제표, 이익잉여금처분계산서(안) 승인의 건<br>※ 현금배당 1주당 800원</td>
-                                                            <td>원안대로 승인</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th class="bg-gry">제 2호 의안</th>
-                                                            <td>정관 일부 변경 승인의 건</td>
-                                                            <td>원안대로 승인</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th class="bg-gry">제 3호 의안</th>
-                                                            <td>사외이사 선임의 건 (하대영)</td>
-                                                            <td>원안대로 승인</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th class="bg-gry">제 4호 의안</th>
-                                                            <td>감사위원 선임의 건 (하대영)</td>
-                                                            <td>원안대로 승인</td>
-                                                        </tr>
-                                                        <tr>
-                                                            <th class="bg-gry">제 5호 의안</th>
-                                                            <td>이사 보수한도 승인의 건</td>
-                                                            <td>원안대로 승인</td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                        </div>
 
                                     </div>
                                 </div>

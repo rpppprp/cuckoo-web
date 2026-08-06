@@ -728,6 +728,51 @@ $(function(){
 
   /* -----------------------------------------------------------
 
+      투자정보 - 주주총회
+
+  -------------------------------------------------------------*/
+
+    // 주주총회 드롭다운 토글 및 외부 클릭 닫기
+    $(document).on('click', '.meeting-select-btn', function (e) {
+      e.stopPropagation();
+      const $opt = $(this).next('.meeting-select-opt');
+      $(this).toggleClass('on');
+      $('.meeting-select-opt').not($opt).removeClass('active');
+      $opt.toggleClass('active');
+    }).on('click', function () {
+      $('.meeting-select-opt').removeClass('active');
+    });
+  
+    // 주주총회 커스텀 옵션 .meeting-select-btn 클릭 -> 숨겨진 select 변경(.holdings-select/.homesys-select)
+    $(document).on('click', '.meeting-select-opt a', function (e) {
+      e.preventDefault();
+      const year = $(this).text().replace('년', '').trim();
+      $(this).closest('.meeting-item').find('select').val(year).trigger('change');
+      $('.meeting-select-opt').removeClass('active');
+      $(".meeting-select-btn").removeClass('on');
+    });
+  
+    // select 변경 시 -> .meeting-select-btn h4 텍스트 동기화 및 .meeting-article 연도 필터링
+    $(document).on('change', '.meeting-item select', function () {
+      const year = $(this).val();
+      const $item = $(this).closest('.meeting-item');
+  
+      // .meeting-select-btn h4 셀렉트박스 표시 텍스트 변경
+      $item.find('.meeting-select-btn h4').text(`${year}년`);
+  
+      // .date 영역 기준 연도 일치 여부로 .meeting-article 표시/숨김
+      $item.find('.meeting-article').each(function () {
+        const dateText = $(this).find('.article-info .date').text();
+        $(this).toggle(dateText.includes(year));
+      });
+    });
+  
+    // 초기 실행: select의 현재 선택값(selected) 기준으로 화면 세팅
+    $('.meeting-item select').trigger('change');
+
+
+  /* -----------------------------------------------------------
+
       투자정보 - 주주환원
 
   -------------------------------------------------------------*/
@@ -926,6 +971,40 @@ $(function(){
     }}}
 
 
+  /* -----------------------------------------------------------
+
+      투자정보 - IR미팅
+
+  -------------------------------------------------------------*/
+
+    function addVisitor(){
+
+      // 폼을 복사하여 템플릿 생성 (동적 ID 제거 처리)
+      var $infoArea = $('.request-info-area');
+      var $firstInfo = $infoArea.find('.request-info').first();
+
+      // 복사본 생성 및 ID 제거 (ID 중복 방지)
+      var templateHtml = $firstInfo.clone().find('*').removeAttr('id').end().prop('outerHTML');
+
+      $('#add-visitor').on('click', function(e) {
+          e.preventDefault();
+
+          // .request-info 개수 확인
+          var currentCount = $infoArea.find('.request-info').length;
+
+          // 5개 이상일 경우 경고창 출력
+          if (currentCount >= 5) {
+              alert("방문자는 최대 5명까지 가능합니다.");
+              return;
+          }
+
+          // 새 방문자 폼 추가
+          $infoArea.append(templateHtml);
+      });
+
+    }
+
+    addVisitor();
 
 
 
