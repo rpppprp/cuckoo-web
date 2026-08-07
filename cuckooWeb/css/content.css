@@ -245,13 +245,27 @@ section.about-area .inner .about-section .about-section-bg:after {
     height:40px;
 }
 
+
+.invertor-section .investor-stock-wrap {
+    display: flex;
+    flex-direction: column;
+    position:relative;
+    width:700px;
+    margin-left:auto;
+    margin-top:auto;
+}
+
+.invertor-section .investor-stock-wrap .investor-stock-pager {
+    display: flex;
+    margin:0px 10px 20px auto;
+    gap:10px;
+}
+
 .invertor-section .investor-stock-track {
     background:var(--color-wht);
     color:var(--color-blk);
-    width:700px;
+    width:100%;
     border-radius: 16px;
-    margin-left:auto;
-    margin-top:auto;
     padding:30px;
     overflow:hidden;
 }
@@ -267,6 +281,7 @@ section.about-area .inner .about-section .about-section-bg:after {
     gap:10px;
     padding-top:10px;
     align-items:center;
+    padding:0px 0px 20px;
 }
 
 .invertor-section .investor-item .investor-head .investor-num {
@@ -280,9 +295,78 @@ section.about-area .inner .about-section .about-section-bg:after {
     margin-left:auto;
 }
 
-.invertor-section .investor-item .investor-graph {
+.invertor-section .investor-item .investor-board {
     width:100%;
-    height:340px;
+}
+
+.investor-board > .stock-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.investor-board > .stock-group .stock-current {
+    background:var(--color-gry-0);
+    display:flex;
+    width:100%;
+    padding:20px 30px;
+    border-radius: 8px;
+}
+
+.investor-board .stock-group .stock-current li {
+    width:calc(100% / 2);
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.investor-board .stock-group .stock-current li:last-child {
+    color:var(--color-red);
+    justify-content: space-between;
+}
+
+.investor-board .stock-group .stock-current li > h4 {
+    font-size:var(--font-xx-lg);
+}
+
+.investor-board .stock-group .stock-current li > span {
+    font-size:var(--font-sm);
+    background:var(--color-blk);
+    color:var(--color-wht);
+    padding:5px 10px;
+    border-radius: 6px;
+}
+
+.investor-board .stock-group .stock-current li > em {
+    color:var(--color-gry-4);
+}
+
+.investor-board .stock-detail-group {
+    display:flex;
+    flex-wrap: wrap;
+    width:100%;
+    gap:20px 40px;
+    padding:0px 10px 20px;
+    margin-top:20px;
+    box-sizing: border-box;
+}
+
+.investor-board .stock-detail-group li {
+    width:calc(100% / 2 - 20px);
+    font-size:var(--font-sm);
+    display:flex;
+    align-items:center;
+    box-sizing: border-box;
+}
+
+.investor-board .stock-detail-group li > em {
+    min-width:100px;
+    color:var(--color-gry-4);
+    margin-right:40px;
+}
+
+.investor-board .stock-detail-group li > p {
+    width:calc(100% - 100px);
+    text-align:right;
 }
 
 /* ESG section */
@@ -2750,7 +2834,7 @@ section .request-item .sub-tit {
 
     section.about-area .inner,
     .investor-area .inner,
-    .esg-area .inner {
+    .esg-area .inner, .ethic-area .inner {
         width: 100%;
         padding: 0 40px;
         box-sizing: border-box;
@@ -2776,7 +2860,7 @@ section .request-item .sub-tit {
         font-size: var(--font-x-lg);
     }
 
-    .invertor-section .investor-stock-track {
+    .invertor-section .investor-stock-wrap {
         width:600px;
     }
 
@@ -3036,9 +3120,8 @@ section .request-item .sub-tit {
         object-fit: cover;
     }
 
-    section.about-area .inner,
-    .investor-area .inner,
-    .esg-area .inner {
+    section.about-area .inner, .investor-area .inner,
+    .esg-area .inner, .ethic-area .inner {
         width: 100%;
         padding: 60px 24px;
         box-sizing: border-box;
@@ -3114,9 +3197,9 @@ section .request-item .sub-tit {
         height:32px;
     }
 
-    .invertor-section .investor-stock-track {
-        width:600px;
-        margin-top:40px;
+    .invertor-section .investor-stock-wrap {
+        width:100%;
+        margin-top:40px;        
     }
 
     .esg-area .inner {
@@ -3361,9 +3444,6 @@ section .request-item .sub-tit {
         padding:0 30px;
     }
 
-    .esg-outline p {
-
-    }
 
     section.section-obs .inner {
         padding:80px 24px;
@@ -3583,7 +3663,8 @@ section .request-item .sub-tit {
         height:auto;
     }
 
-    section.about-area .inner, .investor-area .inner, .esg-area .inner {
+    section.about-area .inner, .investor-area .inner,
+    .esg-area .inner, .ethic-area .inner {
         width:100%;
         padding:60px 16px;
         box-sizing: border-box;
@@ -3635,30 +3716,56 @@ section .request-item .sub-tit {
         width:100%;
     }
 
+    .invertor-section .investor-stock-wrap {
+        width:100%;
+        margin:0px 0px 40px;
+    }
+
+    .invertor-section .investor-stock-wrap .investor-stock-pager {
+        order:1;
+        margin:20px 5px 0px auto;
+    }
+
+    .invertor-section .investor-stock-wrap .investor-stock-track {
+        padding:20px 10px;
+    }
+
     .invertor-section .investor-item .investor-head {
         flex-wrap: wrap;
-        gap:0px;
-        align-items: normal;
+        gap:5px;
+    }
+
+    .invertor-section .investor-item .investor-head h4 {
+        font-size:var(--font-lg);
     }
 
     .invertor-section .investor-item .investor-head .investor-num {
-        font-size:var(--font-x-sm);
-        order:3;
+        font-size:var(--font-sm);
     }
 
     .invertor-section .investor-item .investor-head .investor-date {
-        width:calc(100% - 100px);
-        text-align:right;
-    }
-
-    .invertor-section .investor-stock-track {
         width:100%;
-        margin:0px;
-        padding:10px;
+        font-size: var(--font-x-sm);
     }
 
-    .invertor-section .investor-item .investor-graph {
-        height:240px;
+    .investor-board .stock-group .stock-current {
+        flex-direction: column;
+        padding:15px;
+        gap:10px;
+    }
+
+    .investor-board .stock-group .stock-current li {
+        width:100%;
+    }
+
+    .investor-board .stock-group .stock-current li > h4 {
+        font-size:var(--font-x-lg);
+        margin-left:auto;
+    }
+
+    .investor-board .stock-detail-group li {
+        font-size:var(--font-x-sm);
+        width:100%;
     }
 
     .esg-area .inner .esg-section .esg-item-group {
@@ -3689,6 +3796,10 @@ section .request-item .sub-tit {
 
     .esg-section .esg-item-group li a .esg-txt {
         font-size:var(--font-x-sm);
+    }
+
+    section.ethic-area:before {
+        width:80vw;
     }
 
 
