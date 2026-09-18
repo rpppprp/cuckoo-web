@@ -255,7 +255,7 @@ $(function(){
         const map = new jsVectorMap({
             selector: '#associate-map',
             map: 'world',
-            zoomOnScroll: true,
+            zoomOnScroll: false,
     
             // 국가 선택 시 기본/호버 색상 설정
             regionStyle: {
