@@ -6,29 +6,27 @@ const PORT = 8000;
 
 app.use(useragent.express());
 
-// html 확장자 파일도 ejs 엔진으로 렌더링하도록 설정
+// HTML 확장자를 EJS 엔진으로 렌더링 설정
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
-app.set('views', path.join(__dirname, 'cuckooWeb'));
 
-// ejs 엔진 설정 부분 아래에 이 한 줄을 추가하세요
-app.set('view options', { root: path.join(__dirname, 'cuckooWeb') });
+// 1. 템플릿(EJS/HTML) 파일 위치를 pages 폴더로 변경
+const pagesPath = path.join(__dirname, 'cuckooWeb', 'pages');
+app.set('views', pagesPath);
+app.set('view options', { root: pagesPath });
 
-// CSS, JS, 이미지 등 정적 파일 매핑
-app.use('/cuckooWeb', express.static(path.join(__dirname, 'cuckooWeb')));
+// 2. CSS, JS, Images 등 정적 파일 위치를 static 폴더로 매핑
+// HTML 내부에서 /static/css/style.css 형태로 접근 가능
+app.use('/static', express.static(path.join(__dirname, 'cuckooWeb', 'static')));
 
-// 1. 메인 페이지 라우팅 (localhost:8000/)
+// 3. 메인 페이지 라우팅 (cuckooWeb/pages/index.html 렌더링)
 app.get("/", (req, res) => {
   res.render("index"); 
 });
 
-// 2. [핵심] 자동 서브 라우팅 (localhost:8000/폴더명/파일명)
-// 주소창에 치는 '폴더명'과 '파일명'을 변수로 받아서 알아서 ejs로 렌더링합니다.
+// 4. 자동 서브 라우팅 (cuckooWeb/pages/폴더명/파일명.html 렌더링)
 app.get("/:section/:page", (req, res) => {
-  const section = req.params.section;
-  const page = req.params.page;
-  
-  // cuckooWeb/폴더명/파일명.html 구조를 찾아 렌더링
+  const { section, page } = req.params;
   res.render(`${section}/${page}`);
 });
 
