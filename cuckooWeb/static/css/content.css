@@ -4592,6 +4592,11 @@ section .request-item .sub-tit {
         width:calc(70% - 24px);
     }
 
+    .env-content-wrap .img-area {
+        width:100%;
+    }
+
+
     #social-part-1 .safe-img-area {
         flex-direction: column;
         height: auto;

@@ -508,7 +508,7 @@ if ($('.section-overview').length > 0) {
     }
 
     $('.env-slide-track').slick({
-        slidesToShow: 4, // 기본값 (0px ~ 767px)
+        slidesToShow: 4, // 기본값 (1920px 이상 PC)
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 7000,
@@ -520,29 +520,30 @@ if ($('.section-overview').length > 0) {
         dots: false,
         prevArrow: $('.env-slide-pager .env-slide-prev'),
         nextArrow: $('.env-slide-pager .env-slide-next'),
-        mobileFirst: true,
+        // mobileFirst: true 제거 -> max-width(데스크톱 기준) 동작
         responsive: [
             {
-                breakpoint: 480, // 768px 이상일 때 1개
+                breakpoint: 1919, // 1919px 이하 (1280px ~ 1918px)
                 settings: {
-                    slidesToShow: 1
+                    slidesToShow: 3
                 }
             },
             {
-                breakpoint: 768, // 768px 이상일 때 1개
+                breakpoint: 1279, // 1279px 이하 (1024px ~ 1278px)
                 settings: {
                     slidesToShow: 2
                 }
             },
             {
-                breakpoint: 1024, // 1024px 이상일 때 2개
+                breakpoint: 1023, // 1023px 이하 (~ 1023px 모바일/태블릿)
                 settings: {
-                    slidesToShow: 3
+                    slidesToShow: 1
                 }
             }
         ]
     });
 
+    
     // E-순환우수제품 현황    
     if ($('#env-recycle-graph').length > 0) {
 
