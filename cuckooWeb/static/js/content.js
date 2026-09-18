@@ -508,7 +508,7 @@ if ($('.section-overview').length > 0) {
     }
 
     $('.env-slide-track').slick({
-        slidesToShow: 1,
+        slidesToShow: 4, // 기본값 (0px ~ 767px)
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 7000,
@@ -523,9 +523,21 @@ if ($('.section-overview').length > 0) {
         mobileFirst: true,
         responsive: [
             {
-                breakpoint: 768, // 768px 이상일 때 4개
+                breakpoint: 480, // 768px 이상일 때 1개
                 settings: {
-                    slidesToShow: 4
+                    slidesToShow: 1
+                }
+            },
+            {
+                breakpoint: 768, // 768px 이상일 때 1개
+                settings: {
+                    slidesToShow: 2
+                }
+            },
+            {
+                breakpoint: 1024, // 1024px 이상일 때 2개
+                settings: {
+                    slidesToShow: 3
                 }
             }
         ]
