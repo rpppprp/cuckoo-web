@@ -574,6 +574,12 @@ section.section > .inner {
     will-change: opacity;
 }
 
+.intro-full .txt-area .txt {
+    font-size:var(--font--md);
+    padding: 20px 0px 0px;
+}
+
+
 
 /* ----------------------------------------------------------
 

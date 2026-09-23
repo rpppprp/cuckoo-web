@@ -559,7 +559,7 @@ section.ethic-area .inner .ethic-section {
 .vision-head .content {
     display:flex;
     flex-direction: column;
-    gap:40px;
+    gap:50px;
     text-align:center;
     margin:20px 0px;
 }
@@ -602,6 +602,7 @@ section.ethic-area .inner .ethic-section {
     height:460px;
     border-radius: 100px;
     overflow:hidden;
+    flex-shrink: 0;
 }
 
 .seek-item-list .seek-item .img > img {
@@ -613,17 +614,20 @@ section.ethic-area .inner .ethic-section {
 .seek-item-list .seek-item .txt-wrap {
     display:flex;
     flex-direction: column;
-    gap:10px;
+    gap:30px;
     justify-content: center;
 }
 
 .seek-item-list .seek-item .txt-wrap .tit-txt {
     color:var(--color-gry-2);
+    line-height:1.2;
 }
 
 .seek-item-list .seek-item .txt-wrap .txt {
-    font-size:var(--font-lg);
-    white-space: pre-line;
+    font-size:var(--font-sm);
+    text-align:justify;
+    overflow-wrap: break-word;
+    word-break: keep-all;
 }
 
 
@@ -798,7 +802,7 @@ section.section-banner .inner {
 
 
 .associate-china-area, .associate-usa-area,
-.associate-mal-area, .associate-india-area,
+.associate-mal-area, .associate-sing-area,
 .associate-vietnam-area, .associate-indonesia-area,
 .associate-aus-area {
     margin-bottom:60px;
@@ -828,6 +832,7 @@ section.section-banner .inner {
 
 .associate-list > li .associate-info .eng {
     color:var(--color-gry-4);
+    text-transform: uppercase;
     margin-bottom:20px;
 }
 
@@ -858,7 +863,7 @@ section.section-banner .inner {
 }
 
 .associate-list .company-info li.date:before {
-    content:"설립일";
+    content:"설립년월";
 }
 
 .associate-list .company-info li.type:before {
@@ -866,26 +871,12 @@ section.section-banner .inner {
 }
 
 .associate-list .company-info li.address:before {
-    content:"주소";
+    content:"본사 주소";
 }
 
-.associate-list .company-info li.url:before {
-    content:"홈페이지";
+.associate-list .company-info li.stock-info:before {
+    content:"상장 정보";
 }
-
-
-.associate-list.oversea .company-info li.date:before {
-    content:"설립년도";
-}
-
-.associate-list.oversea .company-info li.address:before {
-    content:"주소";
-}
-
-.associate-list.oversea .company-info li.url:before {
-    content:"홈페이지";
-}
-
 
 
 /* ----------------------------------------------------------
@@ -985,6 +976,11 @@ section.section-banner .inner {
 
 .stock-current-group li:nth-child(-n+3) {
     border-bottom:1px solid var(--color-gry-2);
+}
+
+.stock-current-group li.vol:after {
+    content:'주';
+    margin-left:5px;
 }
 
 .stock-current-group li > em {
@@ -1475,6 +1471,12 @@ section .request-item .sub-tit {
 .request-calendar-area {
     display:flex;
     gap:24px;
+}
+
+section .request-item > p.txt {
+    font-size:var(--font-rg);
+    color:var(--color-gry-5);
+    padding:20px 0px 0px;
 }
 
 .request-calendar-area .request-calendar {
@@ -1995,6 +1997,14 @@ section .request-item .sub-tit {
     display:flex;
     flex-direction: column;
     gap:20px;
+}
+
+.section-esg .comment {
+    display:flex;
+    font-size:var(--font-sm);
+    color:var(--color-gry-5);
+    padding:20px 0px 0;
+    gap:15px;
 }
 
 

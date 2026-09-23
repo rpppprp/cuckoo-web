@@ -228,57 +228,90 @@ $(function(){
     // overseas map
     if ($('#associate-map').length > 0) {
 
-        // 1. 대문자 ISO-2 국가 코드 및 URL 매핑
-        const countryUrls = {
-            'CN': 'https://www.cuckoo.cn',          // 중국
-            'US': 'https://cuckooamerica.com/',     // 미국
-            'MY': 'https://www.cuckoo.com.my',      // 말레이시아
-            'VN': 'https://cuckoovina.com/vi/',     // 베트남
-            'ID': 'https://www.cuckoo.co.id/',      // 인도네시아
-            'IN': 'https://cuckooindia.in',         // 인도
-            'SG': 'https://www.cuckoo.sg/',         // 싱가포르
-            'AU': 'https://www.cuckooaustralia.com.au' // 호주
-        };
+        // 1. 국가 정보 및 마커 데이터 (ISO-2 코드, 좌표, 영문명, URL)
+        const countryData = [
+            { code: 'CN', name: 'CHINA', coords: [35.8617, 104.1954], url: 'https://www.cuckoo.cn' },
+            { code: 'US', name: 'USA', coords: [37.0902, -95.7129], url: 'https://cuckooamerica.com/' },
+            { code: 'MY', name: 'MALAYSIA', coords: [4.2105, 101.9758], url: 'https://www.cuckoo.com.my' },
+            { code: 'VN', name: 'VIETNAM', coords: [14.0583, 108.2772], url: 'https://cuckoovina.com/vi/' },
+            { code: 'ID', name: 'INDONESIA', coords: [-0.7893, 113.9213], url: 'https://www.cuckoo.co.id/' },
+            { code: 'IN', name: 'INDIA', coords: [20.5937, 78.9629], url: 'https://cuckooindia.in' },
+            { code: 'SG', name: 'SINGAPORE', coords: [1.3521, 103.8198], url: 'https://www.cuckoo.sg/' },
+            { code: 'AU', name: 'AUSTRALIA', coords: [-25.2744, 133.7751], url: 'https://www.cuckooaustralia.com.au' }
+        ];
     
-        // 국가 코드 -> 표시할 영문 국가명
-        const countryNames = {
-            'CN': 'CHINA',
-            'US': 'USA',
-            'MY': 'MALAYSIA',
-            'VN': 'VIETNAM',
-            'ID': 'INDONESIA',
-            'IN': 'INDIA',
-            'SG': 'SINGAPORE',
-            'AU': 'AUSTRALIA'
-        };
+        // 매핑 객체 생성
+        const countryUrls = {};
+        const countryNames = {};
+        const markers = countryData.map(item => {
+            countryUrls[item.code] = item.url;
+            countryNames[item.code] = item.name;
+            return {
+                name: item.name,
+                coords: item.coords,
+                code: item.code
+            };
+        });
     
         const map = new jsVectorMap({
             selector: '#associate-map',
             map: 'world',
             zoomOnScroll: false,
     
-            // 국가 선택 시 기본/호버 색상 설정
+            // 국가 면적 색상 (선택된 국가 강조)
             regionStyle: {
-                initial: { fill: '#d1d5db' },
-                hover: { fill: '#9ca3af', cursor: 'pointer' },
-                selected: { fill: '#767676' },
-                selectedHover: { fill: '#222222', cursor: 'pointer' }
+                initial: { fill: '#e5e7eb' },
+                hover: { fill: '#d1d5db', cursor: 'pointer' },
+                selected: { fill: '#9ca3af' },
+                selectedHover: { fill: '#6b7280', cursor: 'pointer' }
             },
-    
-            // 대상 국가 미리 선택(색상 적용)
             selectedRegions: Object.keys(countryUrls),
     
-            // 툴팁 표시
+            // 마커 배치 및 스타일
+            markers: markers,
+            markerStyle: {
+                initial: {
+                    r: 6,
+                    fill: '#222222',
+                    stroke: '#ffffff',
+                    strokeWidth: 2,
+                    cursor: 'pointer'
+                },
+                hover: {
+                    r: 8,
+                    fill: '#000000',
+                    stroke: '#ffffff',
+                    strokeWidth: 2,
+                    cursor: 'pointer'
+                }
+            },
+    
+            // 마커 툴팁 설정
+            onMarkerTooltipShow(event, tooltip, index) {
+                const marker = markers[index];
+                tooltip.text(marker.name);
+            },
+    
+            // 국가 면적 툴팁 설정
             onRegionTooltipShow(event, tooltip, code) {
                 const countryCode = code.toUpperCase();
                 if (countryUrls[countryCode]) {
                     tooltip.text(countryNames[countryCode] || countryCode);
                 } else {
-                    event.preventDefault(); // 해당 없는 국가는 툴팁 비활성화
+                    event.preventDefault();
                 }
             },
     
-            // 클릭 이벤트
+            // 마커 클릭 이벤트
+            onMarkerClick(event, index) {
+                const marker = markers[index];
+                const url = countryUrls[marker.code];
+                if (url) {
+                    window.open(url, '_blank');
+                }
+            },
+    
+            // 국가 면적 클릭 이벤트
             onRegionClick(event, code) {
                 const countryCode = code.toUpperCase();
                 const url = countryUrls[countryCode];
@@ -289,6 +322,7 @@ $(function(){
         });
     
     }
+
 
 /* ----------------------------------------------------------
 
@@ -520,7 +554,6 @@ if ($('.section-overview').length > 0) {
         dots: false,
         prevArrow: $('.env-slide-pager .env-slide-prev'),
         nextArrow: $('.env-slide-pager .env-slide-next'),
-        // mobileFirst: true 제거 -> max-width(데스크톱 기준) 동작
         responsive: [
             {
                 breakpoint: 1919, // 1919px 이하 (1280px ~ 1918px)
@@ -845,10 +878,10 @@ if ($('.section-overview').length > 0) {
         option = {
           // 전체 화면 대비 여백 및 정렬 최적화
           grid: {
-            left: '8%',
-            right: '8%',
+            left: '5%',
+            right: '5%',
             top: '15%',
-            bottom: '15%',
+            bottom: '10%',
             containLabel: true
           },
           tooltip: {
@@ -858,7 +891,7 @@ if ($('.section-overview').length > 0) {
             type: 'category',
             // 양 끝 여백을 두어 꺾은선 시작점과 끝점이 축선에 붙지 않게 처리
             boundaryGap: true, 
-            data: ['2023년', '2024년', '2025년', '2026년(진행중)']
+            data: ['2022년', '2023년', '2024년', '2025년', '2026년\n(진행중)']
           },
           yAxis: {
             type: 'value',
@@ -871,16 +904,16 @@ if ($('.section-overview').length > 0) {
             },
             // 데이터 범위(7~235)에 맞춰 그리드가 예쁘게 잡히도록 최대값 설정
             min: 0,
-            max: 500,
+            max: 1000,
             interval: 100
           },
           series: [
             {
               name: '모델수',
               type: 'line',
-              data: [138, 155, 390, 440],
+              data: [145, 178, 237, 604, 687],
               itemStyle: { color: '#56a3f1' },
-              lineStyle: { width: 3 },
+              lineStyle: { width: 5 },
               // 꺾은선 꼭짓점 위에 "X개 모델" 라벨 표시
               label: {
                 show: true,
