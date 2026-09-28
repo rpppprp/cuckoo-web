@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+    <head>
+        <meta charset="utf-8">
+        <title>CUCKOO - investor - 실시간주가정보</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+         
+    </head>
+        
+
+    <body>
+
+        <!-- header -->
+        <%- include('/layout/header.html') %>
+        <!-- header -->
+
+        <main id="container" class="container">
+
+            <div class="investor-finance sub-page">
+
+                <!-- sub-tab -->
+                <%- include('/layout/sub-tab.html', { showTab: 'investor-finance' }) %>
+                <!-- sub-tab -->
+
+                <div class="tab-area finance-tab-area">
+                    <ul class="tab-track finance-tab">
+                        <li class="tab-item on"><a href="/investor/finance-stock.html">실시간 주가정보</a></li>
+                        <li class="tab-item"><a href="/investor/finance-statement.html">재무제표</a></li>
+                        <li class="tab-item"><a href="/investor/finance-indicator.html">재무지표</a></li>
+                    </ul>
+                </div>
+                
+                <section class="section section-finance">
+                    <div class="inner">
+                        <div class="tit-area finance-tit">
+                            <h1>실시간 주가정보</h1>
+                        </div>
+                        <ul class="tab-group finance">
+                            <li class="on" data-tab="stock-cuckooHoldings"><a>쿠쿠홀딩스</a></li>
+                            <li data-tab="stock-cuckooHomesys"><a>쿠쿠홈시스</a></li>
+                        </ul>
+                        <div class="finance-stock-tab tab">
+                            <!-- 쿠쿠 홀딩스 -->
+                            <div class="stock-item stock-cuckooHoldings items" id="stock-cuckooHoldings">
+                                <div class="stock-tit">
+                                    <h4 class="name">쿠쿠홀딩스</h4>
+                                    <b class="code">192400</b>
+                                    <p class="date-txt">2026-03-26 02:00:00 기준</p>
+                                </div>
+                                <div class="stock-head">
+                                    <div class="stock-table" id="holdings-current">
+                                        <ul class="stock-current">
+                                            <li>
+                                                <h2 class="tit-txt">28,700</h2>
+                                            </li>
+                                            <li>
+                                                <em>전일대비</em>
+                                                <p class="color-high">+ 250원 (0.70%)</p>
+                                            </li>
+                                        </ul>
+                                        <ul class="stock-current-group">
+                                            <li><em>종가</em><p>28,450원</p></li>
+                                            <li><em>고가</em><p>28,450원(상한가 36,000)</p></li>
+                                            <li class="vol"><em>거래량</em><p>37,995</p></li>
+                                            <li><em>시가</em><p>28,450원</p></li>
+                                            <li><em>저가</em><p>28,450원(상한가 36,000원)</p></li>
+                                            <li><em>거래대금</em><p>28,450원</p></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 쿠쿠 홈시스 -->
+                            <div class="stock-item stock-cuckooHomesys items" id="stock-cuckooHomesys">
+                                <div class="stock-tit">
+                                    <h4 class="name">쿠쿠홈시스</h4>
+                                    <b class="code">284740</b>
+                                    <p class="date-txt">2026-03-26 02:00:00 기준</p>
+                                </div>
+                                <div class="stock-head">
+                                    <div class="stock-table" id="homesys-current">
+                                        <ul class="stock-current">
+                                            <li><h2 class="tit-txt">28,700</h2></li>
+                                            <li>
+                                                <em>전일대비</em>
+                                                <p class="color-low">+ 250원 (0.70%)</p>
+                                            </li>
+                                        </ul>
+                                        <ul class="stock-current-group">
+                                            <li><em>종가</em><p>28,450원</p></li>
+                                            <li><em>고가</em><p>28,450원(상한가 36,000)</p></li>
+                                            <li class="vol"><em>거래량</em><p>37,995</p></li>
+                                            <li><em>시가</em><p>28,450원</p></li>
+                                            <li><em>저가</em><p>28,450원(상한가 36,000)</p></li>
+                                            <li><em>거래대금</em><p>28,450원</p></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+       
+                <!-- bottom page -->
+                <%- include('/layout/bottom-page.html', { showBottom: 'investor-finance' }) %>
+                <!-- bottom page -->
+
+            </div>
+
+
+        </main>
+
+        <!-- footer -->
+        <%- include('/layout/footer.html') %>
+        <!-- footer -->
+    </body>
+
+
+</html>

@@ -406,32 +406,62 @@ $(function(){
     
 
     // 방문자 정보 추가
-    function addVisitor(){
+// 방문자 정보 추가
+function addVisitor() {
 
-        // 폼을 복사하여 템플릿 생성 (동적 ID 제거 처리)
-        var $infoArea = $('.request-info-area');
-        var $firstInfo = $infoArea.find('.request-info').first();
-  
-        // 복사본 생성 및 ID 제거 (ID 중복 방지)
-        var templateHtml = $firstInfo.clone().find('*').removeAttr('id').end().prop('outerHTML');
-  
-        $('#add-visitor').on('click', function(e) {
-            e.preventDefault();
-  
-            // .request-info 개수 확인
-            var currentCount = $infoArea.find('.request-info').length;
-  
-            // 5개 이상일 경우 경고창 출력
-            if (currentCount >= 5) {
-                alert("방문자는 최대 5명까지 가능합니다.");
-                return;
-            }
-  
-            // 새 방문자 폼 추가
-            $infoArea.append(templateHtml);
+    var $infoArea = $('.request-info-area');
+
+    $('#add-visitor').on('click', function(e) {
+        e.preventDefault();
+
+        var currentCount = $infoArea.find('.request-info').length;
+
+        if (currentCount >= 5) {
+            alert('방문자는 최대 5명까지 가능합니다.');
+            return;
+        }
+
+        // 새 방문자 번호
+        var visitorIndex = currentCount + 1;
+
+        // 첫 번째 방문자 폼 복사
+        var $newInfo = $infoArea.find('.request-info').first().clone();
+
+        // input 값 초기화
+        $newInfo.find('input[type="text"], input[type="number"]').val('');
+
+        // radio / checkbox 초기화
+        $newInfo.find('input[type="radio"], input[type="checkbox"]').prop('checked', false);
+
+        // select 초기화
+        $newInfo.find('select').prop('selectedIndex', 0);
+
+        // 각 input/select의 id와 label for 재설정
+        $newInfo.find('input, select').each(function(index) {
+
+            var $input = $(this);
+            var oldId = $input.attr('id');
+
+            if (!oldId) return;
+
+            // 새 ID
+            var newId = oldId + '-' + visitorIndex;
+
+            $input.attr('id', newId);
+
+            // 연결된 label도 수정
+            $newInfo.find('label[for="' + oldId + '"]').attr('for', newId);
         });
-  
-      }
+
+        // 라디오 그룹은 방문자별 name 분리
+        $newInfo.find('input[type="radio"][name="meeting-method"]')
+            .attr('name', 'meeting-method-' + visitorIndex);
+
+        // 추가
+        $infoArea.append($newInfo);
+    });
+
+}
   
       addVisitor();
 

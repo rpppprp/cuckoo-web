@@ -26,6 +26,15 @@
                     map: map
                 });
             }
+
+
+            // 팝업 테스트용
+
+            function popupOpen(){
+                
+            }
+
+
         </script>
     </head>
         
@@ -109,12 +118,48 @@
                                 <div class="request-map" id="request-map"></div>
                                 <p class="txt"><b>06098</b> 서울시 강남구 언주로 652 쿠쿠B/D</p>
                             </div>
+
+                            <!-- 신청자 정보 -->
+                            <div class="request-item">
+                                <div class="sub-tit request-tit">
+                                    <h2>신청자 정보</h2>
+                                </div>
+                                <div class="request-form-area">
+                                    <ul class="request-info">
+                                        <li>
+                                            <label for="request-name">이름</label>
+                                            <input id="request-name" type="text" class="input-txt request-name" placeholder="이름을 입력하세요." required>
+                                        </li>
+                                        <li>
+                                            <label for="request-rols">직위</label>
+                                            <input id="request-rols" type="text" class="input-txt request-rols" placeholder="직위 입력해 주세요." required>
+                                        </li>
+                                        <li>
+                                            <label for="request-corp">회사명</label>
+                                            <input id="request-corp" type="text" class="input-txt request-corp" placeholder="회사명을 입력해 주세요." required>
+                                        </li>
+                                        <li>
+                                            <label for="request-team">부서명</label>
+                                            <input id="request-team" type="text" class="input-txt request-team" placeholder="부서명을 입력해주세요." required>
+                                        </li>
+                                        <li>
+                                            <label for="request-tel">전화번호</label>
+                                            <input id="request-tel" type="number" class="input-txt request-tel" placeholder="전화번호를 입력하세요." required>
+                                        </li>
+                                        
+                                        <li>
+                                            <label for="request-mail">이메일</label>
+                                            <input id="request-mail" type="text" class="input-txt request-mail" placeholder="이메일을 입력해주세요." required>
+                                        </li>
+                                        
+                                    </ul>
+                                </div>
+                            </div>
                             <!-- 방문자 정보 -->
                             <div class="request-item">
                                 <div class="sub-tit request-tit">
                                     <h2>방문자 정보</h2>
                                     <p class="txt color-point">* 방문자는 최대 5명까지 가능</p>
-                                    <a class="btn b-btn" id="add-visitor">방문자 추가 +</a>
                                 </div>
                                 <div class="request-info-area">
                                     <ul class="request-info">
@@ -177,11 +222,11 @@
                                             </label>
                                             <ul class="input-group">
                                                 <li>
-                                                    <input type="checkbox" class="input-chk" name="interests" id="interestsCorp-01">
+                                                    <input type="checkbox" class="input-chk" name="interestsCorp" id="interestsCorp-01">
                                                     <label for="interestsCorp-01">쿠쿠홀딩스</label>
                                                 </li>
                                                 <li>
-                                                    <input type="checkbox" class="input-chk" name="interests" id="interestsCorp-02">
+                                                    <input type="checkbox" class="input-chk" name="interestsCorp" id="interestsCorp-02">
                                                     <label for="interestsCorp-02">쿠쿠홈시스</label>
                                                 </li>
                                             </ul>
@@ -207,6 +252,9 @@
                                             </ul>
                                         </li>
                                     </ul>
+                                </div>
+                                <div class="request-add-btn">
+                                    <a class="btn" id="add-visitor">방문자 추가 +</a>
                                 </div>
                             </div>
                             <!-- 방문 목적 및 요청사항 -->

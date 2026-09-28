@@ -885,8 +885,25 @@ section.section-banner .inner {
 
 -------------------------------------------------------------*/
 
+
+.section-finance .tit-area {
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+}
+
+.section-finance .tit-area p.date-txt {
+    font-size:var(--font-sm);
+    color:var(--color-gry-4);
+}
+
+.finance-stock-tab {
+    display: flex;
+    gap:80px;
+}
+
 .stock-item {
-    display:none;
+    /* display:none; */
     padding-top:40px;
 }
 
@@ -902,7 +919,11 @@ section.section-banner .inner {
 }
 
 .stock-item .stock-tit .code {
+    background:var(--color-gry-0);
+    font-size:var(--font-sm);
     color:var(--color-gry-5);
+    padding:5px 20px;
+    border-radius: 24px;
     margin-left:10px;
 }
 
@@ -913,29 +934,27 @@ section.section-banner .inner {
 
 .stock-head .stock-table {
     display: flex;
-    border-top:3px solid var(--color-blk);
-    border-bottom:1px solid var(--color-gry-1);
+    flex-direction: column;
+    gap:60px;
 }
 
 .stock-head .stock-table .stock-current {
     display:flex;
-    width:40%;
     flex-direction: column;
-    background:var(--color-wht);
-    padding-bottom:20px;
-    flex-shrink: 0;
+    background:var(--color-gry-0);
+    padding-bottom:40px;
+    border-radius: 16px;
 }
 
 .stock-head .stock-table .stock-current li {
     display:flex;
-    padding:30px 30px 0px;
+    padding:30px 40px 0px;
     align-items:center;
     gap:20px;
 }
 
 .stock-head .stock-table .stock-current li:last-child {
     color:var(--color-red);
-    justify-content: space-between;
 }
 
 
@@ -947,65 +966,65 @@ section.section-banner .inner {
     display:flex;
     flex-wrap: wrap;
     width:100%;
-    background:var(--color-gry-0);
+    border-top:2px solid var(--color-blk);
 }
 
 .stock-current-group li {
-    width:50%;
+    width:100%;
     display:flex;
     align-items:center;
     box-sizing: border-box;
-    padding:30px;
-}
-
-
-.stock-current-group li:nth-child(-n+4) {
     border-bottom:1px solid var(--color-gry-2);
 }
 
-.stock-current-group li.vol:after {
+/* .stock-current-group li:nth-child(-n+4) {
+    border-bottom:1px solid var(--color-gry-2);
+} */
+
+.stock-current-group li > div {
+    background:var(--color-gry-0);
+    display: inline-flex;
+    width:30%;
+    height:100%;
+    font-weight: 700;
+    padding:20px 30px;
+    box-sizing: border-box;
+    align-items:center;
+    justify-content: center;
+    border-right:1px solid var(--color-gry-1);
+}
+
+.stock-current-group li > p {
+    width:70%;
+    display: flex;
+    flex-wrap:wrap;
+    gap:5px;
+    padding:20px 30px;
+    box-sizing: border-box;
+    justify-content: flex-end;
+}
+
+.stock-current-group li.vol > p:after {
     content:'주';
     margin-left:5px;
 }
 
-.stock-current-group li > em {
-    width:80px;
-    color:var(--color-gry-4);
-    margin-right:40px;
+
+.stock-btn {
+    margin:40px 0px;
 }
 
-.stock-graph-area {
+.stock-btn > a {
     width:100%;
-    margin-top:60px;
+    border:1px solid var(--color-gry-5);
+    padding:15px 30px;
+    transition:all 0.3s;
 }
 
-.chart-btn-group {
-    display:flex;
-    gap:20px;
-}
-
-.chart-btn-group button {
-    background:var(--color-gry-0);
-    color:var(--color-gry-4);
-    padding:5px 15px;
-    border-radius: 3px;
-}
-
-.chart-btn-group button.active {
+.stock-btn > a:hover {
     background:var(--color-blk);
     color:var(--color-wht);
 }
-
-.stock-graph-area .stock-graph {
-    width:100%;
-    height:700px;
-}
-
-
-.stock-graph-area .stock-graph > div canvas {
-    width: 100% !important;
-}
-
 
 /* ----------------------------------------------------------
 
@@ -1674,6 +1693,14 @@ section .request-item > p.txt {
     border-radius: 16px;
 }
 
+.request-item .request-form-area .request-info {
+    padding:40px;
+}
+
+.request-item .request-form-area .request-info:before {
+    display: none;
+}
+
 .request-item .request-info:before {
     background:var(--color-blk);
     counter-increment: numbering;
@@ -1736,6 +1763,15 @@ section .request-item > p.txt {
     align-items:center;
 }
 
+.request-add-btn {
+    padding:40px 0px;
+}
+
+.request-add-btn #add-visitor {
+    padding:15px 30px;
+    border:1px solid var(--color-gry-4);
+}
+
 .request-item .request-text {
     width:100%;
     height:200px;
@@ -1744,6 +1780,7 @@ section .request-item > p.txt {
 .request-item .request-text .input-textbox {
     height:200px;
 }
+
 
 .request-item .request-privacy {
     padding-bottom:40px;
@@ -1790,6 +1827,78 @@ section .request-item > p.txt {
     width:300px;
 }
 
+
+
+/* IR 미팅신청 완료폼 */
+
+.request-confirm-area {
+    display:none;
+    position:fixed;
+    width:100%;
+    height:100%;
+    left:0;
+    top:0;
+    background:rgba(0,0,0,0.4);
+    backdrop-filter: blur(20px);
+    z-index:1000;
+    transition: all 0.4s;
+}
+
+.request-confirm-area .request-confirm {
+    width:600px;
+    background:var(--color-wht);
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    border-radius: 16px;
+    box-shadow: 0px 0px 14px rgba(0,0,0,0.2);
+}
+
+.request-confirm-content {
+    padding:40px;
+}
+
+.request-confirm-content .request-confirm-wrap {
+    display: flex;
+    flex-direction: column;
+    gap:30px;
+}
+
+.request-confirm-content .request-confirm-wrap h3 {
+    display: flex;
+    align-items:center;
+    gap:10px;
+}
+
+.request-confirm-content .request-confirm-wrap h3 > span {
+    display: flex;
+    background:var(--color-blk);
+    width:32px;
+    height:32px;
+    color:var(--color-wht);
+    border-radius: 32px;
+    justify-content: center;
+    align-items:center;
+}
+
+.request-date {
+    background:var(--color-gry-0);
+    padding:30px;
+    margin:20px 0px 40px;
+    border-radius: 8px;
+}
+
+.request-date li {
+    display: flex;
+    gap:20px;
+    align-items:center;
+    padding:5px 0px;
+}
+
+.request-date li > b {
+    min-width:70px;
+}
 
 
 /* ----------------------------------------------------------
@@ -3446,6 +3555,10 @@ section .request-item > p.txt {
 
     /* investor */
 
+    .finance-stock-tab {
+        gap:20px;
+    }
+
     .stock-head .stock-table {
         flex-flow:column;
     }
@@ -3460,17 +3573,8 @@ section .request-item > p.txt {
         width:100%;
     }
 
-    .stock-current-group li {
-        padding:20px;
-    }
-
-    .statement-graph {
-        height:300px;
-        gap:30px;
-    }
-
-    .statement-graph > div {
-        height:300px;
+    .stock-btn {
+        margin:40px 0px 0px;
     }
 
     .info-item > .item-wrap {
@@ -4182,6 +4286,10 @@ section .request-item > p.txt {
 
     /* investor */
 
+    .finance-stock-tab {
+        flex-direction: column;
+    }
+
     .stock-current-group li {
         width:100% !important;
         border-bottom:1px solid var(--color-gry-2) !important;
@@ -4195,17 +4303,6 @@ section .request-item > p.txt {
         width:100px;
     }
 
-    .stock-graph-area {
-        width:100%;
-        margin-top: 60px;
-        overflow-x:auto;
-    }
-
-    .stock-graph-area .stock-graph {
-        width:800px;
-        height:400px;
-        padding-bottom:40px;
-    }
 
     .statement-item, .indicator-item,
     .drt-item, .notice-item,
@@ -4344,10 +4441,7 @@ section .request-item > p.txt {
         flex-wrap: wrap;
     }
 
-    .request-item .sub-tit #add-visitor {
-        min-width:100%;
-        width:100%;
-    }
+
 
     .request-item .request-info {
         padding:60px 30px 40px;
@@ -4382,6 +4476,11 @@ section .request-item > p.txt {
     }
 
     .request-item .request-info > li > .input-select {
+        width:100%;
+    }
+
+    .request-add-btn #add-visitor {
+        min-width:100%;
         width:100%;
     }
 
