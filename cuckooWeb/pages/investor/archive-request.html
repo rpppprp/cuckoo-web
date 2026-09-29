@@ -30,8 +30,21 @@
 
             // 팝업 테스트용
 
-            function popupOpen(){
+            function popupTest() {
                 
+                var _popup = $(".request-confirm-area");
+
+                $(".request-btn-area > a.btn").click(function(){
+                    scrollDisable();
+                    _popup.show();
+                })
+
+
+                $(".request-confirm-btn > a.btn").click(function(){
+                    scrollAble();
+                    _popup.hide();
+                })
+
             }
 
 
@@ -308,5 +321,12 @@
         <!-- footer -->
     </body>
 
+    <script>
+
+        $(function(){
+            popupTest()
+        })
+                    
+    </script>
 
 </html>
