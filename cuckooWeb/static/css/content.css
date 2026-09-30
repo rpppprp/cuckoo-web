@@ -328,6 +328,12 @@ section.about-area .inner .about-section .about-section-bg:after {
     font-size:var(--font-xx-lg);
 }
 
+.investor-board .stock-group .stock-current li > h4:after {
+    font-size:var(--font-lg);
+    content:"원";
+    margin-left:5px;
+}
+
 .investor-board .stock-group .stock-current li > span {
     font-size:var(--font-sm);
     background:var(--color-blk);
@@ -367,6 +373,15 @@ section.about-area .inner .about-section .about-section-bg:after {
 .investor-board .stock-detail-group li > p {
     width:calc(100% - 100px);
     text-align:right;
+}
+
+.investor-board .stock-detail-group li > p:after {
+    content:'원';
+    margin-left:5px;
+}
+
+.investor-board .stock-detail-group li.vol > p:after {
+    content:'주';
 }
 
 /* ESG section */
@@ -1004,11 +1019,13 @@ section.section-banner .inner {
     justify-content: flex-end;
 }
 
-.stock-current-group li.vol > p:after {
-    content:'주';
-    margin-left:5px;
+.stock-current-group li > p:after {
+    content:'원';
 }
 
+.stock-current-group li.vol > p:after {
+    content:'주';
+}
 
 .stock-btn {
     margin:40px 0px;
@@ -1666,6 +1683,25 @@ section .request-item > p.txt {
     height:360px;
     border-radius: 16px;
     border:1px solid var(--color-gry-1);
+}
+
+.request-tit > p.txt {
+    margin-left:auto;
+}
+
+.request-item .visitor-applicant {
+    display: flex;
+    gap:10px;
+    align-items:center;
+    margin-left:10px;
+}
+
+.request-item .visitor-applicant label {
+    display: flex;
+    font-size: var(--font-sm);
+    color: var(--color-gry-5);
+    gap: 10px;
+    align-items: center;
 }
 
 .request-item .sub-tit #add-visitor {
@@ -4445,7 +4481,9 @@ section .request-item > p.txt {
         flex-wrap: wrap;
     }
 
-
+    .request-item .sub-tit p.txt {
+        margin-left:0px;
+    }
 
     .request-item .request-info {
         padding:60px 30px 40px;
